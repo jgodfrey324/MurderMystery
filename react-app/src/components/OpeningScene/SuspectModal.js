@@ -53,20 +53,25 @@ const SuspectModal = () => {
     }
 
     return (
-        <div className='suspect-container'>
-            {suspects.map(suspect => {
-                return (
-                    <div className='single-suspect' key={suspect.id}>
-                        <p>{suspect.first_name} {suspect.last_name}</p>
-                        <button onClick={(e) => handleDelete(e, suspect)}>remove suspect</button>
-                    </div>
-                )
-            })}
-            {addBackIds.map(id => {
-                return (
-                    <button key={id} onClick={(e) => handleAddBack(e, id)}>add back {characters[id]['first_name']} {characters[id]['last_name']}</button>
-                )
-            })}
+        <div className='suspect-modal-container'>
+            <img src="https://i.imgur.com/7kwSq0B.png" alt='notebook'></img>
+            <div className='suspect-container'>
+                {suspects.map(suspect => {
+                    return (
+                        <div className='single-suspect' key={suspect.id}>
+                            <p>{suspect.first_name} {suspect.last_name}</p>
+                            <button onClick={(e) => handleDelete(e, suspect)}>remove suspect</button>
+                        </div>
+                    )
+                })}
+                <div className='add-back-buttons'>
+                    {addBackIds.map(id => {
+                        return (
+                            <button key={id} onClick={(e) => handleAddBack(e, id)}>add back {characters[id]['first_name']} {characters[id]['last_name']}</button>
+                        )
+                    })}
+                </div>
+            </div>
         </div>
     )
 }

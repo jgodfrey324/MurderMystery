@@ -170,3 +170,51 @@
 .modal-button > #suspect-icon:hover {
     background-color: rgb(208, 208, 208);
 }
+
+.suspect-container {
+    margin: 20px 0;
+    position: relative;
+    z-index: 2;
+    background-color: antiquewhite;
+    border-radius: 30px;
+    width: 493px;
+    top: 60px;
+    left: 85px;
+}
+
+.suspect-modal-container > img {
+    position: absolute;
+    z-index: 1;
+    width: -webkit-fill-available;
+    top: -35px;
+    left: -20px;
+    height: -webkit-fill-available;
+    object-fit: contain;
+}
+
+.single-suspect {
+    border-bottom: 1px solid rgb(255, 132, 152);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+    height: 45px;
+}
+
+.single-suspect > button {
+    height: 25px;
+    cursor: pointer;
+}
+
+.add-back-buttons > button {
+    margin: 10px 20px;
+    cursor: pointer;
+    height: 25px;
+}
+
+.add-back-buttons {
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
