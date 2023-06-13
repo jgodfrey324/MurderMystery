@@ -16,7 +16,7 @@ class User(db.Model, UserMixin):
     hashed_password = db.Column(db.String(255), nullable=False)
 
     notes = db.relationship('Note', back_populates='user')
-
+    suspects = db.relationship('Suspect', back_populates='user')
 
     @property
     def password(self):
