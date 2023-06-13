@@ -1,7 +1,7 @@
 """empty message
 
 Revision ID: 1c20824c96c5
-Revises: 
+Revises:
 Create Date: 2023-06-13 10:05:26.900362
 
 """
@@ -63,9 +63,7 @@ def upgrade():
     op.create_table('suspects',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('character_id', sa.Integer(), nullable=False),
-    sa.Column('user_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['character_id'], ['characters.id'], ),
-    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###
