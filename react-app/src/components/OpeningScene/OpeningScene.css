@@ -154,3 +154,19 @@
     width: 400px;
     height: 20px;
 }
+
+.suspect-button {
+    /* border: 1px solid blue; */
+    width: fit-content;
+}
+
+.modal-button > #suspect-icon {
+    /* border: 1px solid red; */
+    font-size: 60px;
+    padding: 5px;
+    border-radius: 10px
+}
+
+.modal-button > #suspect-icon:hover {
+    background-color: rgb(208, 208, 208);
+}
