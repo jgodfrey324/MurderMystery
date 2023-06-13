@@ -7,7 +7,7 @@ import './LoginForm.css';
 function LoginFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
@@ -15,7 +15,7 @@ function LoginFormPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = await dispatch(login(email, password));
+    const data = await dispatch(login(username, password));
     if (data) {
       setErrors(data);
     }
@@ -31,11 +31,11 @@ function LoginFormPage() {
           ))}
         </ul>
         <label>
-          Email
+          Username
           <input
             type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             required
           />
         </label>
