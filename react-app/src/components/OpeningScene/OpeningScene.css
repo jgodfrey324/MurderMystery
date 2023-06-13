@@ -1,0 +1,75 @@
+.notepad-button {
+    /* border: 2px solid blue; */
+    width: fit-content;
+    border-radius: 50px;
+    /* cursor: pointer; */
+}
+
+.modal-button > img {
+    /* border: 1px solid red; */
+    height: 70px;
+    width: 70px;
+    border-radius: 20px;
+}
+
+.modal-button {
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(242, 242, 242);
+}
+
+.modal-button:hover {
+    background-color: rgb(208, 208, 208);
+}
+
+
+#modal-notepad {
+    /* border: 2px solid purple; */
+    width: -webkit-fill-available;
+    height: 750px;
+    object-fit: cover;
+    /* z-index: 1; */
+    border-radius: 50px;
+}
+
+#modal-content {
+    width: 700px;
+    height: 750px;
+}
+
+.note-contents {
+    border-bottom: 1px solid red;
+    margin: 7px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.note-contents > p {
+    margin: 0;
+}
+
+.notepad-empty-div {
+    border: 2px solid blue;
+    height: 600px;
+    width: 500px;
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    background-color: antiquewhite;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .notepad-content-house {
+    border-radius: 50px;
+} */
+
+#modal-content {
+    border-radius: 50px;
+}
+
+.new-note-form-house {
+    border: 3px solid green;
+}
