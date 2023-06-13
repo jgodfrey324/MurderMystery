@@ -84,6 +84,11 @@
     cursor: pointer;
 }
 
+.menu-dropdown > button:hover {
+    /* background-color: white; */
+    border: 1px solid black;
+}
+
 
 .button-menu-house {
     /* border: 2px solid blue; */
@@ -92,6 +97,7 @@
     grid-gap: 3px;
     gap: 3px;
     align-items: flex-end;
+    position: relative;
 }
 
 
@@ -99,10 +105,16 @@
     /* order: 2px solid green; */
     display: flex;
     flex-direction: column-reverse;
-    grid-gap: 3px;
-    gap: 3px;
+    /* grid-gap: 3px;
+    gap: 3px; */
     position: absolute;
-    top: 32px;
+    top: 22px;
+    z-index: 102;
+    background-color: aliceblue;
+    padding: 4px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    /* width: 70px; */
 }
 
 .hidden {
@@ -110,13 +122,35 @@
 }
 
 
-.modal-edit-button {
-    border: 1px solid red;
+.update-modal-content:hover {
+    background: rgb(216, 216, 216);
+    border-radius: 10px;
 }
 
-.modal-edit-button > button {
+.update-modal-content > button {
     padding: 0;
     border: none;
     background: none;
     font-size: 14px;
+    cursor: pointer;
+}
+
+/* .update-modal-content > button:hover {
+    background: rgb(216, 216, 216);
+} */
+
+.update-modal-content {
+    position: relative;
+}
+
+.form-dropdown {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+}
+
+.form-dropdown > textarea {
+    outline: none;
+    width: 400px;
+    height: 20px;
 }

@@ -1,17 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux"
 import { putNote } from "../../store/notes";
-import { useModal } from "../../context/Modal";
 
 
 
 const UpdateNoteModal = ({ note }) => {
     const dispatch = useDispatch();
-    const { closeModal } = useModal();
-    // const notes = useSelector(state => state.notes);
     const [errors, setErrors] = useState('');
     const [submitted, setSubmitted] = useState(false)
     const [text, setText] = useState(note.text)
+    const [showMenu, setShowMenu] = useState(false);
+    const [updated, setUpdated] = useState(false);
+
+
+    useEffect(() => {
+        setUpdated(false)
+        return () => null
+    }, [updated])
+
+
+
+    const openMenu = () => {
+        if (showMenu) return;
+        setShowMenu(true);
+    }
+    const closeMenu = () => {
+        if (!showMenu) return;
+        setShowMenu(false)
+    };
 
 
     const handleSubmit = async(e) => {
@@ -32,27 +48,25 @@ const UpdateNoteModal = ({ note }) => {
             setErrors('');
         }
 
-        setText('');
+        setText(note.text);
         setSubmitted(false);
-        closeModal();
+        closeMenu();
     }
 
-
-
-    // if (!notes) return null;
-
-    // const note = notes[noteId]
-
-
+    const menuClassName = "form-dropdown" + (showMenu ? "" : " hidden");
 
     return (
         <div className="update-modal-content">
-            <form onSubmit={handleSubmit}>
+            <button onClick={openMenu}><i className="fa-solid fa-pencil" style={{color: "#000000"}}></i></button>
+            <form onSubmit={handleSubmit} className={menuClassName}>
                 <textarea
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 />
-                <button>update</button>
+                <div className="edit-button-house">
+                    <button onClick={closeMenu}>cancel</button>
+                    <button>update</button>
+                </div>
             </form>
         </div>
     )
