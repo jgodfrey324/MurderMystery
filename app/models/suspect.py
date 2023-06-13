@@ -23,5 +23,6 @@ class Suspect(db.Model):
         return {
             'id': self.id,
             'character_id': self.character_id,
-            'user_id': self.user_id
+            'first_name': self.character.first_name,
+            'last_name': self.character.last_name
         }

@@ -17,6 +17,30 @@ def get_suspects():
     res = {}
 
     for suspect in suspects:
-        res[suspect.id] = {'first_name': suspect.character.first_name, 'last_name': suspect.character.last_name}
+        res[suspect.id] = suspect.to_dict()
 
     return res
+
+
+
+@suspect_routes.route('/<int:id>/delete', methods=["DELETE"])
+@login_required
+def delete_suspect(id):
+    suspect_to_delete = Suspect.query.get(id)
+
+    db.session.delete(suspect_to_delete)
+    db.session.commit()
+
+    return {'message': 'Successfully deleted'}
+
+
+
+@suspect_routes.route('/add', methods=["POST"])
+@login_required
+def add_suspect():
+    new_suspect = Suspect(character_id= request.form['id'])
+
+    db.session.add(new_suspect)
+    db.session.commit()
+
+    return new_suspect.to_dict()
