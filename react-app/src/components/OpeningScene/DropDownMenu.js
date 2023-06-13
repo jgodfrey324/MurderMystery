@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteNote } from "../../store/notes"
-import OpenModalButton from '../OpenModalButton'
 import UpdateNoteModal from "./UpdateNoteModal";
-import NotepadModal from "./NotepadModal";
 import './OpeningScene.css';
 
 
@@ -51,10 +49,7 @@ const DropDownMenu = ({ note }) => {
                 <button onClick={closeMenu}>cancel</button>
             </div>
             <div className='modal-edit-button'>
-                <OpenModalButton
-                    buttonImage={<i className="fa-solid fa-pencil" style={{color: "#000000"}}></i>}
-                    modalComponent={<UpdateNoteModal note={note} />}
-                />
+                <UpdateNoteModal note={note} />
             </div>
         </div>
     )
