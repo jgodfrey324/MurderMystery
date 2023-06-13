@@ -73,3 +73,50 @@
 .new-note-form-house {
     border: 3px solid green;
 }
+
+
+.button-menu-house > button {
+    cursor: pointer;
+    width: 60px;
+}
+
+.menu-dropdown > button {
+    cursor: pointer;
+}
+
+
+.button-menu-house {
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: row-reverse;
+    grid-gap: 3px;
+    gap: 3px;
+    align-items: flex-end;
+}
+
+
+.menu-dropdown {
+    /* order: 2px solid green; */
+    display: flex;
+    flex-direction: column-reverse;
+    grid-gap: 3px;
+    gap: 3px;
+    position: absolute;
+    top: 32px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.modal-edit-button {
+    border: 1px solid red;
+}
+
+.modal-edit-button > button {
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 14px;
+}

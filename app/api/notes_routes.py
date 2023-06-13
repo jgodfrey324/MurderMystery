@@ -62,6 +62,31 @@ def post_note():
 
 
 
+@notes_routes.route('/<int:id>/update', methods=["PUT"])
+@login_required
+def put_note(id):
+    """
+    Query for note in database and update it according to form input
+    """
+    form = NoteForm();
+    form["csrf_token"].data = request.cookies["csrf_token"]
+
+    note_to_update = Note.query.get(id);
+
+    if form.validate_on_submit():
+        note_to_update.text = form.data['text']
+
+        db.session.commit()
+
+        return note_to_update.to_dict()
+
+    if form.errors:
+        return {'errors': validation_errors_to_error_messages(form.errors)}, 400
+
+
+
+
+
 @notes_routes.route('/<int:id>/delete', methods=["DELETE"])
 @login_required
 def delete_note(id):

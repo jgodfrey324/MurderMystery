@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min"
-import { addNotes, deleteNote, getNotes } from "../../store/notes"
+import { addNotes, getNotes } from "../../store/notes"
+import DropDownMenu from "./DropDownMenu"
 import './OpeningScene.css'
 
 
@@ -12,7 +13,7 @@ const NotepadModal = () => {
     const [text, setText] = useState('');
     const [errors, setErrors] = useState('');
     const [submitted, setSubmitted] = useState(false);
-    const [showMenu, setShowMenu] = useState(false);
+
 
     useEffect(() => {
         dispatch(getNotes())
@@ -43,29 +44,6 @@ const NotepadModal = () => {
 
 
 
-
-    const openMenu = () => {
-        if (showMenu) return;
-        setShowMenu(true);
-    }
-
-    const closeMenu = () => setShowMenu(false);
-
-
-    const handleDelete = async (e, note) => {
-        e.preventDefault();
-
-        await dispatch(deleteNote(note.id))
-        closeMenu()
-        return
-    }
-
-
-
-    const menuClassName = "menu-dropdown" + (showMenu ? "" : " hidden");
-
-
-
     if (!user) return <Redirect to='/signup' />
 
     if (!notes) return null
@@ -87,13 +65,7 @@ const NotepadModal = () => {
                     return (
                         <div className="note-contents" key={note.id}>
                             <p>{note.text}</p>
-                            <div className="button-menu-house">
-                                <button onClick={openMenu}>delete</button>
-                                <div className={menuClassName}>
-                                    <button onClick={(e) => handleDelete(e, note)}>delete note?</button>
-                                    <button onClick={closeMenu}>cancel</button>
-                                </div>
-                            </div>
+                            <DropDownMenu note={note} />
                         </div>
                     )
                 })}

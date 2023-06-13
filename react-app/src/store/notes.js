@@ -2,6 +2,7 @@
 const LOAD_NOTES = "notes/LOAD_NOTES";
 const ADD_NOTE = "notes/ADD_NOTE";
 const REMOVE_NOTE = 'notes/REMOVE_NOTE';
+const UPDATE_NOTE = 'notes/UPDATE_NOTE';
 
 
 // action creators -->
@@ -18,6 +19,11 @@ const addNote = (note) => ({
 const removeNote = (noteId) => ({
     type: REMOVE_NOTE,
     noteId
+})
+
+const updateNote = (note) => ({
+    type: UPDATE_NOTE,
+    note
 })
 
 
@@ -66,6 +72,24 @@ export const deleteNote = (noteId) => async (dispatch) => {
     }
 }
 
+export const putNote = (noteId, note) => async (dispatch) => {
+    const res = await fetch(`/api/notes/${noteId}/update`, {
+        method: "PUT",
+        body: note
+    });
+
+    if (res.ok) {
+        const data = await res.json();
+
+        if (data.errors) {
+            return data;
+        }
+
+        dispatch(updateNote(data));
+        return data
+    }
+}
+
 
 
 // initial state set -->
@@ -84,6 +108,10 @@ const notesReducer = (state = initialState, action) => {
         case REMOVE_NOTE:
             newState = { ...state }
             delete newState[action.noteId]
+            return newState;
+        case UPDATE_NOTE:
+            newState = { ...state }
+            newState[action.note.id] = action.note
             return newState;
 		default:
 			return state;

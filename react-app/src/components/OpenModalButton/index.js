@@ -16,7 +16,7 @@ function OpenModalButton({
   };
 
   return (
-    <button className='modal-button' onClick={onClick}><img src={buttonImage} alt='button icon'></img></button>
+    <button className='modal-button' onClick={onClick}>{buttonImage}</button>
   );
 }
 
