@@ -9,6 +9,11 @@ from alembic import op
 import sqlalchemy as sa
 
 
+import os
+environment = os.getenv("FLASK_ENV")
+SCHEMA = os.environ.get("SCHEMA")
+
+
 # revision identifiers, used by Alembic.
 revision = '9936ed25764a'
 down_revision = '1c20824c96c5'
@@ -26,6 +31,8 @@ def upgrade():
     sa.Column('is_food', sa.Boolean(), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE items SET SCHEMA {SCHEMA};")
     op.create_table('backpack_items',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('item_quantity', sa.Integer(), nullable=False),
@@ -33,6 +40,8 @@ def upgrade():
     sa.ForeignKeyConstraint(['item_id'], ['items.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE backpack_items SET SCHEMA {SCHEMA};")
     # ### end Alembic commands ###
 
 
