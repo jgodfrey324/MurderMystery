@@ -5,4 +5,6 @@ from .occupation import Occupation
 from .description import Description
 from .character import Character
 from .suspect import Suspect
+from .item import Item
+from .backpack import Backpack
 from .db import environment, SCHEMA
