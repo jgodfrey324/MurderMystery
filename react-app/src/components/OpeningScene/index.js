@@ -8,8 +8,12 @@ const OpeningScene = () => {
 
 
     return (
-        <>
-            <h1>This is opening scene page!</h1>
+        <div className="home-office-screen">
+            <h1>Dept. Office</h1>
+            <img src="https://i.imgur.com/1HDvBws.jpg" alt='department office'></img>
+            <div className="backpack-button">
+                <button><img src="https://i.imgur.com/HbZRQyN.png" alt="backpack icon"></img></button>
+            </div>
             <div className="notepad-button">
                 <OpenModalButton
                 buttonImage={<img src="https://i.imgur.com/7kwSq0B.png" alt='button icon'></img>}
@@ -22,7 +26,7 @@ const OpeningScene = () => {
                 modalComponent={<SuspectModal />}
                 />
             </div>
-        </>
+        </div>
     )
 }
 

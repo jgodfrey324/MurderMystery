@@ -1,8 +1,14 @@
 .notepad-button {
-    /* border: 2px solid blue; */
+    /* border: 2px solid blue;  */
+    width: -moz-fit-content;
     width: fit-content;
     border-radius: 50px;
     /* cursor: pointer; */
+    position: absolute;
+    z-index: 2;
+    top: 100px;
+    right: 10px;
+    box-shadow: 3px 3px 10px black;
 }
 
 .modal-button > img {
@@ -39,7 +45,7 @@
 }
 
 .note-contents {
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid rgb(255, 132, 152);
     margin: 7px 10px;
     display: flex;
     justify-content: space-between;
@@ -50,16 +56,16 @@
 }
 
 .notepad-empty-div {
-    border: 2px solid blue;
-    height: 600px;
-    width: 500px;
+    height: 630px;
+    width: 550px;
     position: absolute;
-    top: 100px;
-    right: 100px;
+    top: 65px;
+    right: 80px;
     background-color: antiquewhite;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
+    padding: 10px 0;
 }
 
 /* .notepad-content-house {
@@ -70,9 +76,9 @@
     border-radius: 50px;
 }
 
-.new-note-form-house {
+/* .new-note-form-house {
     border: 3px solid green;
-}
+} */
 
 
 .button-menu-house > button {
@@ -156,13 +162,20 @@
 }
 
 .suspect-button {
-    /* border: 1px solid blue; */
+    /* border: 1px solid blue;  */
+    width: -moz-fit-content;
     width: fit-content;
+    position: absolute;
+    z-index: 2;
+    top: 220px;
+    right: 10px;
+    box-shadow: 3px 3px 10px black;
+    border-radius: 50px;
 }
 
 .modal-button > #suspect-icon {
     /* border: 1px solid red; */
-    font-size: 60px;
+    font-size: 65px;
     padding: 5px;
     border-radius: 10px
 }
@@ -174,7 +187,7 @@
 .suspect-container {
     margin: 20px 0;
     position: relative;
-    z-index: 2;
+    z-index: 4;
     background-color: antiquewhite;
     border-radius: 30px;
     width: 493px;
@@ -184,7 +197,7 @@
 
 .suspect-modal-container > img {
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     width: -webkit-fill-available;
     top: -35px;
     left: -20px;
@@ -217,4 +230,74 @@
     display: flex;
     flex-direction: column;
     width: 50%;
+}
+
+
+.home-office-screen > img {
+    position: absolute;
+    z-index: 1;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    object-fit: cover;
+    top: 0;
+    right: 0;
+    opacity: 0.7;
+}
+
+.home-office-screen > h1 {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 100px;
+    font-size: 40px;
+}
+
+.backpack-button {
+    /* border: 1px solid green; */
+    position: absolute;
+    z-index: 2;
+    width: 95px;
+    height: 95px;
+    border-radius: 50px;
+    box-shadow: 3px 3px 10px black;
+    top: 10px;
+    right: 380px;
+}
+
+.backpack-button > button {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: rgb(234, 234, 234);
+}
+
+.backpack-button > button > img {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.backpack-button > button:hover {
+    background-color: rgb(217, 216, 216);
+}
+
+.new-note-form-house > form > textarea {
+    outline: none;
+    width: -webkit-fill-available;
+    height: 25px;
+    margin-right: 40px;
+}
+
+.new-note-form-house > form > button {
+    /* border: 2px solid blue; */
+    width: 100px;
+    margin-right: 40px;
+}
+
+.new-note-form-house > form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
