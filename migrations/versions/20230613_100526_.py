@@ -9,6 +9,11 @@ from alembic import op
 import sqlalchemy as sa
 
 
+import os
+environment = os.getenv("FLASK_ENV")
+SCHEMA = os.environ.get("SCHEMA")
+
+
 # revision identifiers, used by Alembic.
 revision = '1c20824c96c5'
 down_revision = None
@@ -24,6 +29,8 @@ def upgrade():
     sa.Column('job_title', sa.String(length=50), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
     op.create_table('users',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('username', sa.String(length=25), nullable=False),
@@ -35,6 +42,8 @@ def upgrade():
     sa.UniqueConstraint('last_name'),
     sa.UniqueConstraint('username')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
     op.create_table('descriptions',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('gender', sa.String(length=50), nullable=False),
@@ -45,6 +54,8 @@ def upgrade():
     sa.ForeignKeyConstraint(['occupation_id'], ['occupations.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
     op.create_table('notes',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('text', sa.String(length=255), nullable=False),
@@ -52,6 +63,8 @@ def upgrade():
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
     op.create_table('characters',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('first_name', sa.String(length=50), nullable=False),
@@ -60,12 +73,16 @@ def upgrade():
     sa.ForeignKeyConstraint(['description_id'], ['descriptions.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
     op.create_table('suspects',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('character_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['character_id'], ['characters.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
     # ### end Alembic commands ###
 
 
