@@ -1,37 +1,16 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory, Redirect } from "react-router-dom";
-import { getPlaces, postPlace } from "../../store/placesVisited";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
-import NotepadModal from "./NotepadModal"
-import SuspectModal from "./SuspectModal";
-import { dialog1, dialog2 } from "../../dialog/OpeningScene";
-import './OpeningScene.css'
+import NotepadModal from "../OpeningScene/NotepadModal"
+import SuspectModal from "../OpeningScene/SuspectModal";
+import { dialog2 } from "../../dialog/OpeningScene";
+import '../OpeningScene/OpeningScene.css'
 
 
-const OpeningScene = () => {
+const OfficeReturnPage = () => {
     const history = useHistory();
-    const dispatch = useDispatch();
-    const user = useSelector(state => state.session.user)
-    const places = useSelector(state => state.placeVisited)
     const [index, setIndex] = useState(0);
     const [seeFootage, setSeeFootage] = useState(false);
-
-
-    useEffect(() => {
-        dispatch(getPlaces())
-    }, [dispatch])
-
-    const handleChoice = async (e, scene) => {
-        e.preventDefault();
-
-        const formData = new FormData()
-        formData.append('scene', scene)
-
-        await dispatch(postPlace(formData))
-    }
-
-    if (!user) return <Redirect to='/signup' />
 
 
     return (
@@ -55,7 +34,7 @@ const OpeningScene = () => {
             </div>
             <div className="dialog-box">
                 <div className="first-choice">
-                    {index < 3 && seeFootage && (
+                    {dialog2[index] && seeFootage && (
                         <>
                             <div className="dialog-text">
                                 <p>{dialog2[index]}</p>
@@ -63,45 +42,35 @@ const OpeningScene = () => {
                             <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
                         </>
                     )}
-                    {seeFootage && !dialog2[index] && (
+                    {!seeFootage && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
                                 <button>Visit Minnie's apartment</button>
-                                <button onClick={() => history.push('/salon')}>Visit Minnie's place of work</button>
-                                <button>Search system for a person</button>
+                                <button onClick={() => {
+                                    setSeeFootage(true);
+                                    }}>Check the apartment complex security footage</button>
+                                <button>Search the system for a person</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
                     )}
-                    {!seeFootage && !dialog1[index] && (
+                    {!dialog2[index] && seeFootage && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
                                 <button>Visit Minnie's apartment</button>
                                 <button onClick={() => history.push('/salon')}>Visit Minnie's place of work</button>
-                                <button onClick={(e) => {
-                                    setSeeFootage(true);
-                                    setIndex(0);
-                                    handleChoice(e, "security footage")
-                                    }}>Check the apartment complex security footage</button>
+                                <button>Search the system for a person</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
                     )}
                 </div>
-                {index < 3 && !seeFootage && (
-                    <>
-                        <div className="dialog-text">
-                            <p>{dialog1[index]}</p>
-                        </div>
-                        <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
-                    </>
-                )}
             </div>
         </div>
     )
 }
 
 
-export default OpeningScene
+export default OfficeReturnPage
