@@ -233,7 +233,7 @@
 }
 
 
-.home-office-screen > img {
+.home-screen > img {
     position: absolute;
     z-index: 1;
     width: -webkit-fill-available;
@@ -244,11 +244,11 @@
     opacity: 0.7;
 }
 
-.home-office-screen > h1 {
+.home-screen > h1 {
     position: absolute;
     z-index: 2;
     top: 0;
-    right: 100px;
+    right: 30px;
     font-size: 40px;
 }
 
@@ -261,7 +261,7 @@
     border-radius: 50px;
     box-shadow: 3px 3px 10px black;
     top: 10px;
-    right: 380px;
+    right: 400px;
 }
 
 .backpack-button > button {
@@ -311,9 +311,9 @@
     z-index: 2;
     border: 2px solid black;
     height: 280px;
-    width: 1220px;
+    width: 1000px;
     bottom: 5px;
-    left: 125px;
+    left: 10px;
     background-color: aliceblue;
     box-shadow: 1px 3px 20px black;
     border-radius: 20px;

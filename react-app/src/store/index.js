@@ -4,12 +4,14 @@ import session from './session'
 import notesReducer from './notes';
 import suspectsReducer from './suspects';
 import characterReducer from './characters';
+import placesVisitedReducer from './placesVisited';
 
 const rootReducer = combineReducers({
   session,
   characters: characterReducer,
   notes: notesReducer,
-  suspects: suspectsReducer
+  suspects: suspectsReducer,
+  placesVisited: placesVisitedReducer
 });
 
 

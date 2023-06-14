@@ -6,6 +6,8 @@ import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import OpeningScene from "./components/OpeningScene";
+import SalonScene from "./components/SalonScene";
+import OfficeReturnPage from "./components/OfficeReturnPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +29,12 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path='/office-return'>
+            <OfficeReturnPage />
+          </Route>
+          <Route path='/salon'>
+            <SalonScene />
           </Route>
         </Switch>
       )}
