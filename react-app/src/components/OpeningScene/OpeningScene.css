@@ -305,3 +305,47 @@
 .new-note-form-house {
     margin-top: 20px;
 }
+
+.dialog-box {
+    position: absolute;
+    z-index: 2;
+    border: 2px solid black;
+    height: 280px;
+    width: 1220px;
+    bottom: 5px;
+    left: 125px;
+    background-color: aliceblue;
+    box-shadow: 1px 3px 20px black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog-text,
+.first-choice > p {
+    font-size: 20px;
+    margin: 0 60px;
+}
+
+.continue-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 20px 30px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.choice-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.choice-buttons > button {
+    margin: 5px;
+    padding: 12px;
+    font-size: 15px;
+    cursor: pointer;
+}
