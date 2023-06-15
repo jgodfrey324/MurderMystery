@@ -1,23 +1,25 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import ProfileButton from './ProfileButton';
+import { useDispatch } from "react-redux";
+// import { NavLink } from 'react-router-dom';
+// import { useSelector } from 'react-redux';
+// import ProfileButton from './ProfileButton';
+import { logout } from "../../store/session";
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
-	const sessionUser = useSelector(state => state.session.user);
+	const dispatch = useDispatch()
+	// const sessionUser = useSelector(state => state.session.user);
+
+	const handleLogout = async (e) => {
+		e.preventDefault();
+		await fetch('/api/reset/');
+		dispatch(logout());
+	  };
+
 
 	return (
-		<ul>
-			<li>
-				<NavLink exact to="/">Home</NavLink>
-			</li>
-			{isLoaded && (
-				<li>
-					<ProfileButton user={sessionUser} />
-				</li>
-			)}
-		</ul>
+		<button id='logout' onClick={handleLogout}>Log Out</button>
+		// null
 	);
 }
 

@@ -13,7 +13,7 @@ const OpeningScene = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user)
-    const places = useSelector(state => state.placeVisited)
+    // const places = useSelector(state => state.placeVisited)
     const [index, setIndex] = useState(0);
     const [seeFootage, setSeeFootage] = useState(false);
 
@@ -68,7 +68,10 @@ const OpeningScene = () => {
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
                                 <button>Visit Minnie's apartment</button>
-                                <button onClick={() => history.push('/salon')}>Visit Minnie's place of work</button>
+                                <button onClick={(e) => {
+                                    handleChoice(e, "salon")
+                                    history.push('/salon')
+                                    }}>Visit Minnie's place of work</button>
                                 <button>Search system for a person</button>
                                 <button>Go to the coffee shop</button>
                             </div>

@@ -3,12 +3,14 @@ import { useEffect } from 'react';
 import { deleteSuspect, getSuspects, postSuspect } from '../../store/suspects';
 import { getCharacters } from '../../store/characters';
 import './OpeningScene.css'
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 
 const SuspectModal = () => {
     const dispatch = useDispatch();
     const characters = useSelector(state => state.characters)
+    const user = useSelector(state => state.session.user)
     const suspects = Object.values(useSelector(state => state.suspects))
 
 
@@ -33,6 +35,8 @@ const SuspectModal = () => {
         await dispatch(postSuspect(formData))
     }
 
+
+    if (!user) return <Redirect to='/signup' />
 
     if (!suspects) return null;
 
