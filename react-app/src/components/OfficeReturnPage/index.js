@@ -1,16 +1,21 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
 import NotepadModal from "../OpeningScene/NotepadModal"
 import SuspectModal from "../OpeningScene/SuspectModal";
 import { dialog2 } from "../../dialog/OpeningScene";
 import '../OpeningScene/OpeningScene.css'
+import { useSelector } from "react-redux";
 
 
 const OfficeReturnPage = () => {
     const history = useHistory();
+    const user = useSelector(state => state.session.user)
     const [index, setIndex] = useState(0);
     const [seeFootage, setSeeFootage] = useState(false);
+
+
+    if (!user) return <Redirect to='/signup' />
 
 
     return (

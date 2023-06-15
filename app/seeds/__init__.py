@@ -5,6 +5,7 @@ from .descriptions import seed_descriptions, undo_descriptions
 from .occupations import seed_occupations, undo_occupations
 from .suspects import seed_suspects, undo_suspects
 from .items import seed_items, undo_items
+from .places import undo_places
 
 from app.models.db import db, environment, SCHEMA
 
@@ -26,6 +27,7 @@ def seed():
         undo_descriptions()
         undo_items()
         undo_occupations()
+        undo_places()
         undo_users()
     seed_users()
     seed_occupations()
@@ -44,5 +46,6 @@ def undo():
     undo_descriptions()
     undo_items()
     undo_occupations()
+    undo_places
     undo_users()
     # Add other undo functions here

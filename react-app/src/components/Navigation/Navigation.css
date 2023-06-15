@@ -5,3 +5,8 @@
 .hidden {
   display: none;
 }
+
+#logout {
+  position: absolute;
+  z-index: 2;
+}
