@@ -82,7 +82,10 @@ const OpeningScene = () => {
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
                                 <button>Visit Minnie's apartment</button>
-                                <button onClick={() => history.push('/salon')}>Visit Minnie's place of work</button>
+                                <button onClick={(e) => {
+                                    handleChoice(e, "salon")
+                                    history.push('/salon')
+                                    }}>Visit Minnie's place of work</button>
                                 <button onClick={(e) => {
                                     setSeeFootage(true);
                                     setIndex(0);

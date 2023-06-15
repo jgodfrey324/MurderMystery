@@ -18,7 +18,7 @@ function Navigation({ isLoaded }){
 
 
 	return (
-		<button id='logout' onClick={handleLogout}>Log Out</button>
+		<button id='logout' onClick={handleLogout}>End Game</button>
 		// null
 	);
 }
