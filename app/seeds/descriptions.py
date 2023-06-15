@@ -15,7 +15,7 @@ def seed_descriptions():
     desc5 = Description(
         gender='Female', height="5'6", age=41, hair_color="Black", occupation_id=1)
     desc6 = Description(
-        gender="Male", height="5'7", age=27, hair_color="Blonde", occupation_id=4)
+        gender="Male", height="5'7", age=27, hair_color="Brown", occupation_id=4)
     desc7 = Description(
         gender="Female", height="5'6", age=24, hair_color="Auburn", occupation_id=1)
     desc8 = Description(

@@ -10,3 +10,12 @@
   position: absolute;
   z-index: 2;
 }
+
+#solution {
+  position: absolute;
+  z-index: 2;
+  top: 40px;
+  left: 2px;
+  /* padding: 5px 10px; */
+  /* font-size: 16px; */
+}

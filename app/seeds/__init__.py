@@ -6,6 +6,7 @@ from .occupations import seed_occupations, undo_occupations
 from .suspects import seed_suspects, undo_suspects
 from .items import seed_items, undo_items
 from .places import undo_places
+from .solutions import seed_solutions, undo_solutions
 
 from app.models.db import db, environment, SCHEMA
 
@@ -23,6 +24,7 @@ def seed():
         # the schema name (see comment in users.py undo_users function).
         # Make sure to add all your other model's undo functions below
         undo_suspects()
+        undo_solutions()
         undo_characters()
         undo_descriptions()
         undo_items()
@@ -34,6 +36,7 @@ def seed():
     seed_items()
     seed_descriptions()
     seed_characters()
+    seed_solutions()
     seed_suspects()
     # Add other seed functions here
 
@@ -42,6 +45,7 @@ def seed():
 @seed_commands.command('undo')
 def undo():
     undo_suspects()
+    undo_solutions()
     undo_characters()
     undo_descriptions()
     undo_items()

@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import OpeningScene from "./components/OpeningScene";
 import SalonScene from "./components/SalonScene";
 import OfficeReturnPage from "./components/OfficeReturnPage";
+import FinishedScene from "./components/FinishedScene";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route path='/salon'>
             <SalonScene />
+          </Route>
+          <Route path='/congrats'>
+            <FinishedScene />
           </Route>
         </Switch>
       )}
