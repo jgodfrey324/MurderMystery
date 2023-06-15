@@ -1,51 +1,37 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
+import { getPlaces } from "../../store/placesVisited";
 import OpenModalButton from "../OpenModalButton";
 import NotepadModal from "../OpeningScene/NotepadModal"
 import SuspectModal from "../OpeningScene/SuspectModal";
-import { dialog2 } from "../../dialog/OpeningScene";
+import { dialog1 } from "../../dialog/NeighborScene";
 import '../OpeningScene/OpeningScene.css'
-import { useDispatch, useSelector } from "react-redux";
-import { getPlaces, postPlace } from "../../store/placesVisited";
 
 
-const OfficeReturnPage = () => {
-    const history = useHistory();
+
+
+const CriminalScene = () => {
     const dispatch = useDispatch()
+    const history = useHistory();
     const user = useSelector(state => state.session.user)
     const places = useSelector(state => state.placesVisited)
     const [index, setIndex] = useState(0);
-    const [seeFootage, setSeeFootage] = useState(false);
-    // const [visitSalon, setVisitSalon] = useState(false);
-
 
     useEffect(() => {
         dispatch(getPlaces())
     }, [dispatch])
 
 
-    const handleChoice = async (e, scene) => {
-        e.preventDefault();
-
-        const formData = new FormData()
-        formData.append('scene', scene)
-
-        await dispatch(postPlace(formData))
-    }
-
-
-
     if (!user) return <Redirect to='/signup' />
-
-    // if (places.includes('salon')) console.log('salon');
-    // if (places.includes('security footage')) console.log('security footage');
-
 
 
     return (
         <div className="home-screen">
-            <h1>Dept. Office</h1>
-            <img src="https://i.imgur.com/1HDvBws.jpg" alt='department office'></img>
+            {(places.includes('apartment') || places.includes('security')) && (
+                <h1>Rush's Apartment</h1>
+            )}
+            <h1>Downstairs Neighbor</h1>
             <div className="backpack-button">
                 <button><img src="https://i.imgur.com/HbZRQyN.png" alt="backpack icon"></img></button>
             </div>
@@ -61,34 +47,33 @@ const OfficeReturnPage = () => {
                 modalComponent={<SuspectModal />}
                 />
             </div>
+            <div className="character-image">
+                <img src="https://i.imgur.com/7k0Cpjd.png" alt="Kalum Ray"></img>
+            </div>
             <div className="dialog-box">
                 <div className="first-choice">
-                    {dialog2[index] && seeFootage && (
-                        <>
-                            <div className="dialog-text">
-                                <p>{dialog2[index]}</p>
-                            </div>
-                            <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
-                        </>
-                    )}
-                    {!places.includes('security footage') && places.includes('salon') && (
+                    {!dialog1[index] && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
-                                <button onClick={(e) => {
-                                    handleChoice(e, 'neighbor')
-                                    history.push('/neighbor')
-                                }}>Visit Minnie's down stairs neighbor</button>
-                                <button>Search the database for Minnie's boyfriend</button>
+                                <button onClick={() => history.push('/office-finished')}>Return to the office</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
                     )}
                 </div>
+                {dialog1[index] && (
+                    <>
+                        <div className="dialog-text">
+                            <p>{dialog1[index]}</p>
+                        </div>
+                        <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
+                    </>
+                )}
             </div>
+
         </div>
     )
 }
 
-
-export default OfficeReturnPage
+export default CriminalScene
