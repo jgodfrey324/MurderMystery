@@ -14,12 +14,13 @@ reset = Blueprint('reset', __name__)
 
 @reset.route('/')
 @login_required
-def get_places():
+def reset_seeds():
     undo_suspects()
     undo_characters()
     undo_descriptions()
     undo_items()
     undo_occupations()
+    undo_places()
     undo_users()
 
     seed_users()
