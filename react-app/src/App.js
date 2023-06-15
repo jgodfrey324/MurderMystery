@@ -9,6 +9,9 @@ import OpeningScene from "./components/OpeningScene";
 import SalonScene from "./components/SalonScene";
 import OfficeReturnPage from "./components/OfficeReturnPage";
 import FinishedScene from "./components/FinishedScene";
+import BoyfriendScene from "./components/BoyfriendScene";
+import CriminalScene from "./components/CriminalScene";
+import FinishedRoute from "./components/OfficeReturnPage/FinishedRoute";
 
 function App() {
   const dispatch = useDispatch();
@@ -34,8 +37,17 @@ function App() {
           <Route path='/office-return'>
             <OfficeReturnPage />
           </Route>
+          <Route path='/office-finished'>
+            <FinishedRoute />
+          </Route>
           <Route path='/salon'>
             <SalonScene />
+          </Route>
+          <Route path='/boyfriend'>
+            <BoyfriendScene />
+          </Route>
+          <Route path='/neighbor'>
+            <CriminalScene />
           </Route>
           <Route path='/congrats'>
             <FinishedScene />

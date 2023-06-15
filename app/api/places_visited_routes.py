@@ -28,4 +28,4 @@ def add_place():
     db.session.add(new_place)
     db.session.commit()
 
-    return new_place.scene
+    return {'scene': new_place.scene}

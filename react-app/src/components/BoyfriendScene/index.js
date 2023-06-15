@@ -1,41 +1,26 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
+import { getPlaces, postPlace } from "../../store/placesVisited";
 import OpenModalButton from "../OpenModalButton";
 import NotepadModal from "../OpeningScene/NotepadModal"
 import SuspectModal from "../OpeningScene/SuspectModal";
-import { postPlace, getPlaces } from "../../store/placesVisited";
-import { dialog1 } from "../../dialog/SalonScene";
+import { dialog1, dialog2 } from "../../dialog/BoyfriendScene";
 import '../OpeningScene/OpeningScene.css'
 
 
 
 
-const SalonScene = () => {
-    const history = useHistory();
+const BoyfriendScene = () => {
     const dispatch = useDispatch()
+    const history = useHistory();
     const user = useSelector(state => state.session.user)
     const places = useSelector(state => state.placesVisited)
     const [index, setIndex] = useState(0);
 
-
-
     useEffect(() => {
         dispatch(getPlaces())
     }, [dispatch])
-
-
-
-
-    const handleChoice = async (e, scene) => {
-        e.preventDefault();
-
-        const formData = new FormData()
-        formData.append('scene', scene)
-
-        await dispatch(postPlace(formData))
-    }
-
 
 
     if (!user) return <Redirect to='/signup' />
@@ -43,7 +28,7 @@ const SalonScene = () => {
 
     return (
         <div className="home-screen">
-            <h1>Thomasville Salon</h1>
+            <h1>Kalum's House</h1>
             <div className="backpack-button">
                 <button><img src="https://i.imgur.com/HbZRQyN.png" alt="backpack icon"></img></button>
             </div>
@@ -60,59 +45,63 @@ const SalonScene = () => {
                 />
             </div>
             <div className="character-image">
-                <img src="https://i.imgur.com/8ixElli.png" alt="Pippa Clements"></img>
+                <img src="https://i.imgur.com/08kzjrF.png" alt="Kalum Ray"></img>
             </div>
             <div className="dialog-box">
                 <div className="first-choice">
-                    {!places.includes('boyfriend') && !places.includes('neighbor') && !dialog1[index] && (
+                    {!places.includes('apartment') && !places.includes('rush') && !dialog2[index] && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
-                                <button onClick={() => history.push('/office-return')}>Return to office to search the database</button>
-                                <button onClick={(e) => {
-                                    handleChoice(e, 'neighbor')
-                                    history.push('/neighbor')
-                                }}>Visit Minnie's downstairs neighbor</button>
+                                <button>Visit Minnie's apartment</button>
+                                <button>Visit Minnie's downstairs neighbor</button>
+                                <button onClick={() => history.push('/office-return')}>Return to the office</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
                     )}
-                    {places.includes('boyfriend') && !places.includes('neighbor') && !dialog1[index] && (
+                    {places.includes('apartment') && !places.includes('rush') && !dialog1[index] && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
-                                <button onClick={(e) => {
-                                    handleChoice(e, 'neighbor')
-                                    history.push('/neighbor')
-                                }}>Visit Minnie's downstairs neighbor</button>
-                                <button onClick={() => history.push('/office-finished')}>Return to office</button>
+                                <button>Visit Minnie's downstairs neighbor</button>
+                                <button onClick={() => history.push('/office-return')}>Return to the office</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
                     )}
-                    {!places.includes('boyfriend') && places.includes('neighbor') && !dialog1[index] && (
+                    {!places.includes('apartment') && places.includes('rush') && !dialog2[index] && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
-                                <button onClick={() => history.push('/office-return')}>Return to office to search the database</button>
+                                <button>Visit Minnie's apartment</button>
+                                <button onClick={() => history.push('/office-return')}>Return to the office</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
                     )}
-                    {places.includes('boyfriend') && places.includes('neighbor') && !dialog1[index] && (
+                    {places.includes('apartment') && places.includes('rush') && !dialog1[index] && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
-                                <button onClick={() => history.push('/office-finished')}>Return to office</button>
+                                <button onClick={() => history.push('/office-return')}>Return to the office</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
                     )}
                 </div>
-                {index < 7 && (
+                {places.includes('apartment') && dialog1[index] && (
                     <>
                         <div className="dialog-text">
                             <p>{dialog1[index]}</p>
+                        </div>
+                        <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
+                    </>
+                )}
+                {!places.includes('apartment') && dialog2[index] && (
+                    <>
+                        <div className="dialog-text">
+                            <p>{dialog2[index]}</p>
                         </div>
                         <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
                     </>
@@ -123,4 +112,4 @@ const SalonScene = () => {
     )
 }
 
-export default SalonScene
+export default BoyfriendScene
