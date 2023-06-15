@@ -13,7 +13,7 @@ const OpeningScene = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user)
-    // const places = useSelector(state => state.placeVisited)
+    const places = useSelector(state => state.placesVisited)
     const [index, setIndex] = useState(0);
     const [seeFootage, setSeeFootage] = useState(false);
 
@@ -55,15 +55,21 @@ const OpeningScene = () => {
             </div>
             <div className="dialog-box">
                 <div className="first-choice">
-                    {index < 3 && seeFootage && (
+                    {dialog2[index] && seeFootage && (
                         <>
                             <div className="dialog-text">
                                 <p>{dialog2[index]}</p>
                             </div>
-                            <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
+                            <button className='continue-button' onClick={() => {
+                                if (!dialog2[index + 1]) {
+                                    setSeeFootage(false)
+                                    setIndex(10)
+                                }
+                                setIndex(index + 1)
+                                }}>continue...</button>
                         </>
                     )}
-                    {seeFootage && !dialog2[index] && (
+                    {!seeFootage && places.includes('security footage') && !dialog1[index] && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
@@ -77,7 +83,7 @@ const OpeningScene = () => {
                             </div>
                         </>
                     )}
-                    {!seeFootage && !dialog1[index] && (
+                    {!seeFootage && !dialog1[index] && !places.includes('security footage') && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
@@ -96,7 +102,7 @@ const OpeningScene = () => {
                         </>
                     )}
                 </div>
-                {index < 3 && !seeFootage && (
+                {dialog1[index] && !seeFootage && (
                     <>
                         <div className="dialog-text">
                             <p>{dialog1[index]}</p>

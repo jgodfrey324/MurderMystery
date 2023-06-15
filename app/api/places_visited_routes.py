@@ -28,4 +28,4 @@ def add_place():
     db.session.add(new_place)
     db.session.commit()
 
-    return {'scene': new_place.scene}
+    return jsonify(new_place.scene)
