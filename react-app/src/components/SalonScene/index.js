@@ -37,6 +37,9 @@ const SalonScene = () => {
                 modalComponent={<SuspectModal />}
                 />
             </div>
+            <div className="character-image">
+                <img src="https://i.imgur.com/8ixElli.png" alt="Pippa Clements"></img>
+            </div>
             <div className="dialog-box">
                 <div className="first-choice">
                     {!dialog1[index] && (

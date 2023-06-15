@@ -15,6 +15,7 @@ class Character(db.Model):
 
     description = db.relationship('Description', back_populates='character_desc')
     suspect = db.relationship('Suspect', back_populates='character')
+    solutions = db.relationship('Solution', back_populates='character')
 
 
     def __repr__(self):

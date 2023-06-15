@@ -351,3 +351,20 @@
     font-size: 15px;
     cursor: pointer;
 }
+
+.character-image {
+    /* border: 1px solid green; */
+    width: 470px;
+    height: 500px;
+    position: absolute;
+    bottom: 270px;
+    /* left: 0px; */
+    left: 50px;
+    z-index: 1;
+}
+
+.character-image > img {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    object-fit: contain;
+}

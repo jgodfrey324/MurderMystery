@@ -8,4 +8,5 @@ from .suspect import Suspect
 from .item import Item
 from .backpack import Backpack
 from .place import Place
+from .solution import Solution
 from .db import environment, SCHEMA
