@@ -23,6 +23,16 @@ const FinishedRoute = () => {
         dispatch(getPlaces())
     }, [dispatch])
 
+    useEffect(() => {
+        if (seeFootage) {
+            setSeeFootage(true)
+        }
+    }, [seeFootage])
+
+
+
+    console.log('see footage ===========> ', seeFootage)
+
 
     const handleChoice = async (e, scene) => {
         e.preventDefault();
@@ -68,10 +78,15 @@ const FinishedRoute = () => {
                             <div className="dialog-text">
                                 <p>{dialog2[index]}</p>
                             </div>
-                            <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
+                            <button className='continue-button' onClick={() => {
+                                if (!dialog2[index + 1]) {
+                                    setSeeFootage(false)
+                                }
+                                setIndex(index + 1)
+                                }}>continue...</button>
                         </>
                     )}
-                    {!dialog2[index] && !places.includes('security footage') && !places.includes('salon') && places.includes('apartment') && (
+                    {!seeFootage && !places.includes('security footage') && !places.includes('salon') && places.includes('apartment') && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
@@ -87,7 +102,7 @@ const FinishedRoute = () => {
                             </div>
                         </>
                     )}
-                    {places.includes('security footage') && !places.includes('salon') && !places.includes('apartment') && (
+                    {!seeFootage && places.includes('security footage') && !places.includes('salon') && !places.includes('apartment') && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
@@ -100,7 +115,7 @@ const FinishedRoute = () => {
                             </div>
                         </>
                     )}
-                    {!dialog2[index] && !places.includes('security footage') && places.includes('salon') && !places.includes('apartment') && (
+                    {!seeFootage && !places.includes('security footage') && places.includes('salon') && !places.includes('apartment') && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
@@ -113,7 +128,7 @@ const FinishedRoute = () => {
                             </div>
                         </>
                     )}
-                    {places.includes('security footage') && places.includes('salon') && !places.includes('apartment') && (
+                    {!seeFootage && places.includes('security footage') && places.includes('salon') && !places.includes('apartment') && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
@@ -122,7 +137,7 @@ const FinishedRoute = () => {
                             </div>
                         </>
                     )}
-                    {places.includes('security footage') && !places.includes('salon') && places.includes('apartment') && (
+                    {!seeFootage && places.includes('security footage') && !places.includes('salon') && places.includes('apartment') && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
@@ -134,7 +149,7 @@ const FinishedRoute = () => {
                             </div>
                         </>
                     )}
-                    {!dialog2[index] && !places.includes('security footage') && places.includes('salon') && places.includes('apartment') && (
+                    {!seeFootage && !places.includes('security footage') && places.includes('salon') && places.includes('apartment') && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
@@ -146,7 +161,7 @@ const FinishedRoute = () => {
                             </div>
                         </>
                     )}
-                    {places.includes('security footage') && places.includes('salon') && places.includes('apartment') && (
+                    {!seeFootage && places.includes('security footage') && places.includes('salon') && places.includes('apartment') && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
