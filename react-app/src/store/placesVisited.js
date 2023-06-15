@@ -39,17 +39,17 @@ export const postPlace = (scene) => async (dispatch) => {
 
 
 
-const initialState = {}
+const initialState = []
 
 const placesVisitedReducer = (state = initialState, action) => {
     let newState;
     switch (action.type) {
         case LOAD_PLACES:
-            newState = { ...action.places }
+            newState = [ ...action.places ]
             return newState;
         case ADD_PLACE:
-            newState = { ...state }
-            newState[action.place.id] = action.place
+            newState = [ ...state ]
+            newState.push(action.place)
             return newState;
         default:
             return state;

@@ -11,10 +11,10 @@ places_visited_routes = Blueprint('places_visited', __name__)
 def get_places():
     places = Place.query.all();
 
-    res = {}
+    res = []
 
     for place in places:
-        res[place.id] = place.to_dict()
+        res.append(place.scene)
 
     return res
 
@@ -28,4 +28,4 @@ def add_place():
     db.session.add(new_place)
     db.session.commit()
 
-    return new_place.to_dict()
+    return new_place.scene

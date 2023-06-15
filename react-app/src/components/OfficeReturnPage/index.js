@@ -1,21 +1,45 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory, Redirect } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
 import NotepadModal from "../OpeningScene/NotepadModal"
 import SuspectModal from "../OpeningScene/SuspectModal";
 import { dialog2 } from "../../dialog/OpeningScene";
 import '../OpeningScene/OpeningScene.css'
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getPlaces, postPlace } from "../../store/placesVisited";
 
 
 const OfficeReturnPage = () => {
     const history = useHistory();
+    const dispatch = useDispatch()
     const user = useSelector(state => state.session.user)
+    const places = useSelector(state => state.placesVisited)
     const [index, setIndex] = useState(0);
     const [seeFootage, setSeeFootage] = useState(false);
+    // const [visitSalon, setVisitSalon] = useState(false);
+
+
+    useEffect(() => {
+        dispatch(getPlaces())
+    }, [dispatch])
+
+
+    const handleChoice = async (e, scene) => {
+        e.preventDefault();
+
+        const formData = new FormData()
+        formData.append('scene', scene)
+
+        await dispatch(postPlace(formData))
+    }
+
 
 
     if (!user) return <Redirect to='/signup' />
+
+    if (places.includes('salon')) console.log('salon');
+    if (places.includes('security footage')) console.log('security footage');
+
 
 
     return (
@@ -47,25 +71,41 @@ const OfficeReturnPage = () => {
                             <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
                         </>
                     )}
-                    {!seeFootage && (
+                    {!places.includes('security footage') && places.includes('salon') && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
                                 <button>Visit Minnie's apartment</button>
-                                <button onClick={() => {
-                                    setSeeFootage(true);
+                                <button>Visit Minnie's down stairs neighbor</button>
+                                <button onClick={(e) => {
+                                    setSeeFootage(true)
+                                    handleChoice(e, 'security footage');
                                     }}>Check the apartment complex security footage</button>
                                 <button>Search the system for a person</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
                     )}
-                    {!dialog2[index] && seeFootage && (
+                    {places.includes('security footage') && !places.includes('salon') && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
                                 <button>Visit Minnie's apartment</button>
-                                <button onClick={() => history.push('/salon')}>Visit Minnie's place of work</button>
+                                <button onClick={(e) => {
+                                    handleChoice(e, 'salon')
+                                    history.push('/salon')
+                                    }}>Visit Minnie's place of work</button>
+                                <button>Search the system for a person</button>
+                                <button>Go to the coffee shop</button>
+                            </div>
+                        </>
+                    )}
+                    {places.includes('security footage') && places.includes('salon') && (
+                        <>
+                            <p>Would you like to:</p>
+                            <div className="choice-buttons">
+                                <button>Visit Minnie's apartment</button>
+                                <button>Visit Minnie's down stairs neighbor</button>
                                 <button>Search the system for a person</button>
                                 <button>Go to the coffee shop</button>
                             </div>
