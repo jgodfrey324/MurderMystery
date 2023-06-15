@@ -37,8 +37,8 @@ const OfficeReturnPage = () => {
 
     if (!user) return <Redirect to='/signup' />
 
-    if (places.includes('salon')) console.log('salon');
-    if (places.includes('security footage')) console.log('security footage');
+    // if (places.includes('salon')) console.log('salon');
+    // if (places.includes('security footage')) console.log('security footage');
 
 
 
