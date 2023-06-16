@@ -63,27 +63,13 @@ const OpeningScene = () => {
                             <button className='continue-button' onClick={() => {
                                 if (!dialog2[index + 1]) {
                                     setSeeFootage(false)
-                                    setIndex(10)
+                                    history.push('/office-return')
                                 }
                                 setIndex(index + 1)
                                 }}>continue...</button>
                         </>
                     )}
-                    {!seeFootage && places.includes('security footage') && !dialog1[index] && (
-                        <>
-                            <p>Would you like to:</p>
-                            <div className="choice-buttons">
-                                <button>Visit Minnie's apartment</button>
-                                <button onClick={(e) => {
-                                    handleChoice(e, "salon")
-                                    history.push('/salon')
-                                    }}>Visit Minnie's place of work</button>
-                                <button>Search system for a person</button>
-                                <button>Go to the coffee shop</button>
-                            </div>
-                        </>
-                    )}
-                    {!seeFootage && !dialog1[index] && !places.includes('security footage') && (
+                    {!seeFootage && !dialog1[index] && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">

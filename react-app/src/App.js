@@ -12,6 +12,8 @@ import FinishedScene from "./components/FinishedScene";
 import BoyfriendScene from "./components/BoyfriendScene";
 import CriminalScene from "./components/CriminalScene";
 import FinishedRoute from "./components/OfficeReturnPage/FinishedRoute";
+import SearchDatabase from "./components/SearchDatabase";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +38,9 @@ function App() {
           </Route>
           <Route path='/office-return'>
             <OfficeReturnPage />
+          </Route>
+          <Route path='/search'>
+            <SearchDatabase />
           </Route>
           <Route path='/office-finished'>
             <FinishedRoute />
