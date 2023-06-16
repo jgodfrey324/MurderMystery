@@ -31,8 +31,6 @@ const FinishedRoute = () => {
 
 
 
-    console.log('see footage ===========> ', seeFootage)
-
 
     const handleChoice = async (e, scene) => {
         e.preventDefault();
@@ -81,6 +79,7 @@ const FinishedRoute = () => {
                             <button className='continue-button' onClick={() => {
                                 if (!dialog2[index + 1]) {
                                     setSeeFootage(false)
+                                    history.push('/office-return')
                                 }
                                 setIndex(index + 1)
                                 }}>continue...</button>

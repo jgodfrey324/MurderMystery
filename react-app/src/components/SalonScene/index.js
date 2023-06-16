@@ -44,6 +44,7 @@ const SalonScene = () => {
     return (
         <div className="home-screen">
             <h1>Thomasville Salon</h1>
+            <img src="https://i.imgur.com/7DHwqz8.jpg" alt='thomasville salon'></img>
             <div className="backpack-button">
                 <button><img src="https://i.imgur.com/HbZRQyN.png" alt="backpack icon"></img></button>
             </div>

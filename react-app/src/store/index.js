@@ -5,13 +5,15 @@ import notesReducer from './notes';
 import suspectsReducer from './suspects';
 import characterReducer from './characters';
 import placesVisitedReducer from './placesVisited';
+import searchResultsReducer from './searchResults';
 
 const rootReducer = combineReducers({
   session,
   characters: characterReducer,
   notes: notesReducer,
   suspects: suspectsReducer,
-  placesVisited: placesVisitedReducer
+  placesVisited: placesVisitedReducer,
+  searchResults: searchResultsReducer
 });
 
 

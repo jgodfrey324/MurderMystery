@@ -79,7 +79,34 @@ const OfficeReturnPage = () => {
                                     handleChoice(e, 'neighbor')
                                     history.push('/neighbor')
                                 }}>Visit Minnie's down stairs neighbor</button>
-                                <button>Search the database for Minnie's boyfriend</button>
+                                <button onClick={() => history.push('/search')}>Search the database for Minnie's boyfriend</button>
+                                <button>Go to the coffee shop</button>
+                            </div>
+                        </>
+                    )}
+                    {places.includes('security footage') && !places.includes('salon') && (
+                        <>
+                            <p>Would you like to:</p>
+                            <div className="choice-buttons">
+                                <button onClick={(e) => {
+                                    handleChoice(e, 'neighbor')
+                                    history.push('/neighbor')
+                                }}>Visit Minnie's down stairs neighbor</button>
+                                <button onClick={() => history.push('/search')}>Search the database for the people who entered the complex</button>
+                                <button>Go to the coffee shop</button>
+                            </div>
+                        </>
+                    )}
+                    {places.includes('security footage') && places.includes('salon') && (
+                        <>
+                            <p>Would you like to:</p>
+                            <div className="choice-buttons">
+                                <button onClick={(e) => {
+                                    handleChoice(e, 'neighbor')
+                                    history.push('/neighbor')
+                                }}>Visit Minnie's down stairs neighbor</button>
+                                <button onClick={() => history.push('/search')}>Search the database for Minnie's boyfriend</button>
+                                <button onClick={() => history.push('/search')}>Search the database for the people who entered the complex</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
