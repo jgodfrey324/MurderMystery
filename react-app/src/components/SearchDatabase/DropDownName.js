@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 // import { deleteNote } from "../../store/notes"
 // import UpdateNoteModal from "./UpdateNoteModal";
 import { postNameSearch } from "../../store/searchResults";
-import '../OpeningScene/OpeningScene.css'
+import { postPlace } from "../../store/placesVisited";
+import './search.css'
 
 
 
-const DropDownName = () => {
+const DropDownName = ({ allowedChars }) => {
     const dispatch = useDispatch();
+    const history = useHistory()
     const [showMenu, setShowMenu] = useState(false);
     const [name, setName] = useState('');
     const results = useSelector(state => state.searchResults.name)
@@ -35,6 +38,15 @@ const DropDownName = () => {
         closeMenu()
     }
 
+    const handleChoice = async (e, scene) => {
+        e.preventDefault();
+
+        const formData = new FormData()
+        formData.append('scene', scene)
+
+        await dispatch(postPlace(formData))
+    }
+
 
 
     const menuClassName = "menu-dropdown" + (showMenu ? "" : " hidden");
@@ -51,15 +63,28 @@ const DropDownName = () => {
                     onChange={(e) => setName(e.target.value)}
                     minLength={1}
                     />
-                    <button>Search</button>
-                    <button onClick={() => closeMenu()}>Cancel</button>
+                    <button onClick={() => closeMenu()}>Search</button>
                 </form>
+                <button onClick={() => closeMenu()}>Cancel</button>
             </div>
             <div className="search-results-house">
                 {results.map(res => {
                     return (
-                        <div key={res.id} className="char-info-house">
-                            <p>{res.first_name} {res.last_name}</p>
+                        <div key={res.id} className="char-info-house" onClick={(e) => {
+                            if (res.id === 6) {
+                                window.alert('You are headed out to visit Kallum Ray')
+                                return history.push('/boyfriend')
+                            }
+                            if (!allowedChars.includes(res.id)) {
+                                window.alert('This person did\'t answer the phone')
+                            }
+                            if (allowedChars.includes(res.id)) {
+                                window.alert(`Calling ${res.first_name} ${res.last_name}...`)
+                                handleChoice(e, res.first_name)
+                                return history.push('/office-call')
+                            }
+                        }}>
+                            <p className='char-name'>{res.first_name} {res.last_name}</p>
                             <p>Gender: {res.description.gender}</p>
                             <p>Age: {res.description.age}</p>
                             <p>Height: {res.description.height}</p>

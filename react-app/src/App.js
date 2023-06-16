@@ -13,6 +13,7 @@ import BoyfriendScene from "./components/BoyfriendScene";
 import CriminalScene from "./components/CriminalScene";
 import FinishedRoute from "./components/OfficeReturnPage/FinishedRoute";
 import SearchDatabase from "./components/SearchDatabase";
+import OfficeCall from "./components/OfficeReturnPage/OfficeCall";
 
 
 function App() {
@@ -41,6 +42,9 @@ function App() {
           </Route>
           <Route path='/search'>
             <SearchDatabase />
+          </Route>
+          <Route path='/office-call'>
+            <OfficeCall />
           </Route>
           <Route path='/office-finished'>
             <FinishedRoute />

@@ -9,7 +9,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPlaces, postPlace } from "../../store/placesVisited";
 
 
-const OfficeReturnPage = () => {
+
+
+const OfficeCall = () => {
     const history = useHistory();
     const dispatch = useDispatch()
     const user = useSelector(state => state.session.user)
@@ -63,7 +65,15 @@ const OfficeReturnPage = () => {
             </div>
             <div className="dialog-box">
                 <div className="first-choice">
-                    {dialog2[index] && seeFootage && (
+                    {dialog1[index] && places.includes('Penny') && (
+                        <>
+                            <div className="dialog-text">
+                                <p>{dialog1[index]}</p>
+                            </div>
+                            <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
+                        </>
+                    )}
+                    {dialog2[index] && places.includes('Lea') && (
                         <>
                             <div className="dialog-text">
                                 <p>{dialog2[index]}</p>
@@ -71,43 +81,20 @@ const OfficeReturnPage = () => {
                             <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
                         </>
                     )}
-                    {!places.includes('security footage') && places.includes('salon') && (
+                    {dialog3[index] && places.includes('Wilma') && (
                         <>
-                            <p>Would you like to:</p>
-                            <div className="choice-buttons">
-                                <button onClick={(e) => {
-                                    handleChoice(e, 'neighbor')
-                                    history.push('/neighbor')
-                                }}>Visit Minnie's down stairs neighbor</button>
-                                <button onClick={() => history.push('/search')}>Search the database for a person</button>
-                                <button>Go to the coffee shop</button>
+                            <div className="dialog-text">
+                                <p>{dialog3[index]}</p>
                             </div>
+                            <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
                         </>
                     )}
-                    {places.includes('security footage') && !places.includes('salon') && (
+                    {dialog4[index] && places.includes('Lucian') && (
                         <>
-                            <p>Would you like to:</p>
-                            <div className="choice-buttons">
-                                <button onClick={(e) => {
-                                    handleChoice(e, 'neighbor')
-                                    history.push('/neighbor')
-                                }}>Visit Minnie's down stairs neighbor</button>
-                                <button onClick={() => history.push('/search')}>Search the database for a person</button>
-                                <button>Go to the coffee shop</button>
+                            <div className="dialog-text">
+                                <p>{dialog4[index]}</p>
                             </div>
-                        </>
-                    )}
-                    {places.includes('security footage') && places.includes('salon') && (
-                        <>
-                            <p>Would you like to:</p>
-                            <div className="choice-buttons">
-                                <button onClick={(e) => {
-                                    handleChoice(e, 'neighbor')
-                                    history.push('/neighbor')
-                                }}>Visit Minnie's down stairs neighbor</button>
-                                <button onClick={() => history.push('/search')}>Search the database for a person</button>
-                                <button>Go to the coffee shop</button>
-                            </div>
+                            <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
                         </>
                     )}
                 </div>
@@ -117,4 +104,4 @@ const OfficeReturnPage = () => {
 }
 
 
-export default OfficeReturnPage
+export default OfficeCall
