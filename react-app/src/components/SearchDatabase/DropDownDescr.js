@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import '../OpeningScene/OpeningScene.css'
 import { postDescSearch } from "../../store/searchResults";
+import { postPlace } from "../../store/placesVisited";
 
 
 
-const DropDownDescr = () => {
+const DropDownDescr = ({ allowedChars }) => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const results = useSelector(state => state.searchResults.description)
     const [showMenu, setShowMenu] = useState(false);
     const [occupation, setOccupation] = useState('')
@@ -36,6 +39,15 @@ const DropDownDescr = () => {
 
         await dispatch(postDescSearch(formData))
         closeMenu()
+    }
+
+    const handleChoice = async (e, scene) => {
+        e.preventDefault();
+
+        const formData = new FormData()
+        formData.append('scene', scene)
+
+        await dispatch(postPlace(formData))
     }
 
 
@@ -98,15 +110,28 @@ const DropDownDescr = () => {
                             <option value={'Dental assistant'}>Dental Assistant</option>
                         </select>
                     </label>
-                    <button>Search</button>
-                    <button onClick={() => closeMenu()}>Cancel</button>
+                    <button onClick={() => closeMenu()}>Search</button>
                 </form>
+                <button onClick={() => closeMenu()}>Cancel</button>
             </div>
             <div className="search-results-house">
                 {results.map(res => {
                     return (
-                        <div key={res.id} className="char-info-house">
-                            <p>{res.first_name} {res.last_name}</p>
+                        <div key={res.id} className="char-info-house" onClick={(e) => {
+                            if (res.id === 6) {
+                                window.alert('You are headed out to visit Kallum Ray')
+                                return history.push('/boyfriend')
+                            }
+                            if (!allowedChars.includes(res.id)) {
+                                window.alert('This person did\'t answer the phone')
+                            }
+                            if (allowedChars.includes(res.id)) {
+                                window.alert(`Calling ${res.first_name} ${res.last_name}...`)
+                                handleChoice(e, res.first_name)
+                                return history.push('/office-call')
+                            }
+                        }}>
+                            <p className='char-name'>{res.first_name} {res.last_name}</p>
                             <p>Gender: {res.description.gender}</p>
                             <p>Age: {res.description.age}</p>
                             <p>Height: {res.description.height}</p>

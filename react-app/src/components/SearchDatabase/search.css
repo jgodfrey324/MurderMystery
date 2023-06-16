@@ -1,0 +1,96 @@
+#descr-search-house {
+    /* border: 1px solid red; */
+    /* display: flex; */
+    position: absolute;
+    z-index: 3;
+    top: -400px;
+    right: 110px;
+    box-shadow: 3px 3px 10px black;
+    padding: 20px;
+    width: 700px;
+}
+
+#descr-search-house > button {
+    width: fit-content;
+    position: absolute;
+    bottom: 20px;
+    left: 85px;
+}
+
+#descr-search-house > form > label {
+    margin-right: 10px;
+}
+
+#descr-search-house > form > button {
+    margin-top: 20px;
+    margin-right: 5px;
+}
+
+#name-search-house {
+    /* border: 1px solid red; */
+    /* display: flex; */
+    position: absolute;
+    z-index: 3;
+    top: -400px;
+    right: 225px;
+    box-shadow: 3px 3px 10px black;
+    padding: 20px;
+}
+
+#name-search-house > button {
+    width: fit-content;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+#name-search-house > form > input{
+    margin-right: 20px;
+    width: 250px;
+}
+
+#name-search-house > form > button {
+    margin-right: 65px;
+}
+
+.search-results-house {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: -480px;
+    right: 110px;
+    width: 750px;
+    height: 475px;
+    overflow-y: auto;
+    gap: 20px;
+    justify-content: center;
+    z-index: 2;
+}
+
+.char-info-house {
+    border: 1px solid pink;
+    width: 280px;
+    height: 200px;
+    padding: 10px;
+    background-color: aliceblue;
+    box-shadow: 1px 3px 10px black;
+    border-radius: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.char-info-house:hover {
+    border: 2px solid black;
+}
+
+.char-info-house > p {
+    margin: 0 0 8px 20px;
+}
+
+.char-info-house > .char-name {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-left: 0;
+}
