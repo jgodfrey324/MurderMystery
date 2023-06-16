@@ -105,7 +105,15 @@ const DropDownDescr = () => {
             <div className="search-results-house">
                 {results.map(res => {
                     return (
-                        <p key={res.id}>{res.first_name} {res.last_name}</p>
+                        <div key={res.id} className="char-info-house">
+                            <p>{res.first_name} {res.last_name}</p>
+                            <p>Gender: {res.description.gender}</p>
+                            <p>Age: {res.description.age}</p>
+                            <p>Height: {res.description.height}</p>
+                            <p>Hair color: {res.description.hair_color}</p>
+                            <p>Occupation: {res.description.occupation.job_title}</p>
+                            <p>Employer: {res.description.occupation.employer}</p>
+                        </div>
                     )
                 })}
             </div>
