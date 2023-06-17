@@ -14,7 +14,8 @@ const DropDownName = ({ allowedChars }) => {
     const history = useHistory()
     const [showMenu, setShowMenu] = useState(false);
     const [name, setName] = useState('');
-    const results = useSelector(state => state.searchResults.name)
+    const searchRes = useSelector(state => state.searchResults)
+    const places = useSelector(state => state.placesVisited)
 
 
 
@@ -51,9 +52,16 @@ const DropDownName = ({ allowedChars }) => {
 
     const menuClassName = "menu-dropdown" + (showMenu ? "" : " hidden");
 
+    if (!searchRes) return null;
+
+    const results = searchRes.name;
+
     return (
         <div className="choice-buttons">
-            <button onClick={openMenu}>Search by name</button>
+            <button onClick={() => {
+                setName('')
+                return openMenu()
+                }}>Search by name</button>
             <div id='name-search-house' className={menuClassName}>
                 <form onSubmit={handleSubmit}>
                     <input
@@ -67,8 +75,12 @@ const DropDownName = ({ allowedChars }) => {
                 </form>
                 <button onClick={() => closeMenu()}>Cancel</button>
             </div>
+            <div className="computer-screen">
+
+            </div>
             <div className="search-results-house">
                 {results.map(res => {
+                    console.log('res from inside mapping =====> ', res)
                     return (
                         <div key={res.id} className="char-info-house" onClick={(e) => {
                             if (res.id === 6) {
@@ -79,6 +91,9 @@ const DropDownName = ({ allowedChars }) => {
                                 window.alert('This person did\'t answer the phone')
                             }
                             if (allowedChars.includes(res.id)) {
+                                if (places.includes(res.first_name)) {
+                                    return window.alert('You\'ve already made a call to this person')
+                                }
                                 window.alert(`Calling ${res.first_name} ${res.last_name}...`)
                                 handleChoice(e, res.first_name)
                                 return history.push('/office-call')

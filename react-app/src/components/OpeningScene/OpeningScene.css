@@ -255,7 +255,7 @@
 .backpack-button {
     /* border: 1px solid green; */
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     width: 95px;
     height: 95px;
     border-radius: 50px;

@@ -41,7 +41,7 @@ const SearchDatabase = () => {
     return (
         <div className="home-screen">
             <h1>Dept. Computer</h1>
-            <img src="https://i.imgur.com/DxS5Dpg.png" alt='department office'></img>
+            <img src="https://i.imgur.com/1HDvBws.jpg" alt='department computer'></img>
             <div className="backpack-button">
                 <button><img src="https://i.imgur.com/HbZRQyN.png" alt="backpack icon"></img></button>
             </div>

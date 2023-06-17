@@ -1,38 +1,48 @@
 #descr-search-house {
-    /* border: 1px solid red; */
+        /* border: 1px solid red; */
     /* display: flex; */
     position: absolute;
-    z-index: 3;
+    z-index: 5;
     top: -400px;
-    right: 110px;
+    right: 190px;
     box-shadow: 3px 3px 10px black;
     padding: 20px;
-    width: 700px;
+    width: 550px;
+    height: 100px;
+}
+
+#descr-search-house > form {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #descr-search-house > button {
     width: fit-content;
     position: absolute;
     bottom: 20px;
-    left: 85px;
+    right: 110px;
 }
 
 #descr-search-house > form > label {
     margin-right: 10px;
+    margin-top: 20px;
 }
 
 #descr-search-house > form > button {
     margin-top: 20px;
-    margin-right: 5px;
+    /* margin-right: 5px; */
+    position: absolute;
+    bottom: 20px;
+    right: 175px;
 }
 
 #name-search-house {
     /* border: 1px solid red; */
     /* display: flex; */
     position: absolute;
-    z-index: 3;
+    z-index: 5;
     top: -400px;
-    right: 225px;
+    right: 260px;
     box-shadow: 3px 3px 10px black;
     padding: 20px;
 }
@@ -54,23 +64,48 @@
 }
 
 .search-results-house {
-    /* border: 2px solid red; */
+    /* border-top: 10px solid rgb(53, 53, 53);
+    border-right: 10px solid rgb(53, 53, 53);
+    border-left: 10px solid rgb(53, 53, 53); */
+    /* background-color: rgb(176, 215, 215); */
+    /* box-shadow: -1px 3px 15px black; */
+    border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    top: -480px;
-    right: 110px;
-    width: 750px;
-    height: 475px;
+    top: -490px;
+    left: 150px;
+    width: 725px;
+    height: 440px;
     overflow-y: auto;
+    grid-gap: 20px;
+    grid-gap: 20px;
     gap: 20px;
     justify-content: center;
+    z-index: 4;
+    padding: 20px 0;
+}
+
+.computer-screen {
+    border-top: 10px solid rgb(53, 53, 53);
+    border-right: 10px solid rgb(53, 53, 53);
+    border-left: 10px solid rgb(53, 53, 53);
+    padding: 20px 0;
+    position: absolute;
+    top: -500px;
+    left: 150px;
+    width: 725px;
+    height: 440px;
+    box-shadow: -1px 3px 15px black;
+    border-radius: 20px;
+    background-color: rgb(176, 215, 215);
     z-index: 2;
 }
 
+
 .char-info-house {
     border: 1px solid pink;
-    width: 280px;
+    width: 250px;
     height: 200px;
     padding: 10px;
     background-color: aliceblue;
