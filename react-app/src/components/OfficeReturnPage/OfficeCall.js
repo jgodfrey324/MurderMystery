@@ -3,7 +3,7 @@ import { useHistory, Redirect } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
 import NotepadModal from "../OpeningScene/NotepadModal"
 import SuspectModal from "../OpeningScene/SuspectModal";
-import { dialog2 } from "../../dialog/OpeningScene";
+import { lucian, lea, wilma, wilma2, penny, fabian } from "../../dialog/callScene";
 import '../OpeningScene/OpeningScene.css'
 import { useDispatch, useSelector } from "react-redux";
 import { getPlaces, postPlace } from "../../store/placesVisited";
@@ -23,15 +23,6 @@ const OfficeCall = () => {
         dispatch(getPlaces())
     }, [dispatch])
 
-
-    const handleChoice = async (e, scene) => {
-        e.preventDefault();
-
-        const formData = new FormData()
-        formData.append('scene', scene)
-
-        await dispatch(postPlace(formData))
-    }
 
 
 
@@ -63,38 +54,79 @@ const OfficeCall = () => {
             </div>
             <div className="dialog-box">
                 <div className="first-choice">
-                    {/* {dialog1[index] && places[places.length - 1] === 'Penny' && (
+                    {penny[index] && places[places.length - 1] === 'Penny' && (
                         <>
                             <div className="dialog-text">
-                                <p>{dialog1[index]}</p>
+                                <p>{penny[index]}</p>
+                            </div>
+                            <button className='continue-button' onClick={() => {
+                                if (!penny[index + 1]) {
+                                    return history.push('/office-return')
+                                }
+                                setIndex(index + 1)
+                                }}>continue...</button>
+                        </>
+                    )}
+                    {lea[index] && places[places.length - 1] === 'Lea' && (
+                        <>
+                            <div className="dialog-text">
+                                <p>{lea[index]}</p>
                             </div>
                             <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
                         </>
-                    )} */}
-                    {/* {dialog2[index] && places[places.length - 1] === 'Lea' && (
+                    )}
+                    {wilma[index] && places[places.length - 1] === 'Wilma' && !places[places.length - 2] === 'Penny' && (
                         <>
                             <div className="dialog-text">
-                                <p>{dialog2[index]}</p>
+                                <p>{wilma[index]}</p>
                             </div>
-                            <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
+                            <button className='continue-button' onClick={() => {
+                                if (!wilma[index + 1]) {
+                                    return history.push('/office-return')
+                                }
+                                setIndex(index + 1)
+                                }}>continue...</button>
                         </>
-                    )} */}
-                    {/* {dialog3[index] && places[places.length - 1] === 'Wilma' && (
+                    )}
+                    {wilma2[index] && places[places.length - 2] === 'Penny' && places[places.length - 1] === 'Wilma' && (
                         <>
                             <div className="dialog-text">
-                                <p>{dialog3[index]}</p>
+                                <p>{wilma2[index]}</p>
                             </div>
-                            <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
+                            <button className='continue-button' onClick={() => {
+                                if (!wilma2[index + 1]) {
+                                    return history.push('/office-return')
+                                }
+                                setIndex(index + 1)
+                                }}>continue...</button>
                         </>
-                    )} */}
-                    {/* {dialog4[index] && places[places.length - 1] === 'Lucian' && (
+                    )}
+                    {lucian[index] && places[places.length - 1] === 'Lucian' && (
                         <>
                             <div className="dialog-text">
-                                <p>{dialog4[index]}</p>
+                                <p>{lucian[index]}</p>
                             </div>
-                            <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
+                            <button className='continue-button' onClick={() => {
+                                if (!lucian[index + 1]) {
+                                    return history.push('/office-return')
+                                }
+                                setIndex(index + 1)
+                                }}>continue...</button>
                         </>
-                    )} */}
+                    )}
+                    {fabian[index] && places[places.length - 1] === 'Fabian' && (
+                        <>
+                            <div className="dialog-text">
+                                <p>{fabian[index]}</p>
+                            </div>
+                            <button className='continue-button' onClick={() => {
+                                if (!fabian[index + 1]) {
+                                    return history.push('/office-return')
+                                }
+                                setIndex(index + 1)
+                                }}>continue...</button>
+                        </>
+                    )}
                 </div>
             </div>
         </div>

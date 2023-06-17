@@ -14,9 +14,6 @@ const OfficeReturnPage = () => {
     const dispatch = useDispatch()
     const user = useSelector(state => state.session.user)
     const places = useSelector(state => state.placesVisited)
-    const [index, setIndex] = useState(0);
-    const [seeFootage, setSeeFootage] = useState(false);
-    // const [visitSalon, setVisitSalon] = useState(false);
 
 
     useEffect(() => {
@@ -63,15 +60,7 @@ const OfficeReturnPage = () => {
             </div>
             <div className="dialog-box">
                 <div className="first-choice">
-                    {dialog2[index] && seeFootage && (
-                        <>
-                            <div className="dialog-text">
-                                <p>{dialog2[index]}</p>
-                            </div>
-                            <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
-                        </>
-                    )}
-                    {!places.includes('security footage') && places.includes('salon') && (
+                    {places[places.length - 1] === 'salon' && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
@@ -84,7 +73,7 @@ const OfficeReturnPage = () => {
                             </div>
                         </>
                     )}
-                    {places.includes('security footage') && !places.includes('salon') && (
+                    {places[places.length - 1] === 'Lucian' && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
@@ -97,14 +86,10 @@ const OfficeReturnPage = () => {
                             </div>
                         </>
                     )}
-                    {places.includes('security footage') && places.includes('salon') && (
+                    {places[places.length - 1] === 'Penny' || places[places.length - 1] === 'Wilma' || places[places.length - 1] === 'Lea' || places[places.length - 1] === 'Fabian' && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
-                                <button onClick={(e) => {
-                                    handleChoice(e, 'neighbor')
-                                    history.push('/neighbor')
-                                }}>Visit Minnie's down stairs neighbor</button>
                                 <button onClick={() => history.push('/search')}>Search the database for a person</button>
                                 <button>Go to the coffee shop</button>
                             </div>
