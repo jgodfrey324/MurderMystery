@@ -64,11 +64,6 @@
 }
 
 .search-results-house {
-    /* border-top: 10px solid rgb(53, 53, 53);
-    border-right: 10px solid rgb(53, 53, 53);
-    border-left: 10px solid rgb(53, 53, 53); */
-    /* background-color: rgb(176, 215, 215); */
-    /* box-shadow: -1px 3px 15px black; */
     border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -104,7 +99,7 @@
 
 
 .char-info-house {
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     width: 250px;
     height: 200px;
     padding: 10px;
