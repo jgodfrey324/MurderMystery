@@ -10,7 +10,8 @@ import { postPlace } from "../../store/placesVisited";
 const DropDownDescr = ({ allowedChars }) => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const results = useSelector(state => state.searchResults.description)
+    const searchRes = useSelector(state => state.searchResults)
+    const places = useSelector(state => state.placesVisited)
     const [showMenu, setShowMenu] = useState(false);
     const [occupation, setOccupation] = useState('')
     const [age, setAge] = useState([]);
@@ -53,6 +54,10 @@ const DropDownDescr = ({ allowedChars }) => {
 
 
     const menuClassName = "menu-dropdown" + (showMenu ? "" : " hidden");
+
+    if (!searchRes) return null;
+
+    const results = searchRes.description
 
     return (
         <div className="choice-buttons">
@@ -114,6 +119,9 @@ const DropDownDescr = ({ allowedChars }) => {
                 </form>
                 <button onClick={() => closeMenu()}>Cancel</button>
             </div>
+            <div className="computer-screen">
+
+            </div>
             <div className="search-results-house">
                 {results.map(res => {
                     return (
@@ -126,6 +134,9 @@ const DropDownDescr = ({ allowedChars }) => {
                                 window.alert('This person did\'t answer the phone')
                             }
                             if (allowedChars.includes(res.id)) {
+                                if (places.includes(res.first_name)) {
+                                    return window.alert('You\'ve already made a call to this person')
+                                }
                                 window.alert(`Calling ${res.first_name} ${res.last_name}...`)
                                 handleChoice(e, res.first_name)
                                 return history.push('/office-call')

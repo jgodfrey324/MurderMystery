@@ -49,11 +49,11 @@ const searchResultsReducer = (state = initialState, action) => {
     let newState;
     switch (action.type) {
         case SEARCH_NAMES:
-            newState = { ...state, description: [...state.description] }
+            newState = { description: [] }
             newState.name = action.res
             return newState;
         case SEARCH_DESC:
-            newState = { ...state, name: [...state.name] }
+            newState = { name: [] }
             newState.description = action.res
             return newState;
         default:

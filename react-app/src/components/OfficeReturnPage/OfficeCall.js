@@ -17,8 +17,6 @@ const OfficeCall = () => {
     const user = useSelector(state => state.session.user)
     const places = useSelector(state => state.placesVisited)
     const [index, setIndex] = useState(0);
-    const [seeFootage, setSeeFootage] = useState(false);
-    // const [visitSalon, setVisitSalon] = useState(false);
 
 
     useEffect(() => {
@@ -65,38 +63,38 @@ const OfficeCall = () => {
             </div>
             <div className="dialog-box">
                 <div className="first-choice">
-                    {dialog1[index] && places.includes('Penny') && (
+                    {/* {dialog1[index] && places[places.length - 1] === 'Penny' && (
                         <>
                             <div className="dialog-text">
                                 <p>{dialog1[index]}</p>
                             </div>
                             <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
                         </>
-                    )}
-                    {dialog2[index] && places.includes('Lea') && (
+                    )} */}
+                    {/* {dialog2[index] && places[places.length - 1] === 'Lea' && (
                         <>
                             <div className="dialog-text">
                                 <p>{dialog2[index]}</p>
                             </div>
                             <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
                         </>
-                    )}
-                    {dialog3[index] && places.includes('Wilma') && (
+                    )} */}
+                    {/* {dialog3[index] && places[places.length - 1] === 'Wilma' && (
                         <>
                             <div className="dialog-text">
                                 <p>{dialog3[index]}</p>
                             </div>
                             <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
                         </>
-                    )}
-                    {dialog4[index] && places.includes('Lucian') && (
+                    )} */}
+                    {/* {dialog4[index] && places[places.length - 1] === 'Lucian' && (
                         <>
                             <div className="dialog-text">
                                 <p>{dialog4[index]}</p>
                             </div>
                             <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
                         </>
-                    )}
+                    )} */}
                 </div>
             </div>
         </div>

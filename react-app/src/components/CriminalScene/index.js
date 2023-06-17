@@ -28,10 +28,8 @@ const CriminalScene = () => {
 
     return (
         <div className="home-screen">
-            {(places.includes('apartment') || places.includes('security')) && (
-                <h1>Rush's Apartment</h1>
-            )}
             <h1>Downstairs Neighbor</h1>
+            <img src="https://i.imgur.com/60YDXOU.jpg" alt='department computer'></img>
             <div className="backpack-button">
                 <button><img src="https://i.imgur.com/HbZRQyN.png" alt="backpack icon"></img></button>
             </div>

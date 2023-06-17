@@ -1,7 +1,7 @@
 export const dialog1 = [
     "[...]   Incoming call from the chief...",
-    "[Cheif] Goodmorning Detective. Looks like you've got a new case. The local police station in the city next over has requested aid for a case they called a 'Murder Mystery'... whatever that means...",
-    "[Cheif] Anyway, the crime actually took place last week, February 14th, sometime in the night. I'll send you all the documents we've recieved. Be warned, the officers before you didn't really do much in regards to investigation."
+    "[Chief] Goodmorning Detective. Looks like you've got a new case. The local police station in the city next over has requested aid for a case they called a 'Murder Mystery'... whatever that means...",
+    "[Chief] Anyway, the crime actually took place last week, February 14th, sometime in the night. I'll send you all the documents we've recieved. Be warned, the officers before you didn't really do much in regards to investigation."
 ]
 
 export const dialog2 = [
