@@ -12,8 +12,10 @@ class Backpack(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     item_quantity = db.Column(db.Integer, nullable=False)
     item_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('items.id')), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
 
     item = db.relationship('Item', back_populates='backpack_items')
+    user = db.relationship('User', back_populates='backpack_items')
 
 
     def __repr__(self):
@@ -22,6 +24,7 @@ class Backpack(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
+            'user_id': self.user_id,
             'item_quantity': self.item_quantity,
             'item': {
                 'id': self.item.id,

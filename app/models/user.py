@@ -15,8 +15,11 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.String(50), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
 
-    notes = db.relationship('Note', back_populates='user')
-    # suspects = db.relationship('Suspect', back_populates='user')
+    notes = db.relationship('Note', back_populates='user', cascade="all, delete-orphan")
+    suspects = db.relationship('Suspect', back_populates='user', cascade="all, delete-orphan")
+    backpack_items = db.relationship('Backpack', back_populates='user', cascade="all, delete-orphan")
+    places = db.relationship('Place', back_populates='user', cascade="all, delete-orphan")
+
 
     @property
     def password(self):

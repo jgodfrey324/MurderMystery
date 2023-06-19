@@ -3,7 +3,6 @@ from .users import seed_users, undo_users
 from .characters import seed_characters, undo_characters
 from .descriptions import seed_descriptions, undo_descriptions
 from .occupations import seed_occupations, undo_occupations
-from .suspects import seed_suspects, undo_suspects
 from .items import seed_items, undo_items
 from .places import undo_places
 from .solutions import seed_solutions, undo_solutions
@@ -23,7 +22,6 @@ def seed():
         # command, which will  truncate all tables prefixed with
         # the schema name (see comment in users.py undo_users function).
         # Make sure to add all your other model's undo functions below
-        undo_suspects()
         undo_solutions()
         undo_characters()
         undo_descriptions()
@@ -37,14 +35,12 @@ def seed():
     seed_descriptions()
     seed_characters()
     seed_solutions()
-    seed_suspects()
     # Add other seed functions here
 
 
 # Creates the `flask seed undo` command
 @seed_commands.command('undo')
 def undo():
-    undo_suspects()
     undo_solutions()
     undo_characters()
     undo_descriptions()

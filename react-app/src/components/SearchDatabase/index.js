@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPlaces, postPlace } from "../../store/placesVisited";
 import DropDownName from "./DropDownName";
 import DropDownDescr from "./DropDownDescr";
+import BackpackPopup from "../OpeningScene/BackpackPopup";
 
 
 const SearchDatabase = () => {
@@ -51,7 +52,7 @@ const SearchDatabase = () => {
             <h1>Dept. Computer</h1>
             <img src="https://i.imgur.com/1HDvBws.jpg" alt='department computer'></img>
             <div className="backpack-button">
-                <button><img src="https://i.imgur.com/HbZRQyN.png" alt="backpack icon"></img></button>
+                <BackpackPopup />
             </div>
             <div className="notepad-button">
                 <OpenModalButton

@@ -1,26 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
-import { getPlaces, postPlace } from "../../store/placesVisited";
+import { postPlace } from "../../store/placesVisited";
 import OpenModalButton from "../OpenModalButton";
 import NotepadModal from "./NotepadModal"
 import SuspectModal from "./SuspectModal";
 import { dialog1, dialog2 } from "../../dialog/OpeningScene";
 import './OpeningScene.css'
+import BackpackPopup from "./BackpackPopup";
 
 
 const OpeningScene = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user)
-    const places = useSelector(state => state.placesVisited)
     const [index, setIndex] = useState(0);
     const [seeFootage, setSeeFootage] = useState(false);
 
-
-    useEffect(() => {
-        dispatch(getPlaces())
-    }, [dispatch])
 
     const handleChoice = async (e, scene) => {
         e.preventDefault();
@@ -39,7 +35,7 @@ const OpeningScene = () => {
             <h1>Dept. Office</h1>
             <img src="https://i.imgur.com/1HDvBws.jpg" alt='department office'></img>
             <div className="backpack-button">
-                <button><img src="https://i.imgur.com/HbZRQyN.png" alt="backpack icon"></img></button>
+                <BackpackPopup />
             </div>
             <div className="notepad-button">
                 <OpenModalButton

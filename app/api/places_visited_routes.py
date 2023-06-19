@@ -9,7 +9,7 @@ places_visited_routes = Blueprint('places_visited', __name__)
 @places_visited_routes.route('/')
 @login_required
 def get_places():
-    places = Place.query.all();
+    places = Place.query.filter(Place.user_id == current_user.id).all();
 
     res = []
 
@@ -23,7 +23,10 @@ def get_places():
 @places_visited_routes.route('/new', methods=["POST"])
 @login_required
 def add_place():
-    new_place = Place(scene= request.form['scene'])
+    new_place = Place(
+        scene= request.form['scene'],
+        user_id=current_user.id
+        )
 
     db.session.add(new_place)
     db.session.commit()

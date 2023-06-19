@@ -28,7 +28,7 @@ def get_notes():
     """
     Query for all notes and returns them in a dictionary of notes
     """
-    notes = Note.query.all()
+    notes = Note.query.filter(Note.user_id == current_user.id).all()
 
     res = {}
 

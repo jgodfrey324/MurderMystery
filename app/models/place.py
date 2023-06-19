@@ -10,9 +10,9 @@ class Place(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     scene = db.Column(db.String(50), nullable=False, unique=True)
-    # job_title = db.Column(db.String(50), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
 
-    # descriptions = db.relationship('Description', back_populates='occupation')
+    user = db.relationship('User', back_populates='places')
 
 
     def __repr__(self):
@@ -21,5 +21,6 @@ class Place(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
+            'user_id': self.user_id,
             'scene': self.scene
         }

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
-import { getPlaces, postPlace } from "../../store/placesVisited";
+import { getPlaces } from "../../store/placesVisited";
 import OpenModalButton from "../OpenModalButton";
 import NotepadModal from "../OpeningScene/NotepadModal"
 import SuspectModal from "../OpeningScene/SuspectModal";
 import { dialog1, dialog2 } from "../../dialog/BoyfriendScene";
 import '../OpeningScene/OpeningScene.css'
+import BackpackPopup from "../OpeningScene/BackpackPopup";
 
 
 
@@ -30,7 +31,7 @@ const BoyfriendScene = () => {
         <div className="home-screen">
             <h1>Kalum's House</h1>
             <div className="backpack-button">
-                <button><img src="https://i.imgur.com/HbZRQyN.png" alt="backpack icon"></img></button>
+                <BackpackPopup />
             </div>
             <div className="notepad-button">
                 <OpenModalButton
