@@ -12,7 +12,7 @@ suspect_routes = Blueprint('suspect', __name__)
 @suspect_routes.route('/')
 @login_required
 def get_suspects():
-    suspects = Suspect.query.all();
+    suspects = Suspect.query.filter(Suspect.user_id == current_user.id).all();
 
     res = {}
 
@@ -38,7 +38,10 @@ def delete_suspect(id):
 @suspect_routes.route('/add', methods=["POST"])
 @login_required
 def add_suspect():
-    new_suspect = Suspect(character_id= request.form['id'])
+    new_suspect = Suspect(
+        character_id= request.form['id'],
+        user_id= current_user.id
+        )
 
     db.session.add(new_suspect)
     db.session.commit()

@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, session, request
-from app.models import User, db
+from app.models import User, Suspect, db
 from app.forms import LoginForm
 from app.forms import SignUpForm
 from flask_login import current_user, login_user, logout_user, login_required
@@ -51,6 +51,7 @@ def logout():
     Logs a user out
     """
     logout_user()
+
     return {'message': 'User logged out'}
 
 
@@ -71,6 +72,39 @@ def sign_up():
         db.session.add(user)
         db.session.commit()
         login_user(user)
+
+
+        sus1 = Suspect(
+        character_id=1, user_id=current_user.id)
+        sus2 = Suspect(
+            character_id=2, user_id=current_user.id)
+        sus3 = Suspect(
+            character_id=3, user_id=current_user.id)
+        sus4 = Suspect(
+            character_id=4, user_id=current_user.id)
+        sus5 = Suspect(
+            character_id=5, user_id=current_user.id)
+        sus6 = Suspect(
+            character_id=6, user_id=current_user.id)
+        sus7 = Suspect(
+            character_id=7, user_id=current_user.id)
+        sus8 = Suspect(
+            character_id=8, user_id=current_user.id)
+        sus9 = Suspect(
+            character_id=9, user_id=current_user.id)
+        sus10 = Suspect(
+            character_id=10, user_id=current_user.id)
+        sus11 = Suspect(
+            character_id=11, user_id=current_user.id)
+        sus12 = Suspect(
+            character_id=12, user_id=current_user.id)
+        sus13 = Suspect(
+            character_id=13, user_id=current_user.id)
+
+        suspects = [sus1, sus2, sus3, sus4, sus5, sus6, sus7, sus8, sus9, sus10, sus11, sus12, sus13]
+        [db.session.add(suspect) for suspect in suspects]
+        db.session.commit()
+
         return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 

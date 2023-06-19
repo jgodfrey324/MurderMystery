@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postDescSearch } from "../../store/searchResults";
-import { postPlace } from "../../store/placesVisited";
 import './search.css'
 
 

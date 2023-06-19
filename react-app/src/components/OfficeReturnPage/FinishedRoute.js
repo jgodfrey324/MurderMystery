@@ -7,6 +7,7 @@ import { dialog2 } from "../../dialog/OpeningScene";
 import '../OpeningScene/OpeningScene.css'
 import { useDispatch, useSelector } from "react-redux";
 import { getPlaces, postPlace } from "../../store/placesVisited";
+import BackpackPopup from "../OpeningScene/BackpackPopup";
 
 
 const FinishedRoute = () => {
@@ -55,7 +56,7 @@ const FinishedRoute = () => {
             <h1>Dept. Office</h1>
             <img src="https://i.imgur.com/1HDvBws.jpg" alt='department office'></img>
             <div className="backpack-button">
-                <button><img src="https://i.imgur.com/HbZRQyN.png" alt="backpack icon"></img></button>
+                <BackpackPopup />
             </div>
             <div className="notepad-button">
                 <OpenModalButton

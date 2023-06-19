@@ -1,10 +1,10 @@
 #descr-search-house {
-        /* border: 1px solid red; */
+       /* border: 1px solid red; */
     /* display: flex; */
     position: absolute;
     z-index: 5;
-    top: -400px;
-    right: 190px;
+    top: -350px;
+    right: 210px;
     box-shadow: 3px 3px 10px black;
     padding: 20px;
     width: 550px;
@@ -41,8 +41,8 @@
     /* display: flex; */
     position: absolute;
     z-index: 5;
-    top: -400px;
-    right: 260px;
+    top: -350px;
+    right: 280px;
     box-shadow: 3px 3px 10px black;
     padding: 20px;
 }
@@ -68,11 +68,12 @@
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    top: -490px;
-    left: 150px;
+    top: -375px;
+    left: 130px;
     width: 725px;
-    height: 440px;
+    height: 330px;
     overflow-y: auto;
+    grid-gap: 20px;
     grid-gap: 20px;
     grid-gap: 20px;
     gap: 20px;
@@ -87,10 +88,10 @@
     border-left: 10px solid rgb(53, 53, 53);
     padding: 20px 0;
     position: absolute;
-    top: -500px;
-    left: 150px;
+    top: -385px;
+    left: 120px;
     width: 725px;
-    height: 440px;
+    height: 330px;
     box-shadow: -1px 3px 15px black;
     border-radius: 20px;
     background-color: rgb(176, 215, 215);

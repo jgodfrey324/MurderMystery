@@ -264,6 +264,29 @@
     right: 400px;
 }
 
+.backpack-popup {
+    border: 1px solid red;
+    height: 100px;
+    width: 430px;
+    position: absolute;
+    top: 0;
+    right: 100px;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 2px;
+}
+
+.backpack-popup.hidden {
+    display:none;
+}
+
+.item-house {
+    border: 1px solid blue;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+}
+
 .backpack-button > button {
     width: -webkit-fill-available;
     height: -webkit-fill-available;

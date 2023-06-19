@@ -7,6 +7,7 @@ import SuspectModal from "../OpeningScene/SuspectModal";
 import { postPlace, getPlaces } from "../../store/placesVisited";
 import { dialog1 } from "../../dialog/SalonScene";
 import '../OpeningScene/OpeningScene.css'
+import BackpackPopup from "../OpeningScene/BackpackPopup";
 
 
 
@@ -46,7 +47,7 @@ const SalonScene = () => {
             <h1>Thomasville Salon</h1>
             <img src="https://i.imgur.com/7DHwqz8.jpg" alt='thomasville salon'></img>
             <div className="backpack-button">
-                <button><img src="https://i.imgur.com/HbZRQyN.png" alt="backpack icon"></img></button>
+                <BackpackPopup />
             </div>
             <div className="notepad-button">
                 <OpenModalButton

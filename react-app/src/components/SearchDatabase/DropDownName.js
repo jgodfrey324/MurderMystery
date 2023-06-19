@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { postNameSearch } from "../../store/searchResults";
-import { postPlace } from "../../store/placesVisited";
 import './search.css'
 
 

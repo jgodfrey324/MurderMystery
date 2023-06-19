@@ -6,7 +6,8 @@ import SuspectModal from "../OpeningScene/SuspectModal";
 import { lucian, lea, wilma, wilma2, penny, fabian } from "../../dialog/callScene";
 import '../OpeningScene/OpeningScene.css'
 import { useDispatch, useSelector } from "react-redux";
-import { getPlaces, postPlace } from "../../store/placesVisited";
+import { getPlaces } from "../../store/placesVisited";
+import BackpackPopup from "../OpeningScene/BackpackPopup";
 
 
 
@@ -24,12 +25,7 @@ const OfficeCall = () => {
     }, [dispatch])
 
 
-
-
     if (!user) return <Redirect to='/signup' />
-
-    // if (places.includes('salon')) console.log('salon');
-    // if (places.includes('security footage')) console.log('security footage');
 
 
 
@@ -38,7 +34,7 @@ const OfficeCall = () => {
             <h1>Dept. Office</h1>
             <img src="https://i.imgur.com/1HDvBws.jpg" alt='department office'></img>
             <div className="backpack-button">
-                <button><img src="https://i.imgur.com/HbZRQyN.png" alt="backpack icon"></img></button>
+                <BackpackPopup />
             </div>
             <div className="notepad-button">
                 <OpenModalButton

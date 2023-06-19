@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useHistory, Redirect } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
 import NotepadModal from "../OpeningScene/NotepadModal"
 import SuspectModal from "../OpeningScene/SuspectModal";
-import { dialog2 } from "../../dialog/OpeningScene";
 import '../OpeningScene/OpeningScene.css'
 import { useDispatch, useSelector } from "react-redux";
 import { getPlaces, postPlace } from "../../store/placesVisited";
+import BackpackPopup from "../OpeningScene/BackpackPopup";
 
 
 const OfficeReturnPage = () => {
@@ -44,7 +44,7 @@ const OfficeReturnPage = () => {
             <h1>Dept. Office</h1>
             <img src="https://i.imgur.com/1HDvBws.jpg" alt='department office'></img>
             <div className="backpack-button">
-                <button><img src="https://i.imgur.com/HbZRQyN.png" alt="backpack icon"></img></button>
+                <BackpackPopup />
             </div>
             <div className="notepad-button">
                 <OpenModalButton
@@ -86,7 +86,7 @@ const OfficeReturnPage = () => {
                             </div>
                         </>
                     )}
-                    {places[places.length - 1] === 'Penny' || places[places.length - 1] === 'Wilma' || places[places.length - 1] === 'Lea' || places[places.length - 1] === 'Fabian' && (
+                    {(places[places.length - 1] === 'Penny' || places[places.length - 1] === 'Wilma' || places[places.length - 1] === 'Lea' || places[places.length - 1] === 'Fabian') && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
