@@ -90,6 +90,7 @@
 
 #modal-content {
     border-radius: 50px;
+    border: 2px solid black;
 }
 
 /* .new-note-form-house {

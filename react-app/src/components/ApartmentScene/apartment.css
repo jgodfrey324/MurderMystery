@@ -7,8 +7,14 @@
     z-index: 2;
     top: 450px;
     left: 200px;
-    box-shadow: 3px 3px 10px black;
+    /* box-shadow: 3px 3px 10px black; */
     border-radius: 50px;
+}
+
+.idcard-button > button:hover,
+.tickets-button > button:hover,
+.receipt-button > button:hover {
+    background-color: transparent;
 }
 
 .idcard-button > button > img,
@@ -17,10 +23,56 @@
     object-fit: contain;
     height: 100px;
     width: 150px;
+    box-shadow: 2px 2px 10px black;
+
+    /* box-shadow: none; */
 }
 
 .idcard-button > button {
     background-color: transparent;
     border: none;
-    box-shadow: none;
+    /* box-shadow: none; */
+}
+
+.idcard-button > button > img:hover,
+.tickets-button > button > img:hover,
+.receipt-button > button > img:hover {
+    border: 2px solid black
+}
+
+.item-detail-modal {
+    /* border: 2px solid blue; */
+    width: 700px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    border-radius: 20px;
+    /* border: 2px solid black; */
+}
+
+.item-detail-modal > img {
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    object-fit: contain;
+    border: 2px solid black;
+    margin-bottom: 50px;
+    background-color: white;
+    box-shadow: 3px 3px 10px black;
+}
+
+.item-detail-modal > p {
+    font-size: 16px;
+    /* border: 1px solid red; */
+    /* width: 500px; */
+    margin: 0 80px;
+    line-height: 25px;
+    font-weight: 300;
+}
+
+#item-description {
+    font-weight: 400;
 }
