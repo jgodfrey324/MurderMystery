@@ -5,14 +5,14 @@ import { getCharacters } from '../../store/characters';
 import { Redirect } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useModal } from '../../context/Modal';
-// import './OpeningScene.css'
+import '../OpeningScene/OpeningScene.css'
 
 
 
 const SolutionModal = () => {
     const dispatch = useDispatch();
     const history = useHistory()
-    const { closeModal } = useModal
+    const { closeModal } = useModal();
     const characters = Object.values(useSelector(state => state.characters))
     const user = useSelector(state => state.session.user)
     const [answer, setAnswer] = useState('');
@@ -52,7 +52,7 @@ const SolutionModal = () => {
         }
 
         if (!character_names.includes(answer)) {
-            setErrors('Please enter valid character name. Remember, capitalize proper nouns and include first and last names.')
+            setErrors('Please enter valid character name.')
         }
         console.log(errors, 'errors')
 
@@ -71,15 +71,14 @@ const SolutionModal = () => {
 
 
     return (
-        // <h1>Solution Modal!</h1>
         <div className='solution-modal-container'>
-            {/* <img src="https://i.imgur.com/7kwSq0B.png" alt='notebook'></img> */}
             <div className='solution-container'>
+                <p>*Please input a first and last name. Make sure to capitalize your pronouns, and double check spelling!*</p>
                 <form onSubmit={handleSubmit}>
                     {errors && (
                         <p>{errors}</p>
                     )}
-                    <textarea
+                    <input
                     placeholder="Who is the killer?"
                     value={answer}
                     onChange={(e) => setAnswer(e.target.value)}

@@ -101,12 +101,12 @@ const SearchDatabase = () => {
                                     }
                                 }}>
                                     <p className='char-name'>{res.first_name} {res.last_name}</p>
-                                    <p>Gender: {res.description.gender}</p>
-                                    <p>Age: {res.description.age}</p>
-                                    <p>Height: {res.description.height}</p>
-                                    <p>Hair color: {res.description.hair_color}</p>
-                                    <p>Occupation: {res.description.occupation.job_title}</p>
-                                    <p>Employer: {res.description.occupation.employer}</p>
+                                    <p><span className="char-title">Gender:</span><span> {res.description.gender}</span></p>
+                                    <p><span className="char-title">Age:</span><span> {res.description.age}</span></p>
+                                    <p><span className="char-title">Height:</span><span> {res.description.height}</span></p>
+                                    <p><span className="char-title">Hair color:</span><span> {res.description.hair_color}</span></p>
+                                    <p><span className="char-title">Occupation:</span><span> {res.description.occupation.job_title}</span></p>
+                                    <p><span className="char-title">Employer:</span><span> {res.description.occupation.employer}</span></p>
                                 </div>
                             )
                         })}

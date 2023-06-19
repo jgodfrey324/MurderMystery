@@ -30,13 +30,16 @@ const BackpackPopup = () => {
         }
     }
 
+    let id = 0
+
     return (
         <>
             <button onClick={openMenu}><img src="https://i.imgur.com/HbZRQyN.png" alt="backpack icon"></img></button>
             <div className={menuClassName}>
                 {spotHolder.map(ele => {
+                    id += 1
                     return (
-                        <div className='item-house'>
+                        <div key={id} className='item-house'>
 
                         </div>
                     )

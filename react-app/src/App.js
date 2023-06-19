@@ -26,47 +26,51 @@ function App() {
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
-          <Route exact path='/'>
-            <OpeningScene />
-          </Route>
-          <Route path="/login" >
-            <LoginFormPage />
-          </Route>
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
-          <Route path='/office-return'>
-            <OfficeReturnPage />
-          </Route>
-          <Route path='/search'>
-            <SearchDatabase />
-          </Route>
-          <Route path='/office-call'>
-            <OfficeCall />
-          </Route>
-          <Route path='/office-finished'>
-            <FinishedRoute />
-          </Route>
-          <Route path='/salon'>
-            <SalonScene />
-          </Route>
-          <Route path='/apartment'>
-            <ApartmentScene />
-          </Route>
-          <Route path='/boyfriend'>
-            <BoyfriendScene />
-          </Route>
-          <Route path='/neighbor'>
-            <CriminalScene />
-          </Route>
-          <Route path='/congrats'>
-            <FinishedScene />
-          </Route>
-        </Switch>
-      )}
+      <>
+        <Route path='/congrats'>
+          <FinishedScene />
+        </Route>
+      </>
+      <>
+        <Navigation isLoaded={isLoaded} />
+        {isLoaded && (
+          <Switch>
+            <Route exact path='/'>
+              <OpeningScene />
+            </Route>
+            <Route path="/login" >
+              <LoginFormPage />
+            </Route>
+            <Route path="/signup">
+              <SignupFormPage />
+            </Route>
+            <Route path='/office-return'>
+              <OfficeReturnPage />
+            </Route>
+            <Route path='/search'>
+              <SearchDatabase />
+            </Route>
+            <Route path='/office-call'>
+              <OfficeCall />
+            </Route>
+            <Route path='/office-finished'>
+              <FinishedRoute />
+            </Route>
+            <Route path='/salon'>
+              <SalonScene />
+            </Route>
+            <Route path='/apartment'>
+              <ApartmentScene />
+            </Route>
+            <Route path='/boyfriend'>
+              <BoyfriendScene />
+            </Route>
+            <Route path='/neighbor'>
+              <CriminalScene />
+            </Route>
+          </Switch>
+        )}
+      </>
     </>
   );
 }

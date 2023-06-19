@@ -1,0 +1,69 @@
+#starting-logo {
+    height: 250px;
+    width: 500px;
+    object-fit: cover;
+    border-radius: 20px
+}
+
+
+.signup-house {
+    border: 2px solid orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.signup-house > form {
+    border: 1px solid purple;
+    display: flex;
+    flex-direction: column;
+    /* height: 300px; */
+    width: 500px;
+    align-items: flex-start;
+}
+
+.signup-house > form > label > input {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 250px;
+    margin-left: 20px;
+    margin-top: 10px;
+    outline:none
+}
+
+.signup-house > form > label {
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    width: -webkit-fill-available;
+    margin: 5px 20px;
+}
+
+#continue-game {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#continue-game:hover {
+    font-weight: 300;
+}
+
+.signup-house > p > span {
+    font-weight: 200;
+}
+
+.default-char-house {
+    border: 1px solid purple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.default-char-house > button {
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+}

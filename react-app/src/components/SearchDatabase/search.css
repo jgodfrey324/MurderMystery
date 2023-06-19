@@ -11,6 +11,11 @@
     height: 100px;
 }
 
+#descr-search-house > form > p {
+    margin: 0;
+    font-weight: 400;
+}
+
 #descr-search-house > form {
     display: flex;
     flex-wrap: wrap;
@@ -95,7 +100,7 @@
     box-shadow: -1px 3px 15px black;
     border-radius: 20px;
     background-color: rgb(176, 215, 215);
-    z-index: 2;
+    z-index: 1;
 }
 
 
@@ -124,4 +129,8 @@
     font-size: 20px;
     margin-bottom: 15px;
     margin-left: 0;
+}
+
+.char-title {
+    font-weight: 400;
 }
