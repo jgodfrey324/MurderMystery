@@ -312,6 +312,16 @@
     border: 1px solid blue;
     height: -webkit-fill-available;
     width: -webkit-fill-available;
+    background-color: antiquewhite;
+}
+
+.item-house > img {
+    border: 3px solid orange;
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    background-color: antiquewhite;
+    cursor: pointer;
 }
 
 .backpack-button > button {
