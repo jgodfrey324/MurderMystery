@@ -98,6 +98,7 @@ const FinishedRoute = () => {
                                     setSeeFootage(true);
                                     handleChoice(e, "security footage")
                                 }}>Check the apartment complex security footage</button>
+                                <button onClick={() => history.push('/search')}>Search the database for a person</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
@@ -111,6 +112,7 @@ const FinishedRoute = () => {
                                     handleChoice(e, "salon")
                                     history.push('/salon')
                                 }}>Visit Minnie's place of work</button>
+                                <button onClick={() => history.push('/search')}>Search the database for a person</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
@@ -124,6 +126,7 @@ const FinishedRoute = () => {
                                     setSeeFootage(true);
                                     handleChoice(e, "security footage")
                                 }}>Check the apartment complex security footage</button>
+                                <button onClick={() => history.push('/search')}>Search the database for a person</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
@@ -133,6 +136,7 @@ const FinishedRoute = () => {
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
                                 <button>Visit Minnie's apartment</button>
+                                <button onClick={() => history.push('/search')}>Search the database for a person</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
@@ -145,6 +149,7 @@ const FinishedRoute = () => {
                                     handleChoice(e, "salon")
                                     history.push('/salon')
                                 }}>Visit Minnie's place of work</button>
+                                <button onClick={() => history.push('/search')}>Search the database for a person</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
@@ -157,6 +162,7 @@ const FinishedRoute = () => {
                                     setSeeFootage(true);
                                     handleChoice(e, "security footage")
                                 }}>Check the apartment complex security footage</button>
+                                <button onClick={() => history.push('/search')}>Search the database for a person</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
@@ -165,6 +171,7 @@ const FinishedRoute = () => {
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
+                                <button onClick={() => history.push('/search')}>Search the database for a person</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
