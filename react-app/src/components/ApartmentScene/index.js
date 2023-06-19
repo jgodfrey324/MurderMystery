@@ -7,6 +7,7 @@ import SuspectModal from "../OpeningScene/SuspectModal";
 import { inTheHallway, dialog1 } from "../../dialog/apartmentScene";
 import BackpackPopup from "../OpeningScene/BackpackPopup";
 import TicketsModal from "./TicketsModal";
+import IdCardModal from "./idCardModal";
 import ReceiptModal from "./ReceiptModal";
 import '../OpeningScene/OpeningScene.css'
 import './apartment.css'
@@ -44,7 +45,7 @@ const ApartmentScene = () => {
                 <div className="idcard-button">
                 <OpenModalButton
                 buttonImage={<img src="https://i.imgur.com/CCM1KIO.png" alt='button icon'></img>}
-                modalComponent={<idCardModal />}
+                modalComponent={<IdCardModal />}
                 />
             </div>
             )}
