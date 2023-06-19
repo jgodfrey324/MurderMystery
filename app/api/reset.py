@@ -20,7 +20,6 @@ def reset_seeds():
         demo = User(
         username='Demo', first_name='Demo', last_name='Lition', password='password')
         db.session.add(demo)
-        undo_suspects()
         db.session.commit()
 
     return {'message': 'Successfully reset'}
