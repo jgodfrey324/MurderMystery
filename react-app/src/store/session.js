@@ -55,6 +55,15 @@ export const login = (username, password) => async (dispatch) => {
 	}
 };
 
+export const loginDemo = () => async (dispatch) => {
+	const response = await fetch("/api/auth/login/demo");
+
+	if (response.ok) {
+		const data = await response.json();
+		dispatch(setUser(data));
+	}
+};
+
 export const logout = () => async (dispatch) => {
 	const response = await fetch("/api/auth/logout", {
 		headers: {

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
-import { signUp } from "../../store/session";
+import { Redirect, useHistory } from "react-router-dom";
+import { signUp, loginDemo } from "../../store/session";
 import './SignupForm.css';
+// import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 function SignupFormPage() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
   const [username, setUsername] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -14,29 +16,42 @@ function SignupFormPage() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  if (sessionUser) return <Redirect to="/" />;
+  if (sessionUser) return <Redirect to="/" />
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
-        const data = await dispatch(signUp(username, firstName, lastName, password));
-        if (data) {
-          setErrors(data)
-        }
+      const data = await dispatch(signUp(username, firstName, lastName, password));
+      if (data) {
+        setErrors(data)
+      }
     } else {
-        setErrors(['Confirm Password field must be the same as the Password field']);
+      setErrors(['Confirm Password field must be the same as the Password field']);
     }
   };
 
+  const handleDemo = async () => {
+    dispatch(loginDemo())
+  }
+
+
   return (
-    <>
-      <h1>Sign Up</h1>
+    <div className="signup-house">
+      <img id="starting-logo" src="https://i.imgur.com/WWA2gAK.png?1" alt="case 1124"></img>
+      <h2>Start a new game...</h2>
+      <p><span>Need to continue? Continue game</span>
+      <span id='continue-game' onClick={() => window.alert('Feature coming soon!')}> here</span></p>
+      <div className="default-char-house">
+        <p>Use the default character</p>
+        <button onClick={handleDemo}>Use default</button>
+      </div>
+      <p>or create a new character</p>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
         <label>
-          Username
+          Username:
           <input
             type="text"
             value={username}
@@ -45,7 +60,7 @@ function SignupFormPage() {
           />
         </label>
         <label>
-          First name
+          First name:
           <input
             type="text"
             value={firstName}
@@ -54,7 +69,7 @@ function SignupFormPage() {
           />
         </label>
         <label>
-          Last name
+          Last name:
           <input
             type="text"
             value={lastName}
@@ -63,7 +78,7 @@ function SignupFormPage() {
           />
         </label>
         <label>
-          Password
+          Password:
           <input
             type="password"
             value={password}
@@ -72,7 +87,7 @@ function SignupFormPage() {
           />
         </label>
         <label>
-          Confirm Password
+          Confirm Password:
           <input
             type="password"
             value={confirmPassword}
@@ -80,9 +95,9 @@ function SignupFormPage() {
             required
           />
         </label>
-        <button type="submit">Sign Up</button>
+        <button type="submit">Start new game</button>
       </form>
-    </>
+    </div>
   );
 }
 

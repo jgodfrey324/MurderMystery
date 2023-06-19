@@ -45,6 +45,49 @@ def login():
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
+@auth_routes.route('/login/demo')
+def login_demo():
+    """
+    Logs a demo user in
+    """
+    user = User.query.filter(User.username == "Demo").first()
+
+    login_user(user)
+
+    sus1 = Suspect(
+    character_id=1, user_id=current_user.id)
+    sus2 = Suspect(
+        character_id=2, user_id=current_user.id)
+    sus3 = Suspect(
+        character_id=3, user_id=current_user.id)
+    sus4 = Suspect(
+        character_id=4, user_id=current_user.id)
+    sus5 = Suspect(
+        character_id=5, user_id=current_user.id)
+    sus6 = Suspect(
+        character_id=6, user_id=current_user.id)
+    sus7 = Suspect(
+        character_id=7, user_id=current_user.id)
+    sus8 = Suspect(
+        character_id=8, user_id=current_user.id)
+    sus9 = Suspect(
+        character_id=9, user_id=current_user.id)
+    sus10 = Suspect(
+        character_id=10, user_id=current_user.id)
+    sus11 = Suspect(
+        character_id=11, user_id=current_user.id)
+    sus12 = Suspect(
+        character_id=12, user_id=current_user.id)
+    sus13 = Suspect(
+        character_id=13, user_id=current_user.id)
+
+    suspects = [sus1, sus2, sus3, sus4, sus5, sus6, sus7, sus8, sus9, sus10, sus11, sus12, sus13]
+    [db.session.add(suspect) for suspect in suspects]
+    db.session.commit()
+
+    return user.to_dict()
+
+
 @auth_routes.route('/logout')
 def logout():
     """

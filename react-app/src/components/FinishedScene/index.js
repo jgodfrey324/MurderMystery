@@ -1,9 +1,11 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/session";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const FinishedScene = () => {
     const dispatch = useDispatch();
+    const user = useSelector(state => state.session.user)
 
 
     const handleLogout = async (e) => {
@@ -11,6 +13,8 @@ const FinishedScene = () => {
 		await fetch('/api/reset/');
 		dispatch(logout());
 	};
+
+    if (!user) return <Redirect to='/signup'/>
 
     return (
         <>

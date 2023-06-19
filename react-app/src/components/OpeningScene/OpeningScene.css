@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+
 .notepad-button {
     /* border: 2px solid blue;  */
     width: -moz-fit-content;
@@ -32,27 +42,33 @@
 
 #modal-notepad {
     /* border: 2px solid purple; */
-    width: -webkit-fill-available;
+    width: 700px;
     height: 750px;
     object-fit: cover;
     /* z-index: 1; */
     border-radius: 50px;
 }
 
-#modal-content {
+/* #modal-content {
     width: 700px;
     height: 750px;
-}
+} */
 
 .note-contents {
     border-bottom: 1px solid rgb(255, 132, 152);
     margin: 7px 10px;
     display: flex;
     justify-content: space-between;
+    /* font-weight: 400; */
+    font-size: 20px;
+    font-family: 'Gaegu', cursive;
 }
 
 .note-contents > p {
     margin: 0;
+    font-size: 20px;
+    font-family: 'Gaegu', cursive;
+
 }
 
 .notepad-empty-div {
@@ -195,6 +211,11 @@
     left: 85px;
 }
 
+.suspect-modal-container {
+    height: 750px;
+    width: 700px;
+}
+
 .suspect-modal-container > img {
     position: absolute;
     z-index: 3;
@@ -212,6 +233,11 @@
     align-items: center;
     margin: 0 20px;
     height: 45px;
+}
+
+.single-suspect > p {
+    font-family: 'Gaegu', cursive;
+    font-size: 20px;
 }
 
 .single-suspect > button {
@@ -309,8 +335,9 @@
 .new-note-form-house > form > textarea {
     outline: none;
     width: -webkit-fill-available;
-    height: 25px;
+    height: 35px;
     margin-right: 20px;
+    font-size: 15px;
 }
 
 .new-note-form-house > form > button {
@@ -344,6 +371,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* font-family: 'Roboto', sans-serif; */
+    font-weight: 300;
 }
 
 .dialog-text,
@@ -390,4 +419,51 @@
     width: -webkit-fill-available;
     height: -webkit-fill-available;
     object-fit: contain;
+}
+
+.solution-modal-container {
+    height: 250px;
+    width: 500px;
+}
+
+.solution-container > p {
+    font-weight: 300;
+    font-size: 14px;
+    /* margin-bottom: 40px; */
+}
+
+.solution-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 30px;
+}
+
+.solution-container > form {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    /* height: 100px; */
+    width: 350px;
+    align-items: center;
+}
+
+.solution-container > form > p {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.solution-container > form > input {
+    width: -webkit-fill-available;
+    outline: none;
+    font-size: 15px;
+    height: 25px;
+}
+
+.solution-container > form > button {
+    /* border: 2px solid blue; */
+    margin: 0;
+    margin-top: 15px;
+    width: 130px;
+    padding: 5px;
 }
