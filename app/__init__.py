@@ -11,6 +11,7 @@ from .api.notes_routes import notes_routes
 from .api.suspect_routes import suspect_routes
 from .api.character_routes import character_routes
 from .api.places_visited_routes import places_visited_routes
+from .api.backpack_items_routes import backpack_items_routes
 from .api.solution import solution
 from .api.reset import reset
 from .seeds import seed_commands
@@ -40,6 +41,7 @@ app.register_blueprint(character_routes, url_prefix='/api/characters')
 app.register_blueprint(places_visited_routes, url_prefix='/api/places')
 app.register_blueprint(reset, url_prefix='/api/reset')
 app.register_blueprint(solution, url_prefix='/api/solution')
+app.register_blueprint(backpack_items_routes, url_prefix='/api/backpack_items')
 
 db.init_app(app)
 Migrate(app, db)

@@ -6,6 +6,7 @@ import suspectsReducer from './suspects';
 import characterReducer from './characters';
 import placesVisitedReducer from './placesVisited';
 import searchResultsReducer from './searchResults';
+import backpackItemsReducer from './backpack';
 
 const rootReducer = combineReducers({
   session,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
   notes: notesReducer,
   suspects: suspectsReducer,
   placesVisited: placesVisitedReducer,
-  searchResults: searchResultsReducer
+  searchResults: searchResultsReducer,
+  backpack: backpackItemsReducer
 });
 
 
