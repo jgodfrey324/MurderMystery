@@ -1,9 +1,22 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from app.models import Backpack, db
+from app.models import Backpack, Item, db
 
 
 backpack_items_routes = Blueprint('backpack_items', __name__)
+
+
+@backpack_items_routes.route('/items/all')
+@login_required
+def get_all_items():
+    items = Item.query.all()
+
+    res = {}
+
+    for item in items:
+        res[item.id] = item.to_dict()
+
+    return res
 
 
 @backpack_items_routes.route('/')
@@ -32,7 +45,7 @@ def add_item():
     db.session.add(new_item)
     db.session.commit()
 
-    return new_item.to_dict
+    return new_item.to_dict()
 
 
 

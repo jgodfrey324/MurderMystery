@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
@@ -19,6 +19,28 @@ const ApartmentScene = () => {
     const user = useSelector(state => state.session.user)
     const [index, setIndex] = useState(0);
     const [inHallway, setInHallway] = useState(true);
+    const [items, setItems] = useState({})
+    const backpack_items = Object.values(useSelector(state => state.backpack))
+
+
+    const getItems = async () => {
+        const res = await fetch('/api/backpack_items/items/all')
+        const data = await res.json()
+
+        setItems(data);
+        return data
+    }
+
+    useEffect(() => {
+        getItems()
+    }, [])
+
+    const item_names = []
+
+    for (const item of backpack_items) {
+        item_names.push(item.item.name)
+    }
+
 
     if (!user) return <Redirect to='/signup' />
 
@@ -41,11 +63,11 @@ const ApartmentScene = () => {
                 modalComponent={<SuspectModal />}
                 />
             </div>
-            {inHallway && (
+            {inHallway && Object.values(items)[4] && !item_names.includes(Object.values(items)[4].name) && (
                 <div className="idcard-button">
                 <OpenModalButton
                 buttonImage={<img src="https://i.imgur.com/CCM1KIO.png" alt='button icon'></img>}
-                modalComponent={<IdCardModal />}
+                modalComponent={<IdCardModal gymCard={Object.values(items)[4]} />}
                 />
             </div>
             )}
@@ -67,7 +89,7 @@ const ApartmentScene = () => {
             )}
             <div className="dialog-box">
                 <div className="first-choice">
-                    {inHallway && !inTheHallway[index] && (
+                    {/* {inHallway && !inTheHallway[index] && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
@@ -75,7 +97,7 @@ const ApartmentScene = () => {
                                 <button onClick={() => setInHallway(false)}>Keep going</button>
                             </div>
                         </>
-                    )}
+                    )} */}
                     {!inHallway && !dialog1[index] && (
                         <>
                             <p>Would you like to:</p>
@@ -91,7 +113,12 @@ const ApartmentScene = () => {
                         <div className="dialog-text">
                             <p>{inTheHallway[index]}</p>
                         </div>
-                        <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
+                        <button className='continue-button' onClick={() => {
+                            if (!inTheHallway[index + 1]) {
+                                setInHallway(false)
+                            }
+                            setIndex(index + 1)
+                            }}>continue...</button>
                     </>
                 )}
                 {!inHallway && dialog1[index] && (
