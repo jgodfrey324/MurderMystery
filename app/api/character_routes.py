@@ -26,7 +26,15 @@ def get_characters():
 def search_names():
     name_filter = request.form['name']
 
-    characters = Character.query.filter(Character.first_name.like(f'{name_filter}%') | Character.last_name.like(f'{name_filter}%')).all()
+    name_list = list(name_filter)
+    capitalize = name_list[0].upper()
+
+    name_list.pop(0)
+    name_list.insert(0, capitalize)
+
+    new_name = ''.join(name_list)
+
+    characters = Character.query.filter(Character.first_name.like(f'{new_name}%') | Character.last_name.like(f'{new_name}%')).all()
 
     chars = [character.to_dict() for character in characters]
 
@@ -40,11 +48,6 @@ def search_descr():
     age_filter = request.form['age']
     occupation_filter = request.form['occupation']
     hair_filter = request.form['hair_color']
-
-
-    print(age_filter.split(',')[0], '--------------------------------------------------------> ')
-
-
 
     characters = Character.query.all()
 
@@ -88,8 +91,5 @@ def search_descr():
     filtered4 = filter(hair_check, list(filtered3))
 
     res = list(filtered4)
-
-
-    print('filtered results ??????????? =============> ', list(filtered4))
 
     return {'results': res}

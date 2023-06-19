@@ -46,7 +46,7 @@ const DropDownName = () => {
                 <form onSubmit={handleSubmit}>
                     <input
                     style={{outline: 'none'}}
-                    placeholder="Enter a full name..."
+                    placeholder="Enter a first OR last name..."
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     minLength={1}
