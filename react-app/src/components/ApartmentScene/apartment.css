@@ -1,0 +1,26 @@
+.idcard-button,
+.tickets-button,
+.receipt-button {
+    width: -moz-fit-content;
+    /* width: fit-content; */
+    position: absolute;
+    z-index: 2;
+    top: 450px;
+    left: 200px;
+    box-shadow: 3px 3px 10px black;
+    border-radius: 50px;
+}
+
+.idcard-button > button > img,
+.tickets-button > button > img,
+.receipt-button > button > img {
+    object-fit: contain;
+    height: 100px;
+    width: 150px;
+}
+
+.idcard-button > button {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}

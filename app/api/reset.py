@@ -1,7 +1,6 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from app.models import User, db
-from app.seeds import undo_suspects
 
 
 reset = Blueprint('reset', __name__)
@@ -20,7 +19,6 @@ def reset_seeds():
         demo = User(
         username='Demo', first_name='Demo', last_name='Lition', password='password')
         db.session.add(demo)
-        undo_suspects()
         db.session.commit()
 
     return {'message': 'Successfully reset'}
