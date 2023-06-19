@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import './OpeningScene.css';
 import { getItems } from '../../store/backpack';
