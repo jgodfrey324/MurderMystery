@@ -69,7 +69,10 @@ const OpeningScene = () => {
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
-                                <button>Visit Minnie's apartment</button>
+                                <button onClick={(e) => {
+                                    handleChoice(e, "apartment")
+                                    history.push('/apartment')
+                                }}>Visit Minnie's apartment</button>
                                 <button onClick={(e) => {
                                     handleChoice(e, "salon")
                                     history.push('/salon')
