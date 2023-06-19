@@ -24,6 +24,16 @@ const BoyfriendScene = () => {
     }, [dispatch])
 
 
+    const handleChoice = async (e, scene) => {
+        e.preventDefault();
+
+        const formData = new FormData()
+        formData.append('scene', scene)
+
+        await dispatch(postPlace(formData))
+    }
+
+
     if (!user) return <Redirect to='/signup' />
 
 
@@ -50,38 +60,20 @@ const BoyfriendScene = () => {
             </div>
             <div className="dialog-box">
                 <div className="first-choice">
-                    {!places.includes('apartment') && !places.includes('rush') && !dialog2[index] && (
+                    {!places.includes('apartment') && !dialog2[index] && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
-                                <button>Visit Minnie's apartment</button>
-                                <button>Visit Minnie's downstairs neighbor</button>
+                                <button onClick={(e) => {
+                                    handleChoice(e, "apartment")
+                                    history.push('/apartment')
+                                }}>Visit Minnie's apartment</button>
                                 <button onClick={() => history.push('/office-return')}>Return to the office</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
                     )}
-                    {places.includes('apartment') && !places.includes('rush') && !dialog1[index] && (
-                        <>
-                            <p>Would you like to:</p>
-                            <div className="choice-buttons">
-                                <button>Visit Minnie's downstairs neighbor</button>
-                                <button onClick={() => history.push('/office-return')}>Return to the office</button>
-                                <button>Go to the coffee shop</button>
-                            </div>
-                        </>
-                    )}
-                    {!places.includes('apartment') && places.includes('rush') && !dialog2[index] && (
-                        <>
-                            <p>Would you like to:</p>
-                            <div className="choice-buttons">
-                                <button>Visit Minnie's apartment</button>
-                                <button onClick={() => history.push('/office-return')}>Return to the office</button>
-                                <button>Go to the coffee shop</button>
-                            </div>
-                        </>
-                    )}
-                    {places.includes('apartment') && places.includes('rush') && !dialog1[index] && (
+                    {places.includes('apartment') && !dialog1[index] && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">

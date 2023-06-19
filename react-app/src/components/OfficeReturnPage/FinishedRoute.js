@@ -107,7 +107,10 @@ const FinishedRoute = () => {
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
-                                <button>Visit Minnie's apartment</button>
+                                <button onClick={(e) => {
+                                    handleChoice(e, "apartment")
+                                    history.push('/apartment')
+                                }}>Visit Minnie's apartment</button>
                                 <button onClick={(e) => {
                                     handleChoice(e, "salon")
                                     history.push('/salon')
@@ -121,7 +124,10 @@ const FinishedRoute = () => {
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
-                                <button>Visit Minnie's apartment</button>
+                                <button onClick={(e) => {
+                                    handleChoice(e, "apartment")
+                                    history.push('/apartment')
+                                }}>Visit Minnie's apartment</button>
                                 <button onClick={(e) => {
                                     setSeeFootage(true);
                                     handleChoice(e, "security footage")
@@ -135,7 +141,10 @@ const FinishedRoute = () => {
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
-                                <button>Visit Minnie's apartment</button>
+                                <button onClick={(e) => {
+                                    handleChoice(e, "apartment")
+                                    history.push('/apartment')
+                                }}>Visit Minnie's apartment</button>
                                 <button onClick={() => history.push('/search')}>Search the database for a person</button>
                                 <button>Go to the coffee shop</button>
                             </div>
