@@ -30,12 +30,7 @@ const OfficeReturnPage = () => {
         await dispatch(postPlace(formData))
     }
 
-
-
     if (!user) return <Redirect to='/signup' />
-
-    // if (places.includes('salon')) console.log('salon');
-    // if (places.includes('security footage')) console.log('security footage');
 
 
 
@@ -86,11 +81,12 @@ const OfficeReturnPage = () => {
                             </div>
                         </>
                     )}
-                    {(places[places.length - 1] === 'Penny' || places[places.length - 1] === 'Wilma' || places[places.length - 1] === 'Lea' || places[places.length - 1] === 'Fabian') && (
+                    {(places[places.length - 1] === 'Penny' || places[places.length - 1] === 'Wilma' || places[places.length - 1] === 'Lea' || places[places.length - 1] === 'Fabian' || places[places.length - 1] === 'security footage') && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
                                 <button onClick={() => history.push('/search')}>Search the database for a person</button>
+                                <button onClick={() => history.push('/office-finished')}>Finished with footage</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
