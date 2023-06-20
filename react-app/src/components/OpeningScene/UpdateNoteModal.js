@@ -1,23 +1,37 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux"
-import { putNote } from "../../store/notes";
-
+import { useDispatch, useSelector } from "react-redux"
+import { getNotes, putNote } from "../../store/notes";
+import './OpeningScene.css'
 
 
 const UpdateNoteModal = ({ note }) => {
     const dispatch = useDispatch();
+    const allNotes = useSelector(state => state.notes)
     const [errors, setErrors] = useState('');
-    const [submitted, setSubmitted] = useState(false)
     const [text, setText] = useState(note.text)
     const [showMenu, setShowMenu] = useState(false);
-    const [updated, setUpdated] = useState(false);
+
+
+
+    // console.log('note being passed in ------------> ', note)
 
 
     useEffect(() => {
-        setUpdated(false)
-        return () => null
-    }, [updated])
+        const func = async () => {
+            const data = await dispatch(getNotes())
+            setText(data[note.id].text)
+        }
+        func()
+    }, [dispatch])
 
+    useEffect(() => {
+        if (text.length > 255) {
+            setErrors('Note cannot be longer than 255 characters.')
+        }
+        if (text.length <= 255) {
+            setErrors('')
+        }
+    }, [text])
 
 
     const openMenu = () => {
@@ -33,23 +47,11 @@ const UpdateNoteModal = ({ note }) => {
     const handleSubmit = async(e) => {
         e.preventDefault();
 
-        setSubmitted(true);
-
         const formData = new FormData()
         formData.append('text', text)
 
-        const data = await dispatch(putNote(note.id, formData))
+        await dispatch(putNote(note.id, formData))
 
-        if (data.errors) {
-            setErrors(data.errors)
-            return;
-        }
-        if (submitted && errors) {
-            setErrors('');
-        }
-
-        setText(note.text);
-        setSubmitted(false);
         closeMenu();
     }
 
@@ -59,15 +61,22 @@ const UpdateNoteModal = ({ note }) => {
         <div className="update-modal-content">
             <button onClick={openMenu}><i className="fa-solid fa-pencil" style={{color: "#000000"}}></i></button>
             <form onSubmit={handleSubmit} className={menuClassName}>
+                <ul>
+                    {errors && (
+                    <p style={{color: 'maroon', position: 'absolute', bottom: '-2px', fontSize: '14px', left: '130px'}}>{errors}</p>
+                    )}
+                </ul>
                 <textarea
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 />
                 <div className="edit-button-house">
-                    <button onClick={closeMenu}>cancel</button>
-                    <button>update</button>
+                    <button disabled={errors ? true : false}>update</button>
                 </div>
             </form>
+                <div id='cancel-button-house' className={menuClassName + ' edit-button-house'}>
+                        <button style={{cursor: 'pointer'}}onClick={closeMenu}>cancel</button>
+                </div>
         </div>
     )
 }

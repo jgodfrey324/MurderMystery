@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, session, request
-from app.models import User, Suspect, db
+from app.models import User, Suspect, Backpack, db
 from app.forms import LoginForm
 from app.forms import SignUpForm
 from flask_login import current_user, login_user, logout_user, login_required
@@ -81,8 +81,14 @@ def login_demo():
     sus13 = Suspect(
         character_id=13, user_id=current_user.id)
 
+    backpack_item = Backpack(
+        item_id=6, item_quantity=1, user_id=current_user.id,
+    )
+
     suspects = [sus1, sus2, sus3, sus4, sus5, sus6, sus7, sus8, sus9, sus10, sus11, sus12, sus13]
     [db.session.add(suspect) for suspect in suspects]
+
+    db.session.add(backpack_item)
     db.session.commit()
 
     return user.to_dict()
@@ -144,8 +150,14 @@ def sign_up():
         sus13 = Suspect(
             character_id=13, user_id=current_user.id)
 
+        backpack_item = Backpack(
+        item_id=6, item_quantity=1, user_id=current_user.id,
+        )
+
         suspects = [sus1, sus2, sus3, sus4, sus5, sus6, sus7, sus8, sus9, sus10, sus11, sus12, sus13]
         [db.session.add(suspect) for suspect in suspects]
+
+        db.session.add(backpack_item)
         db.session.commit()
 
         return user.to_dict()
