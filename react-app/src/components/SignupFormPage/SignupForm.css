@@ -2,42 +2,77 @@
     height: 250px;
     width: 500px;
     object-fit: cover;
-    border-radius: 20px
+    border-radius: 20px;
+    box-shadow: 3px 3px 15px black;
+    /* border: 2px solid black */
 }
 
+/* #root {
+    background-;
+} */
 
 .signup-house {
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 50px;
+    padding: 50px 0;
+    background-color: whitesmoke;
 }
 
 .signup-house > form {
-    border: 1px solid purple;
+    border: 2px solid black;
     display: flex;
     flex-direction: column;
     /* height: 300px; */
-    width: 500px;
-    align-items: flex-start;
+    width: 400px;
+    align-items: center;
+    background-color: #c7c7c7;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 15px black;
 }
 
 .signup-house > form > label > input {
     border: 2px solid black;
     border-radius: 5px;
-    width: 250px;
-    margin-left: 20px;
+    /* width: 250px; */
+    /* margin-left: 50px; */
     margin-top: 10px;
-    outline:none
+    height: 25px;
+    outline:none;
+    font-size: 15px;
+    background-color: whitesmoke;
+}
+
+.signup-house > form > label > input:focus {
+    border: 2px solid #db7e65
 }
 
 .signup-house > form > label {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: flex;
     flex-direction: column;
     width: -webkit-fill-available;
     margin: 5px 20px;
+    color: black;
+}
+
+.signup-house > form > button {
+    margin-top: 20px;
+    padding: 15px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #db7e65;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 8px black;
+    color: whitesmoke;
+    text-shadow: 1px 1px 3px black;
+}
+
+.signup-house > form > button:hover {
+    border: 2px solid black;
 }
 
 #continue-game {
@@ -54,7 +89,7 @@
 }
 
 .default-char-house {
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,4 +101,15 @@
     padding: 10px 20px;
     font-size: 15px;
     cursor: pointer;
+    background-color: #db7e65;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 8px black;
+    color: whitesmoke;
+    text-shadow: 1px 1px 3px black;
+    /* font-weight: 500; */
+}
+
+.default-char-house > button:hover {
+    border: 2px solid black;
 }

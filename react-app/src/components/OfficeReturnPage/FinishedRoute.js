@@ -76,7 +76,7 @@ const FinishedRoute = () => {
                             <button className='continue-button' onClick={() => {
                                 if (!dialog2[index + 1]) {
                                     setSeeFootage(false)
-                                    history.push('/office-return')
+                                    history.push('/office-finished')
                                 }
                                 setIndex(index + 1)
                                 }}>continue...</button>

@@ -39,8 +39,8 @@ function SignupFormPage() {
     <div className="signup-house">
       <img id="starting-logo" src="https://i.imgur.com/WWA2gAK.png?1" alt="case 1124"></img>
       <h2>Start a new game...</h2>
-      <p><span>Need to continue? Continue game</span>
-      <span id='continue-game' onClick={() => window.alert('Feature coming soon!')}> here</span></p>
+      <p><span>Need to continue? Continue game </span>
+      <span id='continue-game' onClick={() => window.alert('Feature coming soon!')}>here</span></p>
       <div className="default-char-house">
         <p>Use the default character</p>
         <button onClick={handleDemo}>Use default</button>
@@ -48,7 +48,12 @@ function SignupFormPage() {
       <p>or create a new character</p>
       <form onSubmit={handleSubmit}>
         <ul>
-          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+          {errors.map((error, idx) => {
+            const string = error.split(':')
+            return (
+              <li style={{listStyle: 'none', color: 'maroon', fontSize: '13px'}}key={idx}>{string[1]}</li>
+            )
+          })}
         </ul>
         <label>
           Username:

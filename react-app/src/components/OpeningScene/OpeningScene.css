@@ -309,7 +309,8 @@
     z-index: 2;
     top: 0;
     right: 30px;
-    font-size: 40px;
+    font-size: 33px;
+    font-family: 'Courier Prime', monospace;
 }
 
 .backpack-button {
@@ -325,17 +326,14 @@
 }
 
 .backpack-popup {
-    /* border: 1px solid black; */
     border-radius: 5px;
     height: 100px;
     width: 430px;
     position: absolute;
     top: 0;
-    right: 100px;
+    right: 95px;
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
-    /* gap: 2px; */
 }
 
 .backpack-popup.hidden {
@@ -460,6 +458,16 @@
     font-size: 20px;
     margin: 0 60px;
 }
+
+/* .dialog-text {
+    width: 20rem;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    /* font-size: 2em; */
+
 
 .continue-button {
     position: absolute;

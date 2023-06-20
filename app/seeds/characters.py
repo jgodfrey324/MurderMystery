@@ -15,7 +15,7 @@ def seed_characters():
     char5 = Character(
         first_name='Jorja', last_name='Spencer', description_id=5)
     char6 = Character(
-        first_name='Kalum', last_name='Ray', description_id=6)
+        first_name='Kallum', last_name='Ray', description_id=6)
     char7 = Character(
         first_name='Minnie', last_name='Gilmore', description_id=7)
     char8 = Character(

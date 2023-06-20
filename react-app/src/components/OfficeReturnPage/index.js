@@ -86,7 +86,7 @@ const OfficeReturnPage = () => {
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
                                 <button onClick={() => history.push('/search')}>Search the database for a person</button>
-                                <button onClick={() => history.push('/office-finished')}>Finished with footage</button>
+                                <button onClick={() => history.push('/office-finished')}>Stop looking at footage</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
