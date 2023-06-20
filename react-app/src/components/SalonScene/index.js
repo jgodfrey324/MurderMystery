@@ -111,7 +111,7 @@ const SalonScene = () => {
                         </>
                     )}
                 </div>
-                {index < 7 && (
+                {dialog1[index] && (
                     <>
                         <div className="dialog-text">
                             <p>{dialog1[index]}</p>

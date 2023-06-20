@@ -57,7 +57,7 @@ const OfficeCall = () => {
                             </div>
                             <button className='continue-button' onClick={() => {
                                 if (!penny[index + 1]) {
-                                    return history.push('/office-return')
+                                    return history.push('/office-finished')
                                 }
                                 setIndex(index + 1)
                                 }}>continue...</button>
@@ -71,14 +71,14 @@ const OfficeCall = () => {
                             <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
                         </>
                     )}
-                    {wilma[index] && places[places.length - 1] === 'Wilma' && !places[places.length - 2] === 'Penny' && (
+                    {wilma[index] && (places[places.length - 1] === 'Wilma') && !(places[places.length - 2] === 'Penny') && (
                         <>
                             <div className="dialog-text">
                                 <p>{wilma[index]}</p>
                             </div>
                             <button className='continue-button' onClick={() => {
                                 if (!wilma[index + 1]) {
-                                    return history.push('/office-return')
+                                    return history.push('/office-finished')
                                 }
                                 setIndex(index + 1)
                                 }}>continue...</button>
@@ -91,7 +91,7 @@ const OfficeCall = () => {
                             </div>
                             <button className='continue-button' onClick={() => {
                                 if (!wilma2[index + 1]) {
-                                    return history.push('/office-return')
+                                    return history.push('/office-finished')
                                 }
                                 setIndex(index + 1)
                                 }}>continue...</button>
@@ -104,7 +104,7 @@ const OfficeCall = () => {
                             </div>
                             <button className='continue-button' onClick={() => {
                                 if (!lucian[index + 1]) {
-                                    return history.push('/office-return')
+                                    return history.push('/office-finished')
                                 }
                                 setIndex(index + 1)
                                 }}>continue...</button>
@@ -117,7 +117,7 @@ const OfficeCall = () => {
                             </div>
                             <button className='continue-button' onClick={() => {
                                 if (!fabian[index + 1]) {
-                                    return history.push('/office-return')
+                                    return history.push('/office-finished')
                                 }
                                 setIndex(index + 1)
                                 }}>continue...</button>

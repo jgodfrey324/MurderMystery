@@ -11,9 +11,9 @@ def seed_items():
     item3 = Item(
         name='Pizza receipt', description='Receipt from a local pizza delivery joint called Small\'s Pizza. Looks like an order for 3 large pizzas was placed at 10:28 PM on the night of the crime. The phone call to the police station occured at 11:45 PM ... and 3 large pizzas is perhaps too much food for one person ...', image="https://i.imgur.com/acum3BW.png", is_food=False)
     item4 = Item(
-        name='Theater tickets', description='Theater tickets for a show that played the night after the crime was committed. The show is a popular RomCom, often attended by couples. The tickets are signed with heart, followed by the name \'Kalum\'.', image="https://i.imgur.com/L97q1Na.png", is_food=False)
+        name='Theater tickets', description='Theater tickets for a show that played the night after the crime was committed. The show is a popular RomCom, often attended by couples. The tickets are signed with a heart, followed by the name \'Kallum\'.', image="https://i.imgur.com/L97q1Na.png", is_food=False)
     item5 = Item(
-        name='Gym membership card', description='A gym membership card to the local 24 hour fitness center. Most of the town is a member at this gym. The name on the card reads \'Kalum Ray\'. The card appears to be dirty, like it\'s been stepped on a few times. Perhaps it\'s been sitting here for a while.', image="https://i.imgur.com/CCM1KIO.png", is_food=False)
+        name='Gym membership card', description='A gym membership card to the local 24 hour fitness center. Most of the town\'s people are members at this gym. The name on the card reads \'Kalum Ray\'. The card appears to be dirty, like it\'s been stepped on a few times. Perhaps it\'s been sitting here for a while.', image="https://i.imgur.com/CCM1KIO.png", is_food=False)
 
 
     items = [item1, item2, item3, item4, item5]
