@@ -71,6 +71,7 @@
     margin: 0;
     font-size: 17px;
     font-family: 'Gaegu', cursive;
+    word-break: break-all;
 }
 
 .notepad-empty-div {
@@ -149,15 +150,16 @@
     display: flex;
     flex-direction: column-reverse;
     position: absolute;
-    top: 26px;
+    top: 0;
     /* top: 40px; */
     z-index: 102;
     background-color: aliceblue;
-    padding: 4px;
-    border: 1px solid gray;
+    padding: 6px;
+    border: 2px solid black;
     border-radius: 5px;
-    box-shadow: 1px 1px 3px black;
+    box-shadow: 2px 2px 8px black;
     /* width: 70px; */
+    grid-gap: 6px;
     gap: 6px;
 }
 
@@ -616,5 +618,17 @@
     cursor: not-allowed;
 }
 
-/* .edit-button-house > button {
-    /* box-shadow: 2px 2px 8px black; */
+.edit-button-house > button {
+    padding: 3px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#cancel-button-house {
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    right: 0
+}
