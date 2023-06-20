@@ -81,7 +81,7 @@ const OfficeReturnPage = () => {
                             </div>
                         </>
                     )}
-                    {(places[places.length - 1] === 'Penny' || places[places.length - 1] === 'Wilma' || places[places.length - 1] === 'Lea' || places[places.length - 1] === 'Fabian' || places[places.length - 1] === 'security footage') && (
+                    {/* {(places[places.length - 1] === 'Penny' || places[places.length - 1] === 'Wilma' || places[places.length - 1] === 'Lea' || places[places.length - 1] === 'Fabian' || places[places.length - 1] === 'security footage') && (
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
@@ -90,7 +90,7 @@ const OfficeReturnPage = () => {
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
-                    )}
+                    )} */}
                 </div>
             </div>
         </div>
