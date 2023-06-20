@@ -46,6 +46,11 @@ const SearchDatabase = () => {
 
     const results = searchRes.name.length ? searchRes.name : searchRes.description
 
+    let fail = null;
+    if (results === 'No results') {
+        fail = results
+    }
+
 
     return (
         <div className="home-screen">
@@ -77,7 +82,10 @@ const SearchDatabase = () => {
 
                     </div>
                     <div className="search-results-house">
-                        {results.map(res => {
+                        {fail && (
+                            <p>{results}</p>
+                        )}
+                        {!fail && results.map(res => {
                             return (
                                 <div key={res.id} className="char-info-house" onClick={(e) => {
                                     if (res.id === 6) {

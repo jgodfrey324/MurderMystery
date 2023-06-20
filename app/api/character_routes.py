@@ -92,4 +92,7 @@ def search_descr():
 
     res = list(filtered4)
 
+    if len(res) == 0:
+        res = 'No results'
+
     return {'results': res}
