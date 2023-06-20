@@ -39,7 +39,7 @@ const BoyfriendScene = () => {
 
     return (
         <div className="home-screen">
-            <h1>Kalum's House</h1>
+            <h1>Kallum's House</h1>
             <div className="backpack-button">
                 <BackpackPopup />
             </div>
