@@ -35,6 +35,8 @@ const ApartmentScene = () => {
         getItems()
     }, [])
 
+    console.log('items from fetch -----------------> ', items)
+
     const item_names = []
 
     for (const item of backpack_items) {
@@ -47,7 +49,7 @@ const ApartmentScene = () => {
     return (
         <div className="home-screen">
             <h1>Minnie's Apartment</h1>
-            <img src="https://i.imgur.com/60YDXOU.jpg" alt='department computer'></img>
+            {inHallway ? <img src="https://i.imgur.com/60YDXOU.jpg" alt='hallway'></img> : <img src="https://i.imgur.com/26FEGhd.jpg" alt='apartment livingroom'></img>}
             <div className="backpack-button">
                 <BackpackPopup />
             </div>
@@ -76,13 +78,13 @@ const ApartmentScene = () => {
                     <div className="tickets-button">
                         <OpenModalButton
                         buttonImage={<img src="https://i.imgur.com/L97q1Na.png" alt='button icon'></img>}
-                        modalComponent={<TicketsModal />}
+                        modalComponent={<TicketsModal tickets={Object.values(items)[3]} />}
                         />
                     </div>
                     <div className="receipt-button">
                         <OpenModalButton
                         buttonImage={<img src="https://i.imgur.com/acum3BW.png" alt='button icon'></img>}
-                        modalComponent={<ReceiptModal />}
+                        modalComponent={<ReceiptModal receipt={Object.values(items)[2]} />}
                         />
                     </div>
                 </>

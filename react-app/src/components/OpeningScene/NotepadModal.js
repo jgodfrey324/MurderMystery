@@ -4,42 +4,42 @@ import { Redirect } from "react-router-dom/cjs/react-router-dom.min"
 import { addNotes, getNotes } from "../../store/notes"
 import DropDownMenu from "./DropDownMenu"
 import './OpeningScene.css'
+import { useModal } from "../../context/Modal"
 
 
 const NotepadModal = () => {
     const dispatch = useDispatch()
+    const { closeModal } = useModal()
     const notes = Object.values(useSelector(state => state.notes))
     const user = useSelector(state => state.session.user)
     const [text, setText] = useState('');
     const [errors, setErrors] = useState('');
-    const [submitted, setSubmitted] = useState(false);
 
 
     useEffect(() => {
         dispatch(getNotes())
     }, [dispatch])
 
+    useEffect(() => {
+        console.log('use effect is running')
+        if (text.length > 255) {
+            setErrors('Note cannot be longer than 255 characters.')
+        }
+        if (text.length <= 255) {
+            setErrors('')
+        }
+    }, [text])
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        setSubmitted(true);
-
         const formData = new FormData()
         formData.append('text', text)
 
-        const data = await dispatch(addNotes(formData))
-
-        if (data.errors) {
-            setErrors(data.errors)
-            return;
-        }
-        if (submitted && errors) {
-            setErrors('');
-        }
+        await dispatch(addNotes(formData))
 
         setText('');
-        setSubmitted(false);
     }
 
 
@@ -59,6 +59,7 @@ const NotepadModal = () => {
 
     return (
         <div className="notepad-content-house">
+            <i onClick={() => closeModal()} className="fa-regular fa-rectangle-xmark" style={{color: "maroon"}}></i>
             <img id='modal-notepad' src="https://i.imgur.com/7kwSq0B.png" alt='notepad'></img>
             <div className="notepad-empty-div">
                 {user_notes.length === 0 ? <p className="note-contents">Add a new note! Write down any information you think you may need later</p> : user_notes.map(note => {
@@ -73,18 +74,17 @@ const NotepadModal = () => {
                     <form onSubmit={handleSubmit}>
                         <ul>
                             {errors && (
-                            <p>{errors}</p>
+                            <p style={{color: 'maroon'}}>{errors}</p>
                             )}
                         </ul>
                         <textarea
                         placeholder="Write a note here..."
                         minLength={1}
-                        maxLength={255}
                         required
                         value={text}
                         onChange={(e) => setText(e.target.value)}
                         />
-                        <button>add note</button>
+                        <button disabled={errors ? true : false}>add note</button>
                     </form>
                 </div>
             </div>

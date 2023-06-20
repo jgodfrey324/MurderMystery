@@ -4,6 +4,8 @@ import './OpeningScene.css';
 import { getItems } from '../../store/backpack';
 import IdCardModal from '../ApartmentScene/idCardModal';
 import OpenModalButton from '../OpenModalButton';
+import DropItemModal from './DropItemModal';
+import ItemDetailModal from './ItemDetailModal';
 
 
 const BackpackPopup = () => {
@@ -24,13 +26,19 @@ const BackpackPopup = () => {
 
     const menuClassName = "backpack-popup" + (showMenu ? "" : " hidden");
 
-    const spotHolder = [...Array(3)]
+    const spotHolder = [...Array(4)]
 
     if (items.length > 0) {
         for (const ele of items) {
-            spotHolder.unshift()
+            spotHolder.shift()
             spotHolder.push(ele)
         }
+    }
+    if (spotHolder.length < 4) {
+        spotHolder.push(null)
+    }
+    if (spotHolder.length > 4) {
+        spotHolder.shift()
     }
 
     let id = 0
@@ -40,15 +48,21 @@ const BackpackPopup = () => {
             <button onClick={openMenu}><img src="https://i.imgur.com/HbZRQyN.png" alt="backpack icon"></img></button>
             <div className={menuClassName}>
                 {spotHolder.map(ele => {
-                    console.log(ele, 'element from backpack iterations')
                     id += 1
                     return (
                         <div key={id} className='item-house'>
                             {ele && (
-                                <OpenModalButton
-                                buttonImage={<img src={ele.item.image} alt='item icon'></img>}
-                                modalComponent={<IdCardModal gymCard={ele.item} />}
-                                />
+                                <>
+                                    <OpenModalButton
+                                    buttonImage={<i className="fa-regular fa-square-minus" style={{color: "#000000"}}></i>}
+                                    modalComponent={<DropItemModal itemId={ele.id} />}
+                                    />
+                                    <OpenModalButton
+                                    buttonImage={<img src={ele.item.image} alt='item icon'></img>}
+                                    modalComponent={<ItemDetailModal item={ele.item} />}
+                                    />
+                                    <p>{ele.item_quantity}</p>
+                                </>
                             )}
                         </div>
                     )

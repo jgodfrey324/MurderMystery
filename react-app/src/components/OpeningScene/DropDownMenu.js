@@ -43,7 +43,7 @@ const DropDownMenu = ({ note }) => {
 
     return (
         <div className="button-menu-house">
-            <button onClick={openMenu}>delete</button>
+            <button onClick={openMenu}><i className="fa-regular fa-trash-can" style={{color: "#000000"}}></i></button>
             <div className={menuClassName}>
                 <button onClick={(e) => handleDelete(e, note.id)}>delete note</button>
                 <button onClick={closeMenu}>cancel</button>

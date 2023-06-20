@@ -24,10 +24,14 @@ const IdCardModal = ({ gymCard }) => {
 
     return (
         <div className="item-detail-modal">
+            <i onClick={() => closeModal()} className="fa-regular fa-rectangle-xmark" style={{color: "maroon"}}></i>
             <img src={gymCard.image} alt="small id card"></img>
             {/* <p id='item-description'>Description:</p> */}
             <p className='item-description'>{gymCard.description}</p>
-            {!item_names.includes('Gym membership card') && (
+            {backpack_items.length >= 4 && (
+                <p>Your backpack is at capacity. Please drop an item before picking one up.</p>
+            )}
+            {!item_names.includes('Gym membership card') && backpack_items.length < 4 && (
                 <>
                     <p>Would you like to:</p>
                     <div className="choice-buttons item-options">

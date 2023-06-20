@@ -9,13 +9,37 @@
 #logout {
   position: absolute;
   z-index: 2;
+  font-size: 14px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  width: 85px;
+}
+
+#logout:hover {
+  border: 2px solid black;
 }
 
 #solution {
   position: absolute;
   z-index: 2;
   top: 40px;
-  left: 2px;
+  /* left: 2px; */
   /* padding: 5px 10px; */
   /* font-size: 16px; */
+}
+
+#solution > button {
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid black;
+  font-size: 14px;
+  /* height: fit-content; */
+  width: 85px;
+}
+
+#solution > button:hover {
+  border: 2px solid black;
+  background-color: rgb(242, 242, 242);;
 }

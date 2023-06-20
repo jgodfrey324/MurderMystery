@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
 /* font-family: 'Roboto', sans-serif; */
+/* font-family: 'Courier Prime', monospace; */
 
 
 * {
@@ -84,12 +86,20 @@
     padding: 10px 0;
 }
 
-/* .notepad-content-house {
-    border-radius: 50px;
-} */
+.notepad-content-house > i {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.notepad-content-house > i:hover {
+    font-weight: bold;
+}
 
 #modal-content {
-    border-radius: 50px;
+    border-radius: 20px;
     border: 2px solid black;
 }
 
@@ -100,7 +110,16 @@
 
 .button-menu-house > button {
     cursor: pointer;
-    width: 60px;
+    /* width: 60px; */
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    padding: 0 6px;
+}
+
+.button-menu-house > button:hover {
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .menu-dropdown > button {
@@ -125,18 +144,16 @@
 
 
 .menu-dropdown {
-    /* order: 2px solid green; */
     display: flex;
     flex-direction: column-reverse;
-    /* grid-gap: 3px;
-    gap: 3px; */
     position: absolute;
-    top: 22px;
+    top: 26px;
     z-index: 102;
     background-color: aliceblue;
     padding: 4px;
     border: 1px solid gray;
     border-radius: 5px;
+    box-shadow: 1px 1px 3px black;
     /* width: 70px; */
 }
 
@@ -145,13 +162,14 @@
 }
 
 
-.update-modal-content:hover {
-    background: rgb(216, 216, 216);
-    border-radius: 10px;
+.update-modal-content > button:hover {
+    /* background: rgb(216, 216, 216); */
+    border-radius: 5px;
+    border: 1px solid black;
 }
 
 .update-modal-content > button {
-    padding: 0;
+    padding: 5;
     border: none;
     background: none;
     font-size: 14px;
@@ -168,14 +186,16 @@
 
 .form-dropdown {
     position: absolute;
-    top: -10px;
-    right: 20px;
+    top: 0px;
+    right: 25px;
 }
 
 .form-dropdown > textarea {
     outline: none;
-    width: 445px;
-    height: 20px;
+    width: 440px;
+    height: 25px;
+    font-size: 15px;
+    resize: none;
 }
 
 .suspect-button {
@@ -215,6 +235,19 @@
 .suspect-modal-container {
     height: 750px;
     width: 700px;
+}
+
+.suspect-modal-container > i {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 5;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.suspect-modal-container > i:hover {
+    font-weight: bold;
 }
 
 .suspect-modal-container > img {
@@ -292,7 +325,8 @@
 }
 
 .backpack-popup {
-    border: 1px solid red;
+    /* border: 1px solid black; */
+    border-radius: 5px;
     height: 100px;
     width: 430px;
     position: absolute;
@@ -301,7 +335,7 @@
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
-    gap: 2px;
+    /* gap: 2px; */
 }
 
 .backpack-popup.hidden {
@@ -309,10 +343,31 @@
 }
 
 .item-house {
-    border: 1px solid blue;
+    border: 1px solid black;
+    border-radius: 5px;
     height: -webkit-fill-available;
     width: -webkit-fill-available;
     background-color: antiquewhite;
+    position: relative;
+}
+
+.item-house > button > i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    /* padding: 2px; */
+    margin: 3px;
+    font-size: 16px;
+    /* margin-bottom: 20px; */
+    /* padding-bottom: 10px; */
+    /* border: 1px solid black; */
+}
+
+.item-house > button > i:hover {
+    /* padding: 0;
+    border: 1px solid black; */
+    font-weight: bold;
 }
 
 .item-house > img {
@@ -345,26 +400,40 @@
 
 .new-note-form-house > form > textarea {
     outline: none;
-    width: -webkit-fill-available;
-    height: 35px;
+    width: 35rem;
+    height: 2.5rem;
     margin-right: 20px;
     font-size: 15px;
+    resize: none;
 }
 
 .new-note-form-house > form > button {
     /* border: 2px solid blue; */
     width: 150px;
     margin-right: 40px;
+    cursor: pointer;
+}
+
+.new-note-form-house > form > button:disabled {
+    cursor: not-allowed;
 }
 
 .new-note-form-house > form {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    position: relative;
 }
 
 .new-note-form-house {
     margin-top: 20px;
+}
+
+.new-note-form-house > form > ul > p {
+    position: absolute;
+    top: -20px;
+    margin: 0;
+    font-size: 14px;
 }
 
 .dialog-box {
@@ -433,14 +502,27 @@
 }
 
 .solution-modal-container {
-    height: 250px;
+    /* height: 250px; */
     width: 500px;
+    /* border-radius: 10px; */
+}
+
+.solution-modal-container > i {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.solution-modal-container > i:hover {
+    font-weight: bold;
 }
 
 .solution-container > p {
     font-weight: 300;
     font-size: 14px;
-    /* margin-bottom: 40px; */
+    margin-bottom: 40px;
 }
 
 .solution-container {
@@ -477,4 +559,35 @@
     margin-top: 15px;
     width: 130px;
     padding: 5px;
+}
+
+.drop-item-house {
+    /* border: 2px solid black; */
+    padding: 35px 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.drop-item-house > p {
+    margin: 0;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.drop-item-house > h1 {
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.drop-button-house > button {
+    padding: 5px 40px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.drop-button-house {
+    display: flex;
 }
