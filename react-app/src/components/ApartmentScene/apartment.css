@@ -1,14 +1,55 @@
-.idcard-button,
-.tickets-button,
-.receipt-button {
+.idcard-button {
     width: -moz-fit-content;
     /* width: fit-content; */
     position: absolute;
     z-index: 2;
-    top: 450px;
+    top: 350px;
     left: 200px;
     /* box-shadow: 3px 3px 10px black; */
     border-radius: 50px;
+}
+
+.tickets-button {
+    /* width: fit-content; */
+    position: absolute;
+    z-index: 2;
+    top: 19rem;
+    left: 9rem;
+    /* box-shadow: 3px 3px 10px black; */
+    border-radius: 50px;
+}
+
+.tickets-button > button > img {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+}
+
+.receipt-button {
+    /* width: fit-content; */
+    position: absolute;
+    z-index: 2;
+    top: 23rem;
+    right: 20rem;
+    /* box-shadow: 3px 3px 10px black; */
+    border-radius: 50px;
+}
+
+.receipt-button > button,
+.tickets-button > button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.receipt-button > button > img {
+    object-fit: contain;
+    height: 100px;
+    box-shadow: none;
+}
+
+.receipt-button > button > img:hover {
+    border: 2px solid black;
 }
 
 .idcard-button > button:hover,
@@ -17,13 +58,11 @@
     background-color: transparent;
 }
 
-.idcard-button > button > img,
-.tickets-button > button > img,
-.receipt-button > button > img {
+.idcard-button > button > img {
     object-fit: contain;
     height: 100px;
     width: 150px;
-    box-shadow: 2px 2px 10px black;
+    /* box-shadow: 2px 2px 10px black; */
 
     /* box-shadow: none; */
 }
@@ -51,6 +90,18 @@
     background-color: aliceblue;
     border-radius: 20px;
     padding: 20px 0;
+}
+
+.item-detail-modal > i {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.item-detail-modal > i:hover {
+    font-weight: bold;
 }
 
 .item-detail-modal > img {
@@ -108,5 +159,14 @@
 }
 
 .item-house:hover {
-    border: 3px solid black;
+    border: 2px solid black;
+}
+
+.item-house > p {
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    font-size: 12px;
+    font-weight: 300;
 }

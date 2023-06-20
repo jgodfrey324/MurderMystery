@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useState, useEffect } from 'react';
-import { logout } from '../../store/session';
 import { getCharacters } from '../../store/characters';
 import { Redirect } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
@@ -72,11 +71,12 @@ const SolutionModal = () => {
 
     return (
         <div className='solution-modal-container'>
+            <i onClick={() => closeModal()} className="fa-regular fa-rectangle-xmark" style={{color: "maroon"}}></i>
             <div className='solution-container'>
                 <p>*Please input a first and last name. Make sure to capitalize your pronouns, and double check spelling!*</p>
                 <form onSubmit={handleSubmit}>
                     {errors && (
-                        <p>{errors}</p>
+                        <p style={{color: 'maroon'}}>{errors}</p>
                     )}
                     <input
                     placeholder="Who is the killer?"

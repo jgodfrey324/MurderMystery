@@ -4,11 +4,13 @@ import { deleteSuspect, getSuspects, postSuspect } from '../../store/suspects';
 import { getCharacters } from '../../store/characters';
 import './OpeningScene.css'
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import { useModal } from '../../context/Modal';
 
 
 
 const SuspectModal = () => {
     const dispatch = useDispatch();
+    const { closeModal } = useModal()
     const characters = useSelector(state => state.characters)
     const user = useSelector(state => state.session.user)
     const suspects = Object.values(useSelector(state => state.suspects))
@@ -58,6 +60,7 @@ const SuspectModal = () => {
 
     return (
         <div className='suspect-modal-container'>
+            <i onClick={() => closeModal()} className="fa-regular fa-rectangle-xmark" style={{color: "maroon"}}></i>
             <img src="https://i.imgur.com/7kwSq0B.png" alt='notebook'></img>
             <div className='suspect-container'>
                 {suspects.map(suspect => {
