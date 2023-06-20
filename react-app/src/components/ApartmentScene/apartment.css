@@ -116,16 +116,13 @@
     margin-top: 20px;
 }
 
-/* .item-detail-modal > p {
-    font-size: 16px;
-    /* border: 1px solid red; */
-    /* width: 500px; */
-    /* margin: 0 80px;
-    line-height: 25px;
-    font-weight: 300;
-} */
+.item-detail-modal > p {
+    font-family: 'Courier Prime', monospace;
+    font-size: 14px;
+    color: maroon;
+}
 
-.item-description {
+.item-detail-modal > .item-description {
     font-weight: 400;
     /* margin-bottom: 20px; */
     font-size: 16px;
@@ -137,6 +134,7 @@
     margin-bottom: 40px;
     margin-top: 50px;
     font-family: 'Courier Prime', monospace;
+    color: black;
 }
 
 .item-options {
