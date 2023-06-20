@@ -68,7 +68,7 @@ const BoyfriendScene = () => {
                                     handleChoice(e, "apartment")
                                     history.push('/apartment')
                                 }}>Visit Minnie's apartment</button>
-                                <button onClick={() => history.push('/office-return')}>Return to the office</button>
+                                <button onClick={() => history.push('/office-finished')}>Return to the office</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>
@@ -77,7 +77,7 @@ const BoyfriendScene = () => {
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
-                                <button onClick={() => history.push('/office-return')}>Return to the office</button>
+                                <button onClick={() => history.push('/office-finished')}>Return to the office</button>
                                 <button>Go to the coffee shop</button>
                             </div>
                         </>

@@ -51,7 +51,7 @@ const DropDownDescr = () => {
                         <select
                         onChange={(e) => setGender(e.target.value)}
                         >
-                            <option value={' '}> </option>
+                            <option value={''}> </option>
                             <option value={'Male'}>Male</option>
                             <option value={'Female'}>Female</option>
                         </select>
@@ -61,7 +61,7 @@ const DropDownDescr = () => {
                         <select
                         onChange={(e) => setHair(e.target.value)}
                         >
-                            <option value={' '}> </option>
+                            <option value={''}> </option>
                             <option value={'Blonde'}>Blonde</option>
                             <option value={'Brown'}>Brown</option>
                             <option value={'Black'}>Black</option>
@@ -86,7 +86,7 @@ const DropDownDescr = () => {
                         <select
                         onChange={(e) => setOccupation(e.target.value)}
                         >
-                            <option value={' '}> </option>
+                            <option value={''}> </option>
                             <option value={'Hairstylist'}>Hairstylist</option>
                             <option value={'Server'}>Server</option>
                             <option value={'Butcher'}>Butcher</option>
