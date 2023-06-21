@@ -49,10 +49,16 @@ function SignupFormPage() {
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => {
-            const string = error.split(':')
-            return (
-              <li style={{listStyle: 'none', color: 'maroon', fontSize: '13px'}}key={idx}>{string[1]}</li>
-            )
+            const string = error.split(' : ')
+            if (string.length > 1) {
+              return (
+                <li style={{listStyle: 'none', color: 'maroon', fontSize: '13px'}}key={idx}>{string[1]}</li>
+              )
+            } else {
+              return (
+                <li style={{listStyle: 'none', color: 'maroon', fontSize: '13px'}}key={idx}>{string[0]}</li>
+              )
+            }
           })}
         </ul>
         <label>
