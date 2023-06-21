@@ -1,10 +1,13 @@
+import { useModal } from '../../context/Modal'
 import './tutorial.css'
 
 
 const TutorialModal = () => {
+    const { closeModal } = useModal()
 
     return (
         <div className='tutorial-house'>
+            <i onClick={() => closeModal()} className="fa-regular fa-rectangle-xmark" style={{color: "maroon"}}></i>
             <h1>Welcome to Case #1124</h1>
             <div className='tutorial-text'>
                 <p>In this game you are a detective tasked with aiding the nearby town solve a mystery.</p>
