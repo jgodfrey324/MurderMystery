@@ -12,10 +12,6 @@ const UpdateNoteModal = ({ note }) => {
     const [showMenu, setShowMenu] = useState(false);
 
 
-
-    // console.log('note being passed in ------------> ', note)
-
-
     useEffect(() => {
         const func = async () => {
             const data = await dispatch(getNotes())
