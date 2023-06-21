@@ -1,0 +1,41 @@
+#tutorial-signup  > button {
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #db7e65;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 8px black;
+    color: whitesmoke;
+    text-shadow: 1px 1px 3px black;
+    margin: 40px 0 20px 0;
+}
+
+#tutorial-signup  > button:hover {
+    border: 2px solid black;
+}
+
+#tutorial-signup {
+    border-bottom: 1px solid black;
+    padding: 0 170px;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    padding-top: 0;
+    /* height: 100px; */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* #tutorial-signup > button {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 200;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+#tutorial-signup > button:hover {
+    font-weight: 300;
+} */

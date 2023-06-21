@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
 import { postPlace } from "../../store/placesVisited";
@@ -8,7 +8,6 @@ import SuspectModal from "./SuspectModal";
 import { dialog1, dialog2 } from "../../dialog/OpeningScene";
 import './OpeningScene.css'
 import BackpackPopup from "./BackpackPopup";
-import { TypeAnimation } from 'react-type-animation';
 
 
 const OpeningScene = () => {
@@ -49,8 +48,6 @@ const OpeningScene = () => {
     //   }
 
     if (!user) return <Redirect to='/signup' />
-
-    let timer = null;
 
     return (
         <div className="home-screen">

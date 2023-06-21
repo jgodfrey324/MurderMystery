@@ -1,0 +1,79 @@
+.login-house {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    background-color: whitesmoke;
+    padding-bottom: 100px;
+}
+
+.login-house > h2 {
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+.login-house > p > span {
+    font-weight: 200;
+}
+
+.login-house > form {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    /* height: 300px; */
+    width: 400px;
+    align-items: center;
+    background-color: #c7c7c7;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 15px black;
+    margin-top: 40px;
+}
+
+.login-house > form > ul {
+    padding: 0;
+    margin: 0;
+    /* width: 200px; */
+}
+
+.login-house > form > label > input {
+    border: 2px solid black;
+    border-radius: 5px;
+    /* width: 250px; */
+    /* margin-left: 50px; */
+    margin-top: 10px;
+    height: 25px;
+    outline:none;
+    font-size: 15px;
+    background-color: whitesmoke;
+}
+
+.login-house > form > label > input:focus {
+    border: 2px solid #db7e65
+}
+
+.login-house > form > label {
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: column;
+    width: -webkit-fill-available;
+    margin: 5px 20px;
+    color: black;
+}
+
+.login-house > form > button {
+    margin-top: 20px;
+    padding: 15px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #db7e65;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 8px black;
+    color: whitesmoke;
+    text-shadow: 1px 1px 3px black;
+}
+
+.login-house > form > button:hover {
+    border: 2px solid black;
+}

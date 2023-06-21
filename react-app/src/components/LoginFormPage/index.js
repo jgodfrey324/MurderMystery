@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { login } from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import './LoginForm.css';
 
 function LoginFormPage() {
   const dispatch = useDispatch();
+  const history = useHistory()
   const sessionUser = useSelector((state) => state.session.user);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -22,13 +23,25 @@ function LoginFormPage() {
   };
 
   return (
-    <>
-      <h1>Log In</h1>
+    <div className="login-house">
+      <img id="starting-logo" src="https://i.imgur.com/WWA2gAK.png?1" alt="case 1124"></img>
+      <h2>Continue game...</h2>
+      <p><span>Need to start a new game? Create a character </span>
+      <span id='continue-game' onClick={() => history.push('/signup')}>here</span></p>
       <form onSubmit={handleSubmit}>
         <ul>
-          {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
-          ))}
+          {errors.map((error, idx) => {
+            const string = error.split(' : ')
+            if (string.length > 1) {
+              return (
+                <li style={{listStyle: 'none', color: 'maroon', fontSize: '13px'}}key={idx}>{string[1]}</li>
+              )
+            } else {
+              return (
+                <li style={{listStyle: 'none', color: 'maroon', fontSize: '13px'}}key={idx}>{string[0]}</li>
+              )
+            }
+          })}
         </ul>
         <label>
           Username
@@ -48,9 +61,9 @@ function LoginFormPage() {
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <button type="submit">Continue game</button>
       </form>
-    </>
+    </div>
   );
 }
 
