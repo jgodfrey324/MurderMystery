@@ -23,6 +23,7 @@ def get_places():
 @places_visited_routes.route('/new', methods=["POST"])
 @login_required
 def add_place():
+
     new_place = Place(
         scene= request.form['scene'],
         user_id=current_user.id

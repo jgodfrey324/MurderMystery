@@ -31,7 +31,7 @@ const FinishedRoute = () => {
     }, [seeFootage])
 
 
-
+    if (places.length === 0) return <Redirect to='/' />
 
     const handleChoice = async (e, scene) => {
         e.preventDefault();

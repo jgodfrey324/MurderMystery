@@ -6,14 +6,8 @@ from sqlalchemy.sql import text
 def seed_users():
     demo = User(
         username='Demo', first_name='Demo', last_name='Lition', password='password')
-    marnie = User(
-        username='marnie', first_name='Marnie', last_name='Smith', password='password')
-    bobbie = User(
-        username='bobbie', first_name='Bobbie', last_name='Brown', password='password')
 
     db.session.add(demo)
-    db.session.add(marnie)
-    db.session.add(bobbie)
     db.session.commit()
 
 

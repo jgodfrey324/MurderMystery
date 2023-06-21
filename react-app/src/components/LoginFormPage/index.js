@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { login } from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 import './LoginForm.css';
+import { getPlaces } from "../../store/placesVisited";
 
 function LoginFormPage() {
   const dispatch = useDispatch();
   const history = useHistory()
   const sessionUser = useSelector((state) => state.session.user);
+  const placesVisited = useSelector((state) => state.session.placesVisited);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  if (sessionUser) return <Redirect to="/" />;
+  if (sessionUser) return <Redirect to="/office-finished" />;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,6 +23,7 @@ function LoginFormPage() {
       setErrors(data);
     }
   };
+
 
   return (
     <div className="login-house">

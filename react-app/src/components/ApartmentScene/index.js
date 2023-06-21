@@ -35,8 +35,6 @@ const ApartmentScene = () => {
         getItems()
     }, [])
 
-    console.log('items from fetch -----------------> ', items)
-
     const item_names = []
 
     for (const item of backpack_items) {

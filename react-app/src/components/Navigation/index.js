@@ -13,7 +13,12 @@ function Navigation({ isLoaded }){
 		e.preventDefault();
 		await fetch('/api/reset/');
 		dispatch(logout());
-	  };
+	};
+
+	const logoutFunc = async (e) => {
+		e.preventDefault();
+		await dispatch(logout());
+	}
 
 
 	return (
@@ -21,6 +26,7 @@ function Navigation({ isLoaded }){
 			{sessionUser && (
 				<>
 					<button id='logout' onClick={handleLogout}>End Game</button>
+					<button id='save-game' onClick={(e) => logoutFunc(e)}>Save Game</button>
 					<div id='solution'>
 						<OpenModalButton
 							buttonImage="Submit Answer"
