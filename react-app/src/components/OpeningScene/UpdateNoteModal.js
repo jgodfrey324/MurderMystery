@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { getNotes, putNote } from "../../store/notes";
 import './OpeningScene.css'
 
 
 const UpdateNoteModal = ({ note }) => {
     const dispatch = useDispatch();
-    const allNotes = useSelector(state => state.notes)
     const [errors, setErrors] = useState('');
     const [text, setText] = useState(note.text)
     const [showMenu, setShowMenu] = useState(false);
@@ -18,7 +17,7 @@ const UpdateNoteModal = ({ note }) => {
             setText(data[note.id].text)
         }
         func()
-    }, [dispatch])
+    }, [dispatch, note.id])
 
     useEffect(() => {
         if (text.length > 255) {

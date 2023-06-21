@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 import { signUp, loginDemo } from "../../store/session";
 import './SignupForm.css';
-// import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import OpenModalButton from "../OpenModalButton";
+import TutorialModal from "../TutorialModal";
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -40,7 +41,13 @@ function SignupFormPage() {
       <img id="starting-logo" src="https://i.imgur.com/WWA2gAK.png?1" alt="case 1124"></img>
       <h2>Start a new game...</h2>
       <p><span>Need to continue? Continue game </span>
-      <span id='continue-game' onClick={() => window.alert('Feature coming soon!')}>here</span></p>
+      <span id='continue-game' onClick={() => history.push('/login')}>here</span></p>
+      <div id="tutorial-signup">
+        <OpenModalButton
+        buttonImage='Read the tutorial'
+        modalComponent={<TutorialModal />}
+        />
+      </div>
       <div className="default-char-house">
         <p>Use the default character</p>
         <button onClick={handleDemo}>Use default</button>

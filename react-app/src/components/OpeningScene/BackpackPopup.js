@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import './OpeningScene.css';
 import { getItems } from '../../store/backpack';
-import IdCardModal from '../ApartmentScene/idCardModal';
 import OpenModalButton from '../OpenModalButton';
 import DropItemModal from './DropItemModal';
 import ItemDetailModal from './ItemDetailModal';

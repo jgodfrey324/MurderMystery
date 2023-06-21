@@ -20,6 +20,11 @@
     background-color: whitesmoke;
 }
 
+.signup-house > h2 {
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
 .signup-house > form {
     border: 2px solid black;
     display: flex;
@@ -31,6 +36,12 @@
     padding: 30px;
     border-radius: 20px;
     box-shadow: 3px 3px 15px black;
+}
+
+.signup-house > form > ul {
+    padding: 0;
+    margin: 0;
+    /* width: 200px; */
 }
 
 .signup-house > form > label > input {
