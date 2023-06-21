@@ -4,6 +4,7 @@ import OpenModalButton from '../OpenModalButton';
 import { logout } from "../../store/session";
 import SolutionModal from '../SolutionModal';
 import './Navigation.css';
+import TutorialModal from '../TutorialModal';
 
 function Navigation({ isLoaded }){
 	const dispatch = useDispatch()
@@ -26,18 +27,27 @@ function Navigation({ isLoaded }){
 			{sessionUser && (
 				<>
 					<button id='logout' onClick={handleLogout}>End Game</button>
-					<button id='save-game' onClick={(e) => logoutFunc(e)}>Save Game</button>
+					<button id='save-game' onClick={(e) => {
+						if (sessionUser.id === 1) {
+							return window.alert('Cannot save on default character. Please click \'end game\'.')
+						}
+						return logoutFunc(e)
+						}}>Save Game</button>
 					<div id='solution'>
 						<OpenModalButton
 							buttonImage="Submit Answer"
 							modalComponent={<SolutionModal />}
 						/>
 					</div>
+					<div id='tutorial-nav'>
+						<OpenModalButton
+							buttonImage={<i className="fa-regular fa-circle-question" style={{color: "#ffffff"}}></i>}
+							modalComponent={<TutorialModal />}
+						/>
+					</div>
 				</>
 			)}
 		</>
-
-		// null
 	);
 }
 

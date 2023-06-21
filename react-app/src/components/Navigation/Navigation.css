@@ -15,6 +15,9 @@
   cursor: pointer;
   padding: 5px;
   width: 85px;
+  background-color: #db7e65;
+  color: white;
+  text-shadow: 1px 1px 3px black;
 }
 
 #save-game {
@@ -23,10 +26,32 @@
   z-index: 2;
   font-size: 14px;
   border: 1px solid black;
+  background-color: #db7e65;
+  color: white;
+  text-shadow: 1px 1px 3px black;
   border-radius: 5px;
   cursor: pointer;
   padding: 5px;
   width: 85px;
+}
+
+#tutorial-nav > button {
+  position: absolute;
+  top: 120px;
+  z-index: 2;
+  font-size: 20px;
+  border: 1px solid black;
+  /* color: whitesmoke; */
+  background-color: #db7e65;
+  border-radius: 5px 14px;
+  cursor: pointer;
+  padding: 2px 8px;
+  text-shadow: 1px 1px 1px black;
+  /* width: 85px; */
+}
+
+#tutorial-nav > button:hover {
+  border: 2px solid black;
 }
 
 #logout:hover,
@@ -50,9 +75,12 @@
   font-size: 14px;
   /* height: fit-content; */
   width: 85px;
+  background-color: #db7e65;
+  color: white;
+  text-shadow: 1px 1px 3px black;
 }
 
 #solution > button:hover {
   border: 2px solid black;
-  background-color: rgb(242, 242, 242);;
+  /* background-color: rgb(242, 242, 242);; */
 }

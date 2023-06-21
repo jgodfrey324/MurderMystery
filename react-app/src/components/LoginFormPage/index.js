@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { login } from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 import './LoginForm.css';
-import { getPlaces } from "../../store/placesVisited";
+// import { getPlaces } from "../../store/placesVisited";
 
 function LoginFormPage() {
   const dispatch = useDispatch();
   const history = useHistory()
   const sessionUser = useSelector((state) => state.session.user);
-  const placesVisited = useSelector((state) => state.session.placesVisited);
+  // const placesVisited = useSelector((state) => state.session.placesVisited);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -27,7 +27,7 @@ function LoginFormPage() {
 
   return (
     <div className="login-house">
-      <img id="starting-logo" src="https://i.imgur.com/WWA2gAK.png?1" alt="case 1124"></img>
+      <img id="starting-logo" src="https://i.imgur.com/n2LDt9A.png?1" alt="case 1124"></img>
       <h2>Continue game...</h2>
       <p><span>Need to start a new game? Create a character </span>
       <span id='continue-game' onClick={() => history.push('/signup')}>here</span></p>

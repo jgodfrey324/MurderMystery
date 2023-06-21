@@ -38,7 +38,7 @@ function SignupFormPage() {
 
   return (
     <div className="signup-house">
-      <img id="starting-logo" src="https://i.imgur.com/WWA2gAK.png?1" alt="case 1124"></img>
+      <img id="starting-logo" src="https://i.imgur.com/n2LDt9A.png?1" alt="case 1124"></img>
       <h2>Start a new game...</h2>
       <p><span>Need to continue? Continue game </span>
       <span id='continue-game' onClick={() => history.push('/login')}>here</span></p>
