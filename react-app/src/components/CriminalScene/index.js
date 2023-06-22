@@ -24,7 +24,7 @@ const CriminalScene = () => {
 
     return (
         <div className="home-screen">
-            <audio controls loop src={audioUrl.default}></audio>
+            <audio src={audioUrl.default}></audio>
             <h1>Neighbor</h1>
             <img src="https://i.imgur.com/60YDXOU.jpg" alt='department computer'></img>
             <div className="backpack-button">
