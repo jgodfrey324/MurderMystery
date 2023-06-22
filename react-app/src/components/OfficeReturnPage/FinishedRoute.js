@@ -19,6 +19,8 @@ const FinishedRoute = () => {
     const [seeFootage, setSeeFootage] = useState(false);
     // const [visitSalon, setVisitSalon] = useState(false);
 
+    let audioUrl = require('../../static/Jl-Moody-Alt-Country.mp3');
+
 
     useEffect(() => {
         dispatch(getPlaces())
@@ -49,6 +51,7 @@ const FinishedRoute = () => {
 
     return (
         <div className="home-screen">
+            <audio controls loop src={audioUrl.default}></audio>
             <h1>Dept. Office</h1>
             <img src="https://i.imgur.com/1HDvBws.jpg" alt='department office'></img>
             <div className="backpack-button">
