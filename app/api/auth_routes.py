@@ -38,6 +38,8 @@ def login():
     # form manually to validate_on_submit can be used
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
+        if form.data['username'] == 'Demo':
+            return {'errors': ['Cannot login to default character. Please use default character button on \'create a character\' page.']}, 401
         # Add the user to the session, we are logged in!
         user = User.query.filter(User.username == form.data['username']).first()
         login_user(user)
@@ -113,6 +115,9 @@ def sign_up():
     form = SignUpForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
+        if len(form.data['password']) < 8:
+            return {'errors': ['Password must be atleast 8 characters.']}
+
         user = User(
             username=form.data['username'],
             first_name=form.data['first_name'],

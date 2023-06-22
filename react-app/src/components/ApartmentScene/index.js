@@ -22,8 +22,6 @@ const ApartmentScene = () => {
     const [items, setItems] = useState({})
     const backpack_items = Object.values(useSelector(state => state.backpack))
 
-    let audioUrl = require('../../static/Jl-Moody-Alt-Country.mp3');
-
     const getItems = async () => {
         const res = await fetch('/api/backpack_items/items/all')
         const data = await res.json()
@@ -47,7 +45,6 @@ const ApartmentScene = () => {
 
     return (
         <div className="home-screen">
-            <audio src={audioUrl.default}></audio>
             <h1>Allen Grove</h1>
             {inHallway ? <img src="https://i.imgur.com/60YDXOU.jpg" alt='hallway'></img> : <img src="https://i.imgur.com/26FEGhd.jpg" alt='apartment livingroom'></img>}
             <div className="backpack-button">

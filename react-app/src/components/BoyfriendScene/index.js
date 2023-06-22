@@ -19,8 +19,6 @@ const BoyfriendScene = () => {
     const places = useSelector(state => state.placesVisited)
     const [index, setIndex] = useState(0);
 
-    let audioUrl = require('../../static/Jl-Moody-Alt-Country.mp3');
-
     useEffect(() => {
         dispatch(getPlaces())
     }, [dispatch])
@@ -41,7 +39,6 @@ const BoyfriendScene = () => {
 
     return (
         <div className="home-screen">
-            <audio src={audioUrl.default}></audio>
             <h1>Kallum's House</h1>
             <div className="backpack-button">
                 <BackpackPopup />
