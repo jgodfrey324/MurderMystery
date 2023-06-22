@@ -47,7 +47,7 @@ const ApartmentScene = () => {
 
     return (
         <div className="home-screen">
-            <audio controls loop src={audioUrl.default}></audio>
+            <audio src={audioUrl.default}></audio>
             <h1>Allen Grove</h1>
             {inHallway ? <img src="https://i.imgur.com/60YDXOU.jpg" alt='hallway'></img> : <img src="https://i.imgur.com/26FEGhd.jpg" alt='apartment livingroom'></img>}
             <div className="backpack-button">

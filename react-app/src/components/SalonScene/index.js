@@ -45,7 +45,7 @@ const SalonScene = () => {
 
     return (
         <div className="home-screen">
-            <audio controls loop src={audioUrl.default}></audio>
+            <audio src={audioUrl.default}></audio>
             <h1>Thomasville Salon</h1>
             <img src="https://i.imgur.com/7DHwqz8.jpg" alt='thomasville salon'></img>
             <div className="backpack-button">

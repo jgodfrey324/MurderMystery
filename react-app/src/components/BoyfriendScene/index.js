@@ -41,7 +41,7 @@ const BoyfriendScene = () => {
 
     return (
         <div className="home-screen">
-            <audio controls loop src={audioUrl.default}></audio>
+            <audio src={audioUrl.default}></audio>
             <h1>Kallum's House</h1>
             <div className="backpack-button">
                 <BackpackPopup />

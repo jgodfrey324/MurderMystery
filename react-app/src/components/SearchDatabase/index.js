@@ -56,7 +56,7 @@ const SearchDatabase = () => {
 
     return (
         <div className="home-screen">
-            <audio controls loop src={audioUrl.default}></audio>
+            <audio src={audioUrl.default}></audio>
             <h1>Dept. Computer</h1>
             <img src="https://i.imgur.com/1HDvBws.jpg" alt='department computer'></img>
             <div className="backpack-button">
