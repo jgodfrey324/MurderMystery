@@ -15,6 +15,7 @@ const OfficeReturnPage = () => {
     const user = useSelector(state => state.session.user)
     const places = useSelector(state => state.placesVisited)
 
+    let audioUrl = require('../../static/Jl-Moody-Alt-Country.mp3');
 
     useEffect(() => {
         dispatch(getPlaces())
@@ -36,6 +37,7 @@ const OfficeReturnPage = () => {
 
     return (
         <div className="home-screen">
+            <audio controls loop src={audioUrl.default}></audio>
             <h1>Dept. Office</h1>
             <img src="https://i.imgur.com/1HDvBws.jpg" alt='department office'></img>
             <div className="backpack-button">

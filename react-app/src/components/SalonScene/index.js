@@ -19,6 +19,7 @@ const SalonScene = () => {
     const places = useSelector(state => state.placesVisited)
     const [index, setIndex] = useState(0);
 
+    let audioUrl = require('../../static/Jl-Moody-Alt-Country.mp3');
 
 
     useEffect(() => {
@@ -44,6 +45,7 @@ const SalonScene = () => {
 
     return (
         <div className="home-screen">
+            <audio controls loop src={audioUrl.default}></audio>
             <h1>Thomasville Salon</h1>
             <img src="https://i.imgur.com/7DHwqz8.jpg" alt='thomasville salon'></img>
             <div className="backpack-button">

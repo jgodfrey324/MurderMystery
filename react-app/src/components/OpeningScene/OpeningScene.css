@@ -642,3 +642,17 @@
     top: 77px;
     right: 330px;
 }
+
+.home-screen > audio {
+    /* border: 2px solid red; */
+    position: absolute;
+    z-index: 100;
+    /* width: 20px; */
+    height: 25px;
+    bottom: 260px;
+    left: 15px;
+}
+/*
+.home-screen > audio > input {
+    border: 3px solid blue;
+} */

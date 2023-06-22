@@ -16,12 +16,15 @@ const CriminalScene = () => {
     const user = useSelector(state => state.session.user)
     const [index, setIndex] = useState(0);
 
+    let audioUrl = require('../../static/Jl-Moody-Alt-Country.mp3');
+
 
     if (!user) return <Redirect to='/signup' />
 
 
     return (
         <div className="home-screen">
+            <audio controls loop src={audioUrl.default}></audio>
             <h1>Neighbor</h1>
             <img src="https://i.imgur.com/60YDXOU.jpg" alt='department computer'></img>
             <div className="backpack-button">
