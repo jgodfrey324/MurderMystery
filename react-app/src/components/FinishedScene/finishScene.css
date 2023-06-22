@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+
+.congrats-house {
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 12rem;
+    padding: 20px 50px;
+    background-color: #d5d3d3;
+    box-shadow: 4px 4px 15px black;
+    position: relative;
+    z-index: 2;
+    /* display: flex; */
+    /* justify-content: center; */
+}
+
+
+.congrats-house > h1 {
+    font-family: 'Abril Fatface', cursive;
+    text-shadow: 1px 1px 5px #db7e65;
+    /* text-shadow: 1px 1px 4px black; */
+    /* color: white; */
+}
+
+.congrats-house > p {
+    line-height: 22px;
+    /* border: 2px solid red; */
+    font-weight: 300;
+}
+
+.congrats-house > button {
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #db7e65;
+    border-radius: 10px;
+    border: 1px solid black;
+    /* box-shadow: 1px 1px 3px black; */
+    color: whitesmoke;
+    text-shadow: 1px 1px 3px black;
+    /* margin: 40px 0 20px 0; */
+    margin-top: 20px;
+}
+
+.congrats-house  > button:hover {
+    border: 2px solid black;
+}
+
+.total-congrats-house > img {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.5;
+    width: stretch;
+    height: stretch;
+    object-fit: cover;
+    top: 0;
+    right: 0;
+}
