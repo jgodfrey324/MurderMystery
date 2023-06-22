@@ -49,7 +49,7 @@
     object-fit: cover;
     /* z-index: 1; */
     border-radius: 20px;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
 }
 
 /* #modal-content {
@@ -63,14 +63,14 @@
     display: flex;
     justify-content: space-between;
     /* font-weight: 400; */
-    font-size: 20px;
+    font-size: 22px;
     font-family: 'Gaegu', cursive;
     position: relative;
 }
 
 .note-contents > p {
     margin: 0;
-    font-size: 17px;
+    font-size: 20px;
     font-family: 'Gaegu', cursive;
     word-break: break-all;
 }
@@ -273,7 +273,7 @@
     left: -20px;
     height: -webkit-fill-available;
     object-fit: contain;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     border-radius: 20px;
 }
 
@@ -328,6 +328,7 @@
     right: 30px;
     font-size: 33px;
     font-family: 'Courier Prime', monospace;
+    text-shadow: 2px 2px 5px #db7e65;
 }
 
 .backpack-button {
