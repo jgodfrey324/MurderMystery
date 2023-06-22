@@ -119,6 +119,9 @@ function SignupFormPage() {
         <button type="submit">Start new game</button>
       </form>
       <footer>
+        <span id='about'>
+          Story written by Jenna Godfrey
+        </span>
         About the creator:
         <span>
           <a href="https://github.com/jgodfrey324" target="_blank">
