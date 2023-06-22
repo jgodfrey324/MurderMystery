@@ -23,6 +23,7 @@ const OpeningScene = () => {
     useEffect(() => {
         let sound = new Audio(audioUrl.default);
         sound.autoplay = true;
+        sound.loop = true;
         // sound.play()
     }, [audioUrl.default]);
 
