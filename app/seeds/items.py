@@ -13,7 +13,7 @@ def seed_items():
     item4 = Item(
         name='Theater tickets', description='Theater tickets for a show that played the night after the crime was committed. The show is a popular RomCom, often attended by couples. The tickets are signed with a heart, followed by the name \'Kallum\'.', image="https://i.imgur.com/L97q1Na.png", is_food=False)
     item5 = Item(
-        name='Gym membership card', description='A gym membership card to the local 24 hour fitness center. Most of the town\'s people are members at this gym. The name on the card reads \'Kalum Ray\'. The card appears to be dirty, like it\'s been stepped on a few times. Perhaps it\'s been sitting here for a while.', image="https://i.imgur.com/CCM1KIO.png", is_food=False)
+        name='Gym membership card', description='A gym membership card to the local 24 hour fitness center. Most of the town\'s people are members at this gym. The name on the card reads \'Kallum Ray\'. The card appears to be dirty, like it\'s been stepped on a few times. Perhaps it\'s been sitting here for a while.', image="https://i.imgur.com/CCM1KIO.png", is_food=False)
     item6 = Item(
         name='Minnie\'s documents', description='Minnie Gilmore, a 24 year old female with auburn hair was murdered around 11:30 PM, February 14th, at her home in Allen Grove Apartments. Living on the second floor, she was found at the bottom of the stairwell leading out to the front door by a group of friends.', image='https://i.imgur.com/k1At1g0.png', is_food=False)
 

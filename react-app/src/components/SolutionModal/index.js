@@ -4,6 +4,7 @@ import { getCharacters } from '../../store/characters';
 import { Redirect } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useModal } from '../../context/Modal';
+import { logout } from '../../store/session';
 import '../OpeningScene/OpeningScene.css'
 
 
@@ -31,7 +32,11 @@ const SolutionModal = () => {
         character_names.push(`${character.first_name} ${character.last_name}`)
     }
 
-
+    const handleLogout = async () => {
+		await fetch('/api/reset/');
+		dispatch(logout());
+        closeModal();
+	};
 
 
     const handleSubmit = async (e) => {
@@ -43,7 +48,7 @@ const SolutionModal = () => {
         const solution_file = await res.json()
 
         if (solution_file.answer === answer) {
-            closeModal()
+            handleLogout()
             return history.push('/congrats')
         }
         if (character_names.includes(answer) && solution_file.answer !== answer) {
