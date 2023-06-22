@@ -66,7 +66,7 @@ const OpeningScene = () => {
             {/* {sound} */}
             {/* {{ url_for('static', filename='bootstrap.min.css') }} */}
             {/* <img src='react-app/src/static/IMG_0063-removebg-preview.png'></img> */}
-            <audio controls loop src={audioUrl.default}></audio>
+            <audio src={audioUrl.default}></audio>
             <h1>Dept. Office</h1>
             <img src="https://i.imgur.com/1HDvBws.jpg" alt='department office'></img>
             <div className="backpack-button">
