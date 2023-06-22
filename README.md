@@ -2,6 +2,7 @@
 
 This website is a murder mystery game. You start as a detective tasked with solving a crime in the next town over. Talk to different people, visit different places, and pick up clues to solve this crime.
 This mystery is meant to be solved in under 10 minutes.
+The story is written by me, as well as most of the items, icons and backgrounds are drawn by me.
 Try it out here: https://case1124.onrender.com
 
 

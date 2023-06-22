@@ -98,3 +98,7 @@
 .login-house > footer > span > a > i:hover {
     border: 2px solid black;
 }
+
+#about {
+    margin-right: 50px;
+}
