@@ -4,7 +4,7 @@
     align-items: center;
     padding-top: 50px;
     background-color: whitesmoke;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 
 .login-house > h2 {
@@ -75,5 +75,26 @@
 }
 
 .login-house > form > button:hover {
+    border: 2px solid black;
+}
+
+.login-house > footer {
+    margin-top: 80px;
+    font-weight: 300;
+}
+
+.login-house > footer > span {
+    margin-left: 2px;
+}
+
+.login-house > footer > span > a > i {
+    margin-left: 5px;
+    font-size: 22px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-house > footer > span > a > i:hover {
     border: 2px solid black;
 }

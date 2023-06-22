@@ -66,6 +66,19 @@ function LoginFormPage() {
         </label>
         <button type="submit">Continue game</button>
       </form>
+      <footer>
+        About the creator:
+        <span>
+          <a href="https://github.com/jgodfrey324" target="_blank">
+            <i className="fa-brands fa-github" style={{color: "#000000"}}></i>
+          </a>
+        </span>
+        <span>
+          <a href="https://www.linkedin.com/in/jenna-godfrey-6ba51b107/" target="_blank">
+            <i className="fa-brands fa-linkedin-in" style={{color: "#000000"}}></i>
+          </a>
+        </span>
+      </footer>
     </div>
   );
 }
