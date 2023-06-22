@@ -17,15 +17,15 @@ const OpeningScene = () => {
     const [index, setIndex] = useState(0);
     const [seeFootage, setSeeFootage] = useState(false);
 
-    let audioUrl = require('../../static/Jl-Moody-Alt-Country.mp3');
+    // let audioUrl = require('../../static/Jl-Moody-Alt-Country.mp3');
 
 
-    useEffect(() => {
-        let sound = new Audio(audioUrl.default);
-        sound.autoplay = true;
-        sound.loop = true;
-        // sound.play()
-    }, [audioUrl.default]);
+    // useEffect(() => {
+    //     let sound = new Audio(audioUrl.default);
+    //     sound.autoplay = true;
+    //     sound.loop = true;
+    //     // sound.play()
+    // }, [audioUrl.default]);
 
     const handleChoice = async (e, scene) => {
         e.preventDefault();
@@ -58,15 +58,10 @@ const OpeningScene = () => {
 
     if (!user) return <Redirect to='/signup' />
 
-    // react-app/src/static/Jl-Moody-Alt-Country.mp3
-    // console.log(sound, 'audio url ---------------------------> ')
 
     return (
         <div className="home-screen">
-            {/* {sound} */}
-            {/* {{ url_for('static', filename='bootstrap.min.css') }} */}
-            {/* <img src='react-app/src/static/IMG_0063-removebg-preview.png'></img> */}
-            <audio src={audioUrl.default}></audio>
+            {/* <audio src={audioUrl.default}></audio> */}
             <h1>Dept. Office</h1>
             <img src="https://i.imgur.com/1HDvBws.jpg" alt='department office'></img>
             <div className="backpack-button">
@@ -94,7 +89,7 @@ const OpeningScene = () => {
                             <button className='continue-button' onClick={() => {
                                 if (!dialog2[index + 1]) {
                                     setSeeFootage(false)
-                                    history.push('/office-return')
+                                    history.push('/office-finished')
                                 }
                                 setIndex(index + 1)
                                 }}>continue...</button>

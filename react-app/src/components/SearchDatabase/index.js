@@ -18,8 +18,6 @@ const SearchDatabase = () => {
     const searchRes = useSelector(state => state.searchResults)
     const places = useSelector(state => state.placesVisited)
 
-    let audioUrl = require('../../static/Jl-Moody-Alt-Country.mp3');
-
 
     const allowedChars = [12, 3, 10, 11, 4]
 
@@ -56,7 +54,6 @@ const SearchDatabase = () => {
 
     return (
         <div className="home-screen">
-            <audio src={audioUrl.default}></audio>
             <h1>Dept. Computer</h1>
             <img src="https://i.imgur.com/1HDvBws.jpg" alt='department computer'></img>
             <div className="backpack-button">

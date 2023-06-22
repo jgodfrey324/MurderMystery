@@ -21,6 +21,7 @@ function SignupFormPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (password === confirmPassword) {
       const data = await dispatch(signUp(username, firstName, lastName, password));
       if (data) {
@@ -29,6 +30,7 @@ function SignupFormPage() {
     } else {
       setErrors(['Confirm Password field must be the same as the Password field']);
     }
+
   };
 
   const handleDemo = async () => {
@@ -100,6 +102,7 @@ function SignupFormPage() {
           <input
             type="password"
             value={password}
+            minLength={8}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
