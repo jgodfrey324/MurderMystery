@@ -22,6 +22,10 @@ function SignupFormPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (password.length < 8) {
+      return setErrors(['Password must be more than 8 characters.'])
+    }
+
     if (password === confirmPassword) {
       const data = await dispatch(signUp(username, firstName, lastName, password));
       if (data) {
@@ -102,7 +106,7 @@ function SignupFormPage() {
           <input
             type="password"
             value={password}
-            minLength={8}
+            // minLength={8}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
