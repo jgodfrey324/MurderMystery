@@ -18,6 +18,9 @@ function LoginFormPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (username === 'Demo') {
+      return setErrors(['Cannot login to default character. Please use default character button on \'create a character\' page.'])
+    }
     const data = await dispatch(login(username, password));
     if (data) {
       setErrors(data);
