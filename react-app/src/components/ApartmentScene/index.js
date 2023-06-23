@@ -46,7 +46,7 @@ const ApartmentScene = () => {
     return (
         <div className="home-screen">
             <h1>Allen Grove</h1>
-            {inHallway ? <img src="https://i.imgur.com/60YDXOU.jpg" alt='hallway'></img> : <img src="https://i.imgur.com/26FEGhd.jpg" alt='apartment livingroom'></img>}
+            {inHallway ? <img src="https://i.imgur.com/60YDXOU.jpg" alt='hallway'></img> : <img src="https://i.imgur.com/cQdClX6.jpg" alt='apartment livingroom'></img>}
             <div className="backpack-button">
                 <BackpackPopup />
             </div>
