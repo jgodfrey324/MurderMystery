@@ -18,6 +18,7 @@ def reset_seeds():
         [db.session.delete(place) for place in demo_user.places]
 
         db.session.commit()
+
         return {'message': 'Successfully reset'}
 
     user = User.query.get(current_user.id)

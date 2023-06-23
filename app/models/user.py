@@ -11,9 +11,11 @@ class User(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(25), nullable=False, unique=True)
-    first_name = db.Column(db.String(50), nullable=False, unique=True)
-    last_name = db.Column(db.String(50), nullable=False, unique=True)
+    first_name = db.Column(db.String(50), nullable=False)
+    last_name = db.Column(db.String(50), nullable=False)
     hashed_password = db.Column(db.String(255), nullable=False)
+
+    # cascade="all, delete-orphan"
 
     notes = db.relationship('Note', back_populates='user', cascade="all, delete-orphan")
     suspects = db.relationship('Suspect', back_populates='user', cascade="all, delete-orphan")
