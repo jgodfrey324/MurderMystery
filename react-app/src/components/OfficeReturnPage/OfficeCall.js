@@ -68,7 +68,12 @@ const OfficeCall = () => {
                             <div className="dialog-text">
                                 <p>{lea[index]}</p>
                             </div>
-                            <button className='continue-button' onClick={() => setIndex(index + 1)}>continue...</button>
+                            <button className='continue-button' onClick={() => {
+                                if (!lea[index + 1]) {
+                                    return history.push('/office-finished')
+                                }
+                                setIndex(index + 1)
+                                }}>continue...</button>
                         </>
                     )}
                     {wilma[index] && (places[places.length - 1] === 'Wilma') && !(places[places.length - 2] === 'Penny') && (

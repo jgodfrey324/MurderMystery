@@ -19,7 +19,7 @@ export const lea = [
     "[Lea Wilkin] Yeah I was at Minnie's that night. I had Lucian come over after work and we hung out for a little bit before I drove us over to her place.",
     "[Lea Wilkin] After a couple hours we decided to order pizza, but I fell asleep while they were deciding what to get.",
     "[Lea Wilkin] They all woke me up when they were going to look for her later, and that's all I remember.",
-    "[...] You finished the conversation with Lea, thanked her, and hung up. You have some new options now."
+    "[...] You finish the conversation with Lea, thank her, and hang up. You have some new options now."
 ]
 
 export const wilma = [
