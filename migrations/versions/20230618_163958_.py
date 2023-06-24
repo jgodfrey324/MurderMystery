@@ -25,7 +25,7 @@ def upgrade():
     op.create_table('items',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=50), nullable=False),
-    sa.Column('description', sa.String(length=300), nullable=False),
+    sa.Column('description', sa.String(length=400), nullable=False),
     sa.Column('image', sa.String(length=2000), nullable=False),
     sa.Column('is_food', sa.Boolean(), nullable=False),
     sa.PrimaryKeyConstraint('id')
