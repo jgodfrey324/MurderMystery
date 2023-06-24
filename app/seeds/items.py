@@ -15,7 +15,7 @@ def seed_items():
     item5 = Item(
         name='Gym membership card', description='A gym membership card to the local 24 hour fitness center. Most of the town\'s people are members at this gym. The name on the card reads \'Kallum Ray\'. The card appears to be dirty, like it\'s been stepped on a few times. Perhaps it\'s been sitting here for a while.', image="https://i.imgur.com/CCM1KIO.png", is_food=False)
     item6 = Item(
-        name='Minnie\'s documents', description='Minnie Gilmore, a 24 year old female with auburn hair was murdered around 11:30 PM, February 14th, at her home in Allen Grove Apartments. Living on the second floor, she was found at the bottom of the stairwell leading out to the front door by a group of friends.', image='https://i.imgur.com/k1At1g0.png', is_food=False)
+        name='Minnie\'s documents', description='Minnie Gilmore, a 24 year old female with auburn hair was murdered around 11:30 PM, February 14th, at her home in Allen Grove Apartments. Living on the second floor, she was found at the bottom of the stairwell leading out to the front door by a group of friends. Minnie had been working at Thomasville Salon for the past 4 years, and is reported to generally get along with everyone she meets.', image='https://i.imgur.com/k1At1g0.png', is_food=False)
 
 
     items = [item1, item2, item3, item4, item5, item6]

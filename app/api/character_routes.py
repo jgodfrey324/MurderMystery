@@ -38,6 +38,9 @@ def search_names():
 
     chars = [character.to_dict() for character in characters]
 
+    if len(chars) == 0:
+        chars = 'No results'
+
     return {'results': chars}
 
 
