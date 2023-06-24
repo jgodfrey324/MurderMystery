@@ -9,7 +9,7 @@ export const lucian = [
     "[Lucian Pope] Then we went and looked for her and... well the rest you know.",
     "[...] You asked Lucian if he's ever seen Minnie's neighbor.",
     "[Lucian Pope] No I haven't. I don't think Minnie ever even knew his name.",
-    "[...] You finished the conversation with Lucian, thanked him, and hung up. You have some new options now."
+    "[...] You finish the conversation with Lucian, thank him, and hang up. You have some new options now."
 ]
 
 export const lea = [
@@ -50,12 +50,12 @@ export const penny = [
     "[...] Line ringing...",
     "[Penny Gates] Hello?",
     "[...] Penny answers the phone, you introduce yourself, and explain your reason for calling.",
-    "[Penny Gates] That night after I got to Minnie's, I saw Wilma in the parking lot and we walking inside together. There was no one else around outside or anything.",
-    "[Penny Gates] I think that was around 9 PM-ish... anyway we were hanging out for an hour or so and got hungry so we ordered some pizza from Small's.",
+    "[Penny Gates] That night after I got to Minnie's, I saw Wilma in the parking lot and we walked inside together. There was no one else around outside or anything.",
+    "[Penny Gates] I think that was around 9 PM-ish... anyway, we were hanging out for an hour or so and got hungry so we ordered some pizza from Small's.",
     "[Penny Gates] After the driver showed up, Minnie went outside, but she never came back and that's when we went looking for her.",
     "[...] You asked Penny if she saw the driver.",
     "[Penny Gates] I didn't, but Wilma actually answered the door so she would probably remember.",
-    "[...] You finished the conversation with Penny, thanked her, and hung up. You have some new options now."
+    "[...] You finish the conversation with Penny, thank her, and hang up. You have some new options now."
 ]
 
 export const fabian = [
@@ -63,7 +63,7 @@ export const fabian = [
     "[Fabian Fischer] Hello?",
     "[...] Fabian answers the phone, you introduce yourself, and explain your reason for calling.",
     "[Fabian Fischer] I don't remember the names of any orders... but I do remember that one of my last deliveries on Valentine's Day was to an apartment on the second floor.",
-    "[...] You ask Fabian about what time he delivered the order and if he saw anyone other than who was in the apartment.",
-    "[Fabian Fischer] Just before 11:30 PM, maybe? And I passed someone coming up the stairs on my way back out. He was pretty tall, taller than me, and had blonde hair. That's really all I remember.",
+    "[...] You ask Fabian about what time he delivered the order, and if he saw anyone on his way in or out other than who was in the apartment.",
+    "[Fabian Fischer] I delivered the order just before 11:30 PM, maybe? And I passed someone coming up the stairs on my way back out. He was pretty tall, taller than me, and had blonde hair. That's really all I remember.",
     "[...] You finish the conversation with Fabian, thank him, and hang up. You have some new options now."
 ]

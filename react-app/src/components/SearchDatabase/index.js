@@ -77,6 +77,7 @@ const SearchDatabase = () => {
                     <div className="choice-buttons">
                         <DropDownDescr />
                         <DropDownName />
+                        <button onClick={() => history.goBack()}>Go back</button>
                     </div>
                     <div className="computer-screen">
 
@@ -88,19 +89,22 @@ const SearchDatabase = () => {
                         {!fail && results.map(res => {
                             return (
                                 <div key={res.id} className="char-info-house" onClick={(e) => {
-                                    if (res.id === 6) {
+                                    if (res.id === 6 && !places.includes('boyfriend')) {
                                         window.alert('You are headed out to visit Kallum Ray')
+                                        handleChoice(e, 'boyfriend')
                                         return history.push('/boyfriend')
                                     }
-                                    if (res.id === 13) {
+                                    if (res.id === 13 && !places.includes('neighbor')) {
                                         window.alert('You are headed out to visit Rush Giles')
+                                        handleChoice(e, 'neighbor')
                                         return history.push('/neighbor')
                                     }
                                     if (!allowedChars.includes(res.id)) {
-                                        window.alert('This person didn\'t answer the phone')
+                                        console.log(res.id, 'res id from the person check')
+                                        return window.alert('This person didn\'t answer the phone')
                                     }
                                     if (allowedChars.includes(res.id)) {
-                                        if (places.includes(res.first_name)) {
+                                        if (places.includes(res.first_name) || places.includes('neighbor') || places.includes('boyfriend')) {
                                             return window.alert('You\'ve already made a call to this person')
                                         }
                                         window.alert(`Calling ${res.first_name} ${res.last_name}...`)

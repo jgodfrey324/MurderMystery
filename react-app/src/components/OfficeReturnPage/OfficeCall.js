@@ -109,7 +109,7 @@ const OfficeCall = () => {
                             </div>
                             <button className='continue-button' onClick={() => {
                                 if (!lucian[index + 1]) {
-                                    return history.push('/office-finished')
+                                    return history.push('/office-return')
                                 }
                                 setIndex(index + 1)
                                 }}>continue...</button>
