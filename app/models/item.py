@@ -11,7 +11,7 @@ class Item(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
-    description = db.Column(db.String(300), nullable=False)
+    description = db.Column(db.String(400), nullable=False)
     image = db.Column(db.String(2000), nullable=False)
     is_food = db.Column(db.Boolean, nullable=False)
 
