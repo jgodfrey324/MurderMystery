@@ -58,10 +58,12 @@ const OfficeReturnPage = () => {
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
-                                <button onClick={(e) => {
-                                    handleChoice(e, 'neighbor')
-                                    history.push('/neighbor')
-                                }}>Visit Minnie's down stairs neighbor</button>
+                                {!places.includes('neighbor') && (
+                                    <button onClick={(e) => {
+                                        handleChoice(e, 'neighbor')
+                                        history.push('/neighbor')
+                                    }}>Visit Minnie's down stairs neighbor</button>
+                                )}
                                 <button onClick={() => history.push('/search')}>Search the database for a person</button>
                                 <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button>
                             </div>
@@ -71,10 +73,12 @@ const OfficeReturnPage = () => {
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
-                                <button onClick={(e) => {
-                                    handleChoice(e, 'neighbor')
-                                    history.push('/neighbor')
-                                }}>Visit Minnie's down stairs neighbor</button>
+                                {!places.includes('neighbor') && (
+                                    <button onClick={(e) => {
+                                        handleChoice(e, 'neighbor')
+                                        history.push('/neighbor')
+                                    }}>Visit Minnie's down stairs neighbor</button>
+                                )}
                                 <button onClick={() => history.push('/search')}>Search the database for a person</button>
                                 <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button>
                             </div>

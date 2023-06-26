@@ -22,7 +22,7 @@ const CriminalScene = () => {
 
     return (
         <div className="home-screen">
-            <h1>Neighbor</h1>
+            <h1>Minnie's Neighbor</h1>
             <img src="https://i.imgur.com/60YDXOU.jpg" alt='department computer'></img>
             <div className="backpack-button">
                 <BackpackPopup />
