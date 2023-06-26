@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
-import { postPlace } from "../../store/placesVisited";
+import { getPlaces, postPlace } from "../../store/placesVisited";
 import OpenModalButton from "../OpenModalButton";
 import NotepadModal from "./NotepadModal"
 import SuspectModal from "./SuspectModal";
@@ -19,6 +19,9 @@ const OpeningScene = () => {
 
     // let audioUrl = require('../../static/Jl-Moody-Alt-Country.mp3');
 
+    useEffect(() => {
+        dispatch(getPlaces())
+    }, [dispatch])
 
     // useEffect(() => {
     //     let sound = new Audio(audioUrl.default);
@@ -75,7 +78,7 @@ const OpeningScene = () => {
             </div>
             <div className="suspect-button">
                 <OpenModalButton
-                buttonImage={<i id='suspect-icon' className="fa-solid fa-user-secret" style={{color: "#000000"}}></i>}
+                buttonImage={<img style={{borderRadius: '50px'}} src="https://i.imgur.com/WFMnS64.jpg" alt="suspect icon"></img>}
                 modalComponent={<SuspectModal />}
                 />
             </div>
@@ -112,7 +115,7 @@ const OpeningScene = () => {
                                     setIndex(0);
                                     handleChoice(e, "security footage")
                                     }}>Check the apartment complex security footage</button>
-                                <button>Go to the coffee shop</button>
+                                <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button>
                             </div>
                         </>
                     )}

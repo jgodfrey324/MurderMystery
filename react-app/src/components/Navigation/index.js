@@ -28,10 +28,7 @@ function Navigation({ isLoaded }){
 				<>
 					<button id='logout' onClick={handleLogout}>End Game</button>
 					<button id='save-game' onClick={(e) => {
-						console.log(sessionUser.id, 'id from session user')
-						console.log(typeof sessionUser.id, 'typeof')
 						if (sessionUser.id === 1) {
-							console.log(sessionUser.id, 'id from session user')
 							return window.alert('Cannot save on default character. Please click \'end game\'.')
 						}
 						return logoutFunc(e)

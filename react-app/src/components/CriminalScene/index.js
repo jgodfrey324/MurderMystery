@@ -35,7 +35,7 @@ const CriminalScene = () => {
             </div>
             <div className="suspect-button">
                 <OpenModalButton
-                buttonImage={<i id='suspect-icon' className="fa-solid fa-user-secret" style={{color: "#000000"}}></i>}
+                buttonImage={<img style={{borderRadius: '50px'}} src="https://i.imgur.com/WFMnS64.jpg" alt="suspect icon"></img>}
                 modalComponent={<SuspectModal />}
                 />
             </div>
@@ -49,7 +49,7 @@ const CriminalScene = () => {
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
                                 <button onClick={() => history.push('/office-finished')}>Return to the office</button>
-                                <button>Go to the coffee shop</button>
+                                <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button>
                             </div>
                         </>
                     )}

@@ -526,6 +526,7 @@
     width: -webkit-fill-available;
     height: -webkit-fill-available;
     object-fit: contain;
+    /* box-shadow: 3px 3px 10px black; */
 }
 
 .solution-modal-container {
