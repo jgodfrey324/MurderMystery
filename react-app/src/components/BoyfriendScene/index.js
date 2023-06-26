@@ -39,6 +39,7 @@ const BoyfriendScene = () => {
 
     return (
         <div className="home-screen">
+            <img src="https://i.imgur.com/9496ylp.jpg" alt="Kallum's house"></img>
             <h1>Kallum's House</h1>
             <div className="backpack-button">
                 <BackpackPopup />
@@ -51,11 +52,11 @@ const BoyfriendScene = () => {
             </div>
             <div className="suspect-button">
                 <OpenModalButton
-                buttonImage={<i id='suspect-icon' className="fa-solid fa-user-secret" style={{color: "#000000"}}></i>}
+                buttonImage={<img style={{borderRadius: '50px'}} src="https://i.imgur.com/WFMnS64.jpg" alt="suspect icon"></img>}
                 modalComponent={<SuspectModal />}
                 />
             </div>
-            <div className="character-image">
+            <div className="character-image" style={{ top: '50px'}}>
                 <img src="https://i.imgur.com/08kzjrF.png" alt="Kalum Ray"></img>
             </div>
             <div className="dialog-box">
@@ -69,7 +70,7 @@ const BoyfriendScene = () => {
                                     history.push('/apartment')
                                 }}>Visit Minnie's apartment</button>
                                 <button onClick={() => history.push('/office-finished')}>Return to the office</button>
-                                <button>Go to the coffee shop</button>
+                                <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button>
                             </div>
                         </>
                     )}
@@ -78,7 +79,7 @@ const BoyfriendScene = () => {
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
                                 <button onClick={() => history.push('/office-finished')}>Return to the office</button>
-                                <button>Go to the coffee shop</button>
+                                <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button>
                             </div>
                         </>
                     )}

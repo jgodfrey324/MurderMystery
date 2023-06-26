@@ -56,7 +56,7 @@ const SalonScene = () => {
             </div>
             <div className="suspect-button">
                 <OpenModalButton
-                buttonImage={<i id='suspect-icon' className="fa-solid fa-user-secret" style={{color: "#000000"}}></i>}
+                buttonImage={<img style={{borderRadius: '50px'}} src="https://i.imgur.com/WFMnS64.jpg" alt="suspect icon"></img>}
                 modalComponent={<SuspectModal />}
                 />
             </div>
@@ -74,7 +74,7 @@ const SalonScene = () => {
                                     handleChoice(e, 'neighbor')
                                     history.push('/neighbor')
                                 }}>Visit Minnie's downstairs neighbor</button>
-                                <button>Go to the coffee shop</button>
+                                <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button>
                             </div>
                         </>
                     )}
@@ -87,7 +87,7 @@ const SalonScene = () => {
                                     history.push('/neighbor')
                                 }}>Visit Minnie's downstairs neighbor</button>
                                 <button onClick={() => history.push('/office-finished')}>Return to office</button>
-                                <button>Go to the coffee shop</button>
+                                <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button>
                             </div>
                         </>
                     )}
@@ -96,7 +96,7 @@ const SalonScene = () => {
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
                                 <button onClick={() => history.push('/office-return')}>Return to office to search the database</button>
-                                <button>Go to the coffee shop</button>
+                                <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button>
                             </div>
                         </>
                     )}
@@ -105,7 +105,7 @@ const SalonScene = () => {
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
                                 <button onClick={() => history.push('/office-finished')}>Return to office</button>
-                                <button>Go to the coffee shop</button>
+                                <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button>
                             </div>
                         </>
                     )}

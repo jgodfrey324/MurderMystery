@@ -44,7 +44,7 @@ const OfficeCall = () => {
             </div>
             <div className="suspect-button">
                 <OpenModalButton
-                buttonImage={<i id='suspect-icon' className="fa-solid fa-user-secret" style={{color: "#000000"}}></i>}
+                buttonImage={<img style={{borderRadius: '50px'}} src="https://i.imgur.com/WFMnS64.jpg" alt="suspect icon"></img>}
                 modalComponent={<SuspectModal />}
                 />
             </div>
