@@ -100,11 +100,10 @@ const SearchDatabase = () => {
                                         return history.push('/neighbor')
                                     }
                                     if (!allowedChars.includes(res.id)) {
-                                        console.log(res.id, 'res id from the person check')
                                         return window.alert('This person didn\'t answer the phone')
                                     }
                                     if (allowedChars.includes(res.id)) {
-                                        if (places.includes(res.first_name) || places.includes('neighbor') || places.includes('boyfriend')) {
+                                        if (places.includes(res.first_name)) {
                                             return window.alert('You\'ve already made a call to this person')
                                         }
                                         window.alert(`Calling ${res.first_name} ${res.last_name}...`)
