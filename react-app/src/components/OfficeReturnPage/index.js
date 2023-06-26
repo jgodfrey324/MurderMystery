@@ -58,12 +58,12 @@ const OfficeReturnPage = () => {
                         <>
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
-                                {!places.includes('neighbor') && (
-                                    <button onClick={(e) => {
+                                <button onClick={(e) => {
+                                    if (!places.includes('neighbor')) {
                                         handleChoice(e, 'neighbor')
-                                        history.push('/neighbor')
-                                    }}>Visit Minnie's down stairs neighbor</button>
-                                )}
+                                    }
+                                    history.push('/neighbor')
+                                }}>Visit Minnie's down stairs neighbor</button>
                                 <button onClick={() => history.push('/search')}>Search the database for a person</button>
                                 <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button>
                             </div>
