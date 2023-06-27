@@ -56,7 +56,7 @@ function SignupFormPage() {
       </div>
       <div className="default-char-house">
         <p>Use the default character</p>
-        <button onClick={handleDemo}>Use default</button>
+        <button onClick={() => window.alert('Feature coming soon!')}>Use default</button>
       </div>
       <p>or create a new character</p>
       <form onSubmit={handleSubmit}>
