@@ -8,7 +8,7 @@ Try it out here: https://case1124.onrender.com
 
 ## Technologies used:
 
-Some of the technologies used to create this game are: Python, Flask, SQLAlchemy, Javascript, Node.js, React, HTML5, CSS3, Redux, PostgreSQL, GitHub
+Some of the technologies used to create this game are: Python, Flask, SQLAlchemy, Javascript, React, HTML5, CSS3, Redux, PostgreSQL, GitHub
 
 
 ## Wireframes with Features:
