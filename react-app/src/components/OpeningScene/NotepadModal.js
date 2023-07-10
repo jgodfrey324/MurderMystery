@@ -62,7 +62,6 @@ const NotepadModal = () => {
             <img id='modal-notepad' src="https://i.imgur.com/7kwSq0B.png" alt='notepad'></img>
             <div className="notepad-empty-div">
                 {user_notes.length === 0 ? <p className="note-contents">Add a new note! Write down any information you think you may need later</p> : user_notes.map(note => {
-                    // console.log('note from inside mapping ----------------> ', note)
                     return (
                         <div className="note-contents" key={note.id}>
                             <p>{note.text}</p>

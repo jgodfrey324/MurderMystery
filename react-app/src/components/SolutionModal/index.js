@@ -58,13 +58,10 @@ const SolutionModal = () => {
         if (!character_names.includes(answer)) {
             setErrors('Please enter valid character name.')
         }
-        console.log(errors, 'errors')
 
         if (submitted && errors) {
-            console.log('i got reset')
             setErrors('')
         }
-        console.log(submitted, 'submitted')
 
         setAnswer('');
         setSubmitted(false);

@@ -18,8 +18,6 @@ const ReceiptModal = ({ receipt }) => {
 
     const item_names = []
 
-    console.log('what is the ticket ///////// ', receipt)
-
     for (const item of backpack_items) {
         item_names.push(item.item.name)
     }

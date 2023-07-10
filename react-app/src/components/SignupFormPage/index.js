@@ -54,11 +54,11 @@ function SignupFormPage() {
         modalComponent={<TutorialModal />}
         />
       </div>
-      <div className="default-char-house">
+      {/* <div className="default-char-house">
         <p>Use the default character</p>
         <button onClick={() => window.alert('Feature coming soon!')}>Use default</button>
-      </div>
-      <p>or create a new character</p>
+      </div> */}
+      <p style={{marginTop: '30px'}}></p>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => {

@@ -70,7 +70,7 @@ const BoyfriendScene = () => {
                                     history.push('/apartment')
                                 }}>Visit Minnie's apartment</button>
                                 <button onClick={() => history.push('/office-finished')}>Return to the office</button>
-                                <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button>
+                                {/* <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button> */}
                             </div>
                         </>
                     )}
@@ -79,7 +79,7 @@ const BoyfriendScene = () => {
                             <p>Would you like to:</p>
                             <div className="choice-buttons">
                                 <button onClick={() => history.push('/office-finished')}>Return to the office</button>
-                                <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button>
+                                {/* <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button> */}
                             </div>
                         </>
                     )}

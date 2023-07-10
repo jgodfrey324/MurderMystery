@@ -115,7 +115,7 @@ const OpeningScene = () => {
                                     setIndex(0);
                                     handleChoice(e, "security footage")
                                     }}>Check the apartment complex security footage</button>
-                                <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button>
+                                {/* <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button> */}
                             </div>
                         </>
                     )}
