@@ -17,7 +17,7 @@ const TutorialModal = () => {
                 <p>Every good detective utilizes a notepad. Don't be afraid to jot down bits of dialog or descriptions, as you may not see that information again!</p>
                 <p>Later on, you may encouter a 'search database' option. Be sure to click on the character you are searching for if you find them! You may have the ability to interact with them.</p>
                 <p>When you think you know who-dun-it, click 'submit answer' to input your guess. The input requires a first and last name, proper spelling and capitalization!</p>
-                <p>If you decide to quite the game, you have two options: 'save game', or 'end game'. Clicking 'end game' will delete your character and all progress made. If you wish to save and exit, click 'save game'.</p>
+                <p>If you decide to quit the game, you have two options: 'save game', or 'end game'. Clicking 'end game' will delete your character and all progress made. If you wish to save and exit, click 'save game'.</p>
             </div>
             <p id='side-note'>* A note on this: if you choose to use a default character, you cannot save data. All progress will be deleted. *</p>
 

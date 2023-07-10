@@ -65,7 +65,7 @@ const OfficeReturnPage = () => {
                                     history.push('/neighbor')
                                 }}>Visit Minnie's down stairs neighbor</button>
                                 <button onClick={() => history.push('/search')}>Search the database for a person</button>
-                                <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button>
+                                {/* <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button> */}
                             </div>
                         </>
                     )}
@@ -80,7 +80,7 @@ const OfficeReturnPage = () => {
                                     }}>Visit Minnie's down stairs neighbor</button>
                                 )}
                                 <button onClick={() => history.push('/search')}>Search the database for a person</button>
-                                <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button>
+                                {/* <button onClick={() => window.alert('Feature coming soon!')}>Go to the coffee shop</button> */}
                             </div>
                         </>
                     )}

@@ -18,7 +18,6 @@ const TicketsModal = ({ tickets }) => {
 
     const item_names = []
 
-    console.log('what is the ticket ///////// ', tickets)
 
     for (const item of backpack_items) {
         item_names.push(item.item.name)
