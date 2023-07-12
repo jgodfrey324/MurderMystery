@@ -12,10 +12,9 @@ Some of the technologies used to create this game are: Python, Flask, SQLAlchemy
 
 ## Wireframes with Features:
 
-* Start with the ability to create a character, or use the default set character
+* Start with the ability to create a character and read the tutorial
     * A user may also log into old characters to finish the game
-    * A user may not 'save game' on the default character
-![Alt text](<Screen Shot 2023-06-22 at 1.46.39 PM.png>)
+![Screen Shot 2023-07-12 at 1 05 06 PM](https://github.com/jgodfrey324/MurderMystery/assets/122331146/45491345-9d46-4520-b660-bbf1b5b3e571)
 
 
 
