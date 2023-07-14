@@ -64,8 +64,8 @@
     /* border: 1px solid green; */
     display: flex;
     flex-direction: column;
-    width: -moz-available;
-    width: -webkit-fill-available;
+    width: fill-available;
+    /* width: -webkit-fill-available; */
     margin: 5px 20px;
     color: black;
 }
