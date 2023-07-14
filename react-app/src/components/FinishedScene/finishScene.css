@@ -50,10 +50,10 @@
     position: absolute;
     z-index: 1;
     opacity: 0.5;
-    width: -moz-available;
-    width: -webkit-fill-available;
-    height: -moz-available;
-    height: -webkit-fill-available;
+    width: fill-available;
+    /* width: -webkit-fill-available; */
+    height: fill-available;
+    /* height: -webkit-fill-available; */
     object-fit: cover;
     top: 0;
     right: 0;
