@@ -45,7 +45,7 @@ function SignupFormPage() {
   return (
     <div className="signup-house">
       <img id="starting-logo" src="https://i.imgur.com/n2LDt9A.png?1" alt="case 1124"></img>
-      <p style={{fontWeight: '200', fontSize: '13px', marginTop: '20px'}}>* For best playing experience this game should be played on a Chrome browser *</p>
+      {/* <p style={{fontWeight: '200', fontSize: '13px', marginTop: '20px'}}>* For best playing experience this game should be played on a Chrome browser *</p> */}
       <h2>Start a new game...</h2>
       <p><span>Need to continue? Continue game </span>
       <span id='continue-game' onClick={() => history.push('/login')}>here</span></p>
