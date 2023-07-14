@@ -482,6 +482,10 @@
     margin: 0 60px;
 }
 
+.first-choice > p {
+    margin-top: 20px;
+}
+
 /* .dialog-text {
     width: 20rem;
     animation: typing 2s steps(22), blink .5s step-end infinite alternate;
@@ -594,6 +598,7 @@
     margin-top: 15px;
     width: 130px;
     padding: 5px;
+    cursor: pointer;
 }
 
 .drop-item-house {
@@ -610,6 +615,7 @@
     margin: 0;
     margin-bottom: 40px;
     font-weight: 300;
+    color: maroon;
 }
 
 .drop-item-house > h1 {
@@ -635,6 +641,8 @@
     padding: 3px 10px;
     margin-right: 10px;
     cursor: pointer;
+    /* margin-top: 2px; */
+    height: 30px;
 }
 
 #cancel-button-house {
@@ -645,6 +653,10 @@
 
 #cancel-button-house > button {
     position: absolute;
-    top: 77px;
-    right: 330px;
+    top: 78px;
+    height: 30px;
+    right: 335px;
+    padding: 3px 10px;
+    /* margin-right: 10px; */
+    cursor: pointer;
 }
