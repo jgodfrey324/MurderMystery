@@ -268,12 +268,10 @@
 .suspect-modal-container > img {
     position: absolute;
     z-index: 3;
-    width: fill-available;
-    /* width: -webkit-fill-available; */
-    top: -35px;
+    width: 100%;
+    top: -30px;
     left: -20px;
-    height: fill-available;
-    /* height: -webkit-fill-available; */
+    height: 105%;
     object-fit: contain;
     /* background-color: aliceblue; */
     border-radius: 20px;
@@ -285,7 +283,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 20px;
-    height: 45px;
+    height: 47px;
 }
 
 .single-suspect > p {
@@ -315,10 +313,9 @@
 .home-screen > img {
     position: absolute;
     z-index: 1;
-    width: fill-available;
-    /* width: -webkit-fill-available; */
-    height: fill-available;
-    /* height: -webkit-fill-available; */
+    width: 100%;
+    height: 100%;
+
     object-fit: cover;
     top: 0;
     right: 0;
@@ -365,10 +362,9 @@
 .item-house {
     border: 1px solid black;
     border-radius: 5px;
-    height: fill-available;
-    /* height: -webkit-fill-available; */
-    width: fill-available;
-    /* width: -webkit-fill-available; */
+    height: 100%;
+
+    width: 100%;
     background-color: antiquewhite;
     position: relative;
 }
@@ -402,20 +398,18 @@
 }
 
 .backpack-button > button {
-    width: fill-available;
-    /* width: -webkit-fill-available; */
-    height: fill-available;
-    /* height: -webkit-fill-available; */
+    width: 100%;
+    height: 100%;
+
     border-radius: 50px;
     cursor: pointer;
     background-color: rgb(234, 234, 234);
 }
 
 .backpack-button > button > img {
-    width: fill-available;
-    /* width: -webkit-fill-available; */
-    height: fill-available;
-    /* height: -webkit-fill-available; */
+    width: 100%;
+    height: 100%;
+
     object-fit: cover;
     border-radius: 50px;
 }
@@ -533,10 +527,9 @@
 }
 
 .character-image > img {
-    width: fill-available;
-    /* width: -webkit-fill-available; */
-    height: fill-available;
-    /* height: -webkit-fill-available; */
+    width: 100%;
+    height: 100%;
+
     object-fit: contain;
     /* box-shadow: 3px 3px 10px black; */
 }
@@ -589,8 +582,7 @@
 }
 
 .solution-container > form > input {
-    width: fill-available;
-    /* width: -webkit-fill-available; */
+    width: 100%;
     outline: none;
     font-size: 15px;
     height: 25px;

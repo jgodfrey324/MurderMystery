@@ -56,8 +56,7 @@
     /* border: 1px solid green; */
     display: flex;
     flex-direction: column;
-    width: fill-available;
-    /* width: -webkit-fill-available; */
+    width: 88%;
     margin: 5px 20px;
     color: black;
 }
