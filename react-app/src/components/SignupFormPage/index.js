@@ -11,16 +11,10 @@ function SignupFormPage() {
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
   const [username, setUsername] = useState("");
-  // const [firstName, setFirstName] = useState("");
-  // const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
-  const [isFirefox, setIsFirefox] = useState(false)
 
-  useEffect(() => {
-    setIsFirefox(navigator.userAgent.includes('Firefox'));
-  }, [])
 
   if (sessionUser) return <Redirect to="/" />
 
@@ -50,9 +44,6 @@ function SignupFormPage() {
   return (
     <div className="signup-house">
       <img id="starting-logo" src="https://i.imgur.com/n2LDt9A.png?1" alt="case 1124"></img>
-      {isFirefox ? (
-        <p style={{fontWeight: '200', fontSize: '16px', marginTop: '20px', color: 'maroon'}}>* For best playing experience this game should be played on a Chrome browser *</p>
-      ) : null}
       <h2>Start a new game...</h2>
       <p><span>Need to continue? Continue game </span>
       <span id='continue-game' onClick={() => history.push('/login')}>here</span></p>
