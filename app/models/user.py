@@ -11,8 +11,8 @@ class User(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(25), nullable=False, unique=True)
-    first_name = db.Column(db.String(50), nullable=False)
-    last_name = db.Column(db.String(50), nullable=False)
+    # first_name = db.Column(db.String(50), nullable=False)
+    # last_name = db.Column(db.String(50), nullable=False)
     hashed_password = db.Column(db.String(255), nullable=False)
 
     # cascade="all, delete-orphan"
@@ -37,7 +37,7 @@ class User(db.Model, UserMixin):
     def to_dict(self):
         return {
             'id': self.id,
-            'username': self.username,
-            'first_name': self.first_name,
-            'last_name': self.last_name
+            'username': self.username
+            # 'first_name': self.first_name,
+            # 'last_name': self.last_name
         }

@@ -11,8 +11,8 @@ function SignupFormPage() {
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
   const [username, setUsername] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -27,7 +27,7 @@ function SignupFormPage() {
     }
 
     if (password === confirmPassword) {
-      const data = await dispatch(signUp(username, firstName, lastName, password));
+      const data = await dispatch(signUp(username, password));
       if (data) {
         setErrors(data)
       }
@@ -84,7 +84,7 @@ function SignupFormPage() {
             required
           />
         </label>
-        <label>
+        {/* <label>
           First name:
           <input
             type="text"
@@ -101,7 +101,7 @@ function SignupFormPage() {
             onChange={(e) => setLastName(e.target.value)}
             required
           />
-        </label>
+        </label> */}
         <label>
           Password:
           <input
