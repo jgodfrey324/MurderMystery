@@ -268,10 +268,10 @@
 .suspect-modal-container > img {
     position: absolute;
     z-index: 3;
-    width: stretch;
+    width: -moz-available, -webkit-fill-available;
     top: -35px;
     left: -20px;
-    height: stretch;
+    height: -moz-available, -webkit-fill-available;
     object-fit: contain;
     /* background-color: aliceblue; */
     border-radius: 20px;
@@ -313,8 +313,8 @@
 .home-screen > img {
     position: absolute;
     z-index: 1;
-    width: stretch;
-    height: stretch;
+    width: -moz-available, -webkit-fill-available;
+    height: -moz-available, -webkit-fill-available;
     object-fit: cover;
     top: 0;
     right: 0;
@@ -361,8 +361,8 @@
 .item-house {
     border: 1px solid black;
     border-radius: 5px;
-    height: stretch;
-    width: stretch;
+    height: -moz-available, -webkit-fill-available;
+    width: -moz-available, -webkit-fill-available;
     background-color: antiquewhite;
     position: relative;
 }
@@ -396,16 +396,16 @@
 }
 
 .backpack-button > button {
-    width: stretch;
-    height: stretch;
+    width: -moz-available, -webkit-fill-available;
+    height: -moz-available, -webkit-fill-available;
     border-radius: 50px;
     cursor: pointer;
     background-color: rgb(234, 234, 234);
 }
 
 .backpack-button > button > img {
-    width: stretch;
-    height: stretch;
+    width: -moz-available, -webkit-fill-available;
+    height: -moz-available, -webkit-fill-available;
     object-fit: cover;
     border-radius: 50px;
 }
@@ -523,8 +523,8 @@
 }
 
 .character-image > img {
-    width: stretch;
-    height: stretch;
+    width: -moz-available, -webkit-fill-available;
+    height: -moz-available, -webkit-fill-available;
     object-fit: contain;
     /* box-shadow: 3px 3px 10px black; */
 }
@@ -577,7 +577,7 @@
 }
 
 .solution-container > form > input {
-    width: stretch;
+    width: -moz-available, -webkit-fill-available;
     outline: none;
     font-size: 15px;
     height: 25px;

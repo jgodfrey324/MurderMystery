@@ -64,7 +64,7 @@
     /* border: 1px solid green; */
     display: flex;
     flex-direction: column;
-    width: stretch;
+    width: -moz-available, -webkit-fill-available;
     margin: 5px 20px;
     color: black;
 }
