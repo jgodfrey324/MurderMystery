@@ -82,7 +82,7 @@ function SignupFormPage() {
             required
           />
         </label>
-        {/* <label>
+        <label>
           First name:
           <input
             type="text"
@@ -99,7 +99,7 @@ function SignupFormPage() {
             onChange={(e) => setLastName(e.target.value)}
             required
           />
-        </label> */}
+        </label>
         <label>
           Password:
           <input
